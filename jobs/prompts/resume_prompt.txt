@@ -14,7 +14,7 @@ Lesen Sie das Kandidatenprofil in `@config/profile.json`, den Master-Lebenslauf 
 
 3. **STAR-Methode & Quantifizierung:** Überarbeiten Sie die Stichpunkte der Berufserfahrung nach der STAR-Methode (Situation, Task, Action, Result). Heben Sie quantifizierbare Erfolge hervor, wo immer möglich.
 
-4. **Tech-Stack Fokus:** Betonen Sie die geforderten Kern-Frameworks und Backend-/Cloud-Architekturen gezielt.
+4. **Tech-Stack Fokus:** Betonen Sie die geforderten Kern-Frameworks sowie Backend und Cloud Architekturen gezielt.
 
 5. **Lückenanalyse & Transferable Skills:** Führen Sie eine kurze Lückenanalyse durch. Adressieren Sie "Skill Gaps" direkt bei der Überarbeitung, indem Sie relevante, übertragbare Fähigkeiten betonen.
 

@@ -6,11 +6,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
-  <meta name="description" content="Stefan Kramer — Senior Mechanical &amp; Renewable Energy Systems Engineer specializing in CAD design, CFD simulation, thermal systems, and battery storage (BESS)." />
-  <meta name="author" content="Stefan Kramer" />
-  <title>Stefan Kramer | Senior Mechanical &amp; Renewable Energy Systems Engineer — Resume</title>
-  <link rel="canonical" href="https://stefan-kramer.example.com/" />
+  <meta name="description" content="WebResume & Career Engine — Open-source ATS-optimized web resume template, AI prompt library for cover letters & tailoring, 24 career agent skills, and headless PDF automation." />
+  <meta name="author" content="Masri Systems" />
+  <title>WebResume & Career Engine | Masri Systems</title>
+  <link rel="canonical" href="https://career.masrisystems.com/" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <script src="./hub.js" defer></script>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Stefan Kramer | Senior Mechanical &amp; Renewable Energy Systems Engineer" />
@@ -322,7 +323,438 @@
     }
   </style>
 
-  <div id="resumeContent" class="max-w-4xl mx-auto p-6 bg-stone-50 shadow-md dark:bg-stone-950 overflow-hidden">
+  <!-- Top Navigation (Pinned Editorial Header) -->
+  <nav id="top-nav" class="no-print">
+    <div class="hub-container top-nav-inner">
+      <a href="#hero" class="nav-brand">
+        WebResume &amp; Career Engine
+        <span class="nav-tag">Open Source</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#prompts" class="nav-link">AI Prompts</a></li>
+        <li><a href="#workflows" class="nav-link">Workflows &amp; Skills</a></li>
+        <li><a href="#resume" class="nav-link">Resume Template</a></li>
+        <li><a href="#download" class="nav-link">Download Kit</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button id="lang-toggle-nav-btn" class="btn-pill-sm" onclick="switchLanguage()">EN / DE</button>
+        <a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-pill-sm">Portfolio</a>
+        <a href="#download" class="btn-primary" style="padding: 8px 16px; font-size: 13.5px;">Download Kit</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Band (White Canvas) -->
+  <section id="hero" class="no-print">
+    <div class="hub-container">
+      <h1 class="hero-headline">The Open-Source ATS Web Resume &amp; Career Automation Engine</h1>
+      <p class="hero-subhead">A unified career toolkit for tech professionals. Features an interactive DIN-5008 resume template, production-grade LLM prompts for cover letters and tailoring, 24 specialized career agent skills, and headless PDF automation.</p>
+      <div class="hero-cta-cluster">
+        <a href="#prompts" class="btn-primary">Explore AI Prompts</a>
+        <a href="#resume" class="btn-secondary">Preview Web Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Coral Voltage Card -->
+  <div id="coral-card" class="hub-container no-print">
+    <div class="signature-coral-card">
+      <h2>Production-Grade Career Engineering</h2>
+      <p>Built to bridge the gap between ATS parsers, recruiter evaluation, and modern AI automation. Combines clean semantic HTML with 5 battle-tested prompt suites and automated Python headless Chromium compilation.</p>
+      <a href="#download" class="btn-secondary-on-dark">Download Starter Kit (ZIP)</a>
+    </div>
+  </div>
+
+  <!-- AI Prompt Library Section -->
+  <section id="prompts" class="hub-container section-band no-print">
+    <h2 class="text-3xl font-semibold mb-2" style="border-bottom:none;">AI Prompt Library</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-2xl">Battle-tested prompts engineered for Claude 3.7, GPT-4o, and Gemini 2.0 Pro. Sourced directly from production career workflows. Click any card to copy the full prompt payload.</p>
+    
+    <div class="prompt-grid">
+      <!-- Prompt 1: Cover Letter -->
+      <div class="prompt-card surface-mint">
+        <div>
+          <div class="prompt-card-header">
+            <h3 class="prompt-card-title">DIN-5008 Cover Letter</h3>
+            <span class="prompt-card-models">Claude 3.7 · GPT-4o</span>
+          </div>
+          <p class="prompt-card-desc">Generates a tailored German tech cover letter using the STAR method, verified project metrics, and DIN-5008 compliance.</p>
+          <div class="prompt-code-preview"># Rolle: Tech-Recruiter &amp; Werbetexter
+# Aufgabe: Maßgeschneidertes Anschreiben für <mark>{{COMPANY}}</mark>
+# Struktur: STAR-Hook, 3 Kernprobleme lösen, Tech-Stack quantifizieren</div>
+          <pre class="prompt-raw" style="display:none;"># Rolle
+Handeln Sie als fachkundiger Tech-Recruiter und professioneller Werbetexter mit Spezialisierung auf Anschreiben für Entwickler.
+
+# Aufgabe
+Lesen Sie das Kandidatenprofil (@config/profile.json), den Basis-Lebenslauf (@index.html) sowie die kanonischen Rollenprofile (@jobs/roles/*.json). Ich werde Ihnen eine spezifische Stellenbeschreibung zur Verfügung stellen. Ihre Aufgabe ist es, ein hochgradig maßgeschneidertes, überzeugendes Anschreiben zu verfassen, das den Hintergrund des Kandidaten perfekt mit den Anforderungen dieser Rolle in Einklang bringt.
+
+# Anweisungen
+1. Reale Projekterfahrungen nutzen: Ziehen Sie konkrete Architekturen, Tools, Performance-Erfolge und Projekte aus @index.html und den Rollendefinitionen heran, um authentische, überprüfbare Beweise für die Fähigkeiten zu liefern.
+2. Kein Roboter-Ton: Das Anschreiben darf NICHT wie eine generische KI-Vorlage klingen. Vermeiden Sie typische KI-Buzzwords, Klischees oder übertrieben formelles Füllmaterial. Der Ton soll selbstbewusst, professionell und authentisch enthusiastisch sein.
+3. Starker Aufhänger (Hook): Beginnen Sie das Anschreiben mit einem fesselnden ersten Absatz, der sofort die Aufmerksamkeit weckt, die angestrebte Rolle nennt und die relevanteste Qualifikation für genau dieses Unternehmen hervorhebt.
+4. Bedürfnisse adressieren: Identifizieren Sie die 3 wichtigsten Anforderungen oder Kernprobleme aus der Stellenbeschreibung. Nutzen Sie den Hauptteil, um präzise zu zeigen, wie die bisherige Erfahrung diese Probleme löst, und quantifizieren Sie den Impact.
+5. Kern-Technologien hervorheben: Betonen Sie gezielt die im Profil definierten Kerntechnologien sowie Enterprise-DevOps (Docker, CI/CD).
+6. Kompakt &amp; Prägnant: Halten Sie das Anschreiben kurz, überzeugend und strikt unter 300 Wörtern (maximal 3-4 Absätze).
+7. Handlungsorientierter Schluss: Enden Sie mit einem starken Call-to-Action und der klaren Motivation für ein persönliches Kennenlernen.
+8. Automatisierung: Speichern als JSON-Konfiguration in jobs/configs/JJJJ-MM-TT_[slug].json zur Kompilierung mit python jobs/engine.py run --config ...</pre>
+        </div>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+      <!-- Prompt 2: ATS Tailoring -->
+      <div class="prompt-card surface-peach">
+        <div>
+          <div class="prompt-card-header">
+            <h3 class="prompt-card-title">ATS Resume Tailoring</h3>
+            <span class="prompt-card-models">Claude 3.7 · GPT-4o</span>
+          </div>
+          <p class="prompt-card-desc">Injects target job keywords, sharpens experience bullet points, and maintains strict DOM structure parity.</p>
+          <div class="prompt-code-preview"># Rolle: ATS-Optimierungs-Experte
+# Aufgabe: Lebenslauf passgenau auf Stellenbeschreibung zuschneiden
+# STRIKT: Exakte DOM-Struktur von @index.html und Zweisprachigkeit beibehalten</div>
+          <pre class="prompt-raw" style="display:none;"># Rolle
+Agieren Sie als Experte für technisches Recruiting, professionelles Schreiben von Lebensläufen und ATS-Optimierung (Applicant Tracking System).
+
+# Aufgabe
+Lesen Sie das Kandidatenprofil in @config/profile.json, den Master-Lebenslauf in @index.html sowie die kanonischen Rollen in @jobs/roles/. Ich werde Ihnen eine spezifische Stellenbeschreibung zur Verfügung stellen. Ihre Aufgabe ist es, den HTML-Lebenslauf passgenau auf diese Stellenbeschreibung zuzuschneiden und für ATS-Systeme zu optimieren.
+
+STRIKT: Der generierte Lebenslauf muss die exakte DOM-Struktur von @index.html einhalten. Verändern Sie ausschließlich die Textinhalte der Tags (&lt;li&gt;, &lt;p&gt;, &lt;span&gt;, etc.) und die zweisprachigen Attribute (data-lang-en, data-lang-de). Die gesamte HTML-Struktur, alle Script- und Style-Blöcke, IDs und CSS-Klassen müssen für die DOM-Parität erhalten bleiben.
+
+# Anweisungen
+1. Wissensbasis konsultieren: Ziehen Sie bei der Formulierung konkreter Stichpunkte und Erfolge die Projektdetails und Kennzahlen aus @index.html und den passenden Rollenprofilen aus @jobs/roles/ heran.
+2. ATS-Optimierung: Identifizieren Sie die 5 wichtigsten Keywords und Qualifikationen aus der Stellenbeschreibung. Integrieren Sie diese exakt und natürlich in den Text des Lebenslaufs.
+3. STAR-Methode &amp; Quantifizierung: Überarbeiten Sie die Stichpunkte der Berufserfahrung nach der STAR-Methode (Situation, Task, Action, Result).
+4. Tech-Stack Fokus: Betonen Sie die geforderten Kern-Frameworks sowie Backend und Cloud Architekturen gezielt.
+5. Lückenanalyse: Adressieren Sie Skill Gaps direkt bei der Überarbeitung durch relevante übertragbare Fähigkeiten.
+6. Erhalt von Code &amp; Funktionalität: Alle CSS-Klassen, Inline-Styles und IDs 1:1 übernehmen.</pre>
+        </div>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+      <!-- Prompt 3: Interview Prep -->
+      <div class="prompt-card surface-yellow">
+        <div>
+          <div class="prompt-card-header">
+            <h3 class="prompt-card-title">STAR Technical Interview</h3>
+            <span class="prompt-card-models">Claude 3.7 · Gemini 2.0</span>
+          </div>
+          <p class="prompt-card-desc">Produces tailored German elevator pitches, situational STAR response stories, and insightful closing questions.</p>
+          <div class="prompt-code-preview"># Role: Career Coach &amp; Tech Interview Prep
+# Target: Elevator Pitch, 3 STAR Stories in German, Why Company, Closing Questions</div>
+          <pre class="prompt-raw" style="display:none;">Role: You are an Expert Career Coach and Technical Interview Preparer for Software Developers in Germany.
+
+Context: I am applying for a new job. I will provide you with my Resume, my Base Interview Cheat Sheet, and a Target Job Description.
+
+Task: Analyze the Target Job Description to identify core technical requirements, soft skills, and company culture. Then, rewrite and tailor my Base Interview Cheat Sheet so that it perfectly aligns my Resume's experience with this specific job.
+
+Step-by-Step Instructions:
+Phase 1 (The Opening): Rewrite my "Elevator Pitch" in German. Highlight the top 3 frameworks/skills from my resume that match the job description.
+Phase 2 (Technical Value - STAR Stories): Create 2 to 3 new STAR stories (Situation, Task, Action, Result) in German. Use specific achievements from my resume to prove I can handle the exact responsibilities. Clear, professional, natural German.
+Phase 3 (Motivation &amp; Alignment): Rewrite the "Why Company [NAME]?" section connecting personal working style and goals to company mission.
+Phase 4 (Handling Challenges): Review weaknesses and stress-handling answers to ensure alignment.
+Phase 5 (Logistics &amp; Closing): Generate 3 highly specific, insightful questions in German for the interviewers based on the tech stack and team structure.</pre>
+        </div>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+      <!-- Prompt 4: Job Search Queries -->
+      <div class="prompt-card surface-cream">
+        <div>
+          <div class="prompt-card-header">
+            <h3 class="prompt-card-title">German Tech Search Matrix</h3>
+            <span class="prompt-card-models">Perplexity · GPT-4o</span>
+          </div>
+          <p class="prompt-card-desc">Generates precision Boolean search queries for StepStone, LinkedIn DE, and Indeed with regional and remote filtering.</p>
+          <div class="prompt-code-preview"># Rolle: Executive Recruiting Specialist
+# Quellen: Techstars Directory, HTGF Newsroom, LinkedIn DE, StepStone
+# Output: Strukturierte Tabellenzeilen mit Match Score und Gehaltsspannen</div>
+          <pre class="prompt-raw" style="display:none;">Agieren Sie als Experte für Executive Recruiting. Analysieren Sie das Kandidatenprofil in @config/profile.json sowie den Lebenslauf in @index.html und nutzen Sie Ihre Web-Suche, um die besten passenden Stellenangebote zu finden:
+1. Remote / Deutschlandweit (100% Home Office oder remote-friendly)
+2. Vor Ort / Hybrid in der Zielregion gemäß config/profile.json.
+3. Kuratierte Tech- &amp; Investment-Quellen:
+   - Techstars Portfolio Directory (Tech-Unternehmen &amp; Startups nach Region und Stack filtern)
+   - High-Tech Gründerfonds (HTGF) Newsroom (Neueste Finanzierungsrunden &amp; Tech-Investitionen in Deutschland)
+4. Gehaltsrecherche via kununu für die spezifische Rolle.
+5. Ausgabe als Tabellenzeilen für jobs/job_matches.md mit Job Title, Company Name, Location, Status, Match Score, Match Justification, Skill Gap, Salary Range, Apply Link.</pre>
+        </div>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+      <!-- Prompt 5: Daily Job Workflow -->
+      <div class="prompt-card surface-soft">
+        <div>
+          <div class="prompt-card-header">
+            <h3 class="prompt-card-title">Daily Intake &amp; Tailoring</h3>
+            <span class="prompt-card-models">Claude Code · Antigravity</span>
+          </div>
+          <p class="prompt-card-desc">End-to-end 20-minute daily intake routine: role discovery, scoring, JSON configuration, and automated headless PDF export.</p>
+          <div class="prompt-code-preview"># Daily Routine Directive:
+# 1. Discover -> 2. Ingest &amp; Score -> 3. Tailor &amp; Generate -> 4. Validate ATS &amp; Export
+# Engine Runner: python jobs/engine.py run --config ...</div>
+          <pre class="prompt-raw" style="display:none;"># Daily Job Discovery &amp; Application Preparation Workflow Prompt
+
+Directive:
+Execute the Daily Job Discovery and Application Preparation workflow as defined in daily-job-search-workflow.md. Ensure you discover, qualify, and prepare complete application packages using:
+python jobs/engine.py run --config jobs/configs/YYYY-MM-DD_[company_slug].json
+
+Execution Stages:
+1. Discovery: Search German tech portals with Boolean queries.
+2. Ingestion: Save job description to jobs/job_descriptions/[slug].txt and score in jobs/job_matches.md.
+3. Tailoring: Initialize skeleton config with python jobs/engine.py init-config, run cover letter and resume prompts, populate JSON config.
+4. Export: Run python jobs/engine.py run to generate DIN-5008 HTML, tailored resume HTML, and headless Chromium PDFs.</pre>
+        </div>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflows & 24 Career Skills Section -->
+  <section id="workflows" class="hub-container section-band no-print">
+    <div class="cream-callout-card">
+      <h2>The 4-Stage Daily Career Routine</h2>
+      <p class="text-sm text-gray-700 mb-6">A disciplined 20-minute daily intake and tailoring cycle designed to maximize interview conversion while minimizing application fatigue.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+        <div class="bg-white p-4 rounded-md border border-[#dddddd]">
+          <span class="font-bold text-gray-900 block mb-1">1. Discover</span>
+          <span class="text-gray-600">Run precision Boolean search queries across LinkedIn DE, StepStone, and HTGF newsroom.</span>
+        </div>
+        <div class="bg-white p-4 rounded-md border border-[#dddddd]">
+          <span class="font-bold text-gray-900 block mb-1">2. Ingest &amp; Score</span>
+          <span class="text-gray-600">Save raw job descriptions, evaluate match scoring (1-10), and flag potential skill gaps.</span>
+        </div>
+        <div class="bg-white p-4 rounded-md border border-[#dddddd]">
+          <span class="font-bold text-gray-900 block mb-1">3. Tailor &amp; Generate</span>
+          <span class="text-gray-600">Execute LLM prompts to draft DIN-5008 cover letters and keyword-aligned resume variants.</span>
+        </div>
+        <div class="bg-white p-4 rounded-md border border-[#dddddd]">
+          <span class="font-bold text-gray-900 block mb-1">4. Validate &amp; Export</span>
+          <span class="text-gray-600">Run CLI engine to compile pristine A4 PDFs and verify 100% ATS DOM structural integrity.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <h3 class="text-2xl font-semibold mb-2" style="border-bottom:none;">24 Specialized Career Agent Skills</h3>
+      <p class="text-sm text-gray-600 mb-6">Modular portable agent skills (skills/*) compatible with Claude Code, Antigravity, and Codex for end-to-end career automation.</p>
+
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">resume-ats-optimizer</div>
+            <div class="skill-item-desc">Optimizes resume bullet points and section layouts for high ATS keyword density and parsing accuracy.</div>
+          </div>
+          <span class="skill-item-category">Resume Optimization</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">resume-tailor</div>
+            <div class="skill-item-desc">Tailors resume content, summary, and experience to match specific job descriptions.</div>
+          </div>
+          <span class="skill-item-category">Resume Optimization</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">resume-bullet-writer</div>
+            <div class="skill-item-desc">Rewrites job experience items into punchy, action-oriented, and metric-backed STAR bullet points.</div>
+          </div>
+          <span class="skill-item-category">Resume Optimization</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">resume-quantifier</div>
+            <div class="skill-item-desc">Identifies qualitative bullet points and helps calculate measurable percentages, KPIs, and outcomes.</div>
+          </div>
+          <span class="skill-item-category">Resume Optimization</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">resume-formatter</div>
+            <div class="skill-item-desc">Enforces consistent typography, dates, spacing, and standard German or English date formatting.</div>
+          </div>
+          <span class="skill-item-category">Resume Optimization</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">resume-section-builder</div>
+            <div class="skill-item-desc">Scaffolds new resume sections (e.g. side projects, patents, publications, certifications) with DOM parity.</div>
+          </div>
+          <span class="skill-item-category">Resume Optimization</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">resume-version-manager</div>
+            <div class="skill-item-desc">Tracks, diffs, and manages tailored resume iterations across multiple job applications.</div>
+          </div>
+          <span class="skill-item-category">Resume Optimization</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">tech-resume-optimizer</div>
+            <div class="skill-item-desc">Specialized optimization for software engineers, emphasizing cloud architectures, REST APIs, and pipelines.</div>
+          </div>
+          <span class="skill-item-category">Resume Optimization</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">cover-letter-generator</div>
+            <div class="skill-item-desc">Drafts DIN-5008 German and English cover letters with compelling hooks and candidate invariants.</div>
+          </div>
+          <span class="skill-item-category">Letters &amp; Applications</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">application-form-filler</div>
+            <div class="skill-item-desc">Parses complex portal application forms (Workday, Greenhouse) and prepares copy-ready answers.</div>
+          </div>
+          <span class="skill-item-category">Letters &amp; Applications</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">portfolio-case-study-writer</div>
+            <div class="skill-item-desc">Structures software and design projects into deep technical case studies with problem, architecture, and impact.</div>
+          </div>
+          <span class="skill-item-category">Letters &amp; Applications</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">job-application-generator</div>
+            <div class="skill-item-desc">Coordinates end-to-end generation of complete application bundles (Resume, Letter, Config, Match Note).</div>
+          </div>
+          <span class="skill-item-category">Letters &amp; Applications</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">executive-resume-writer</div>
+            <div class="skill-item-desc">Tailors resumes for leadership, VP, and Director roles focusing on P&amp;L ownership and team scale.</div>
+          </div>
+          <span class="skill-item-category">Career Transitions</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">career-changer-translator</div>
+            <div class="skill-item-desc">Translates non-traditional career paths and domain expertise into relevant engineering competencies.</div>
+          </div>
+          <span class="skill-item-category">Career Transitions</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">academic-cv-builder</div>
+            <div class="skill-item-desc">Formats academic curricula vitae including research grants, teaching experience, and peer-reviewed papers.</div>
+          </div>
+          <span class="skill-item-category">Career Transitions</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">creative-portfolio-resume</div>
+            <div class="skill-item-desc">Optimizes portfolio resumes for product designers, creative directors, and frontend visual developers.</div>
+          </div>
+          <span class="skill-item-category">Career Transitions</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">interview-coach</div>
+            <div class="skill-item-desc">Simulates behavioral and technical interview questions, grading responses against job requirements.</div>
+          </div>
+          <span class="skill-item-category">Interviews &amp; Offers</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">interview-prep-generator</div>
+            <div class="skill-item-desc">Generates 5-phase interview cheat sheets with German elevator pitches, STAR stories, and closing questions.</div>
+          </div>
+          <span class="skill-item-category">Interviews &amp; Offers</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">salary-negotiation-prep</div>
+            <div class="skill-item-desc">Prepares data-driven salary negotiation talk tracks and counter-offers based on German tech benchmarks.</div>
+          </div>
+          <span class="skill-item-category">Interviews &amp; Offers</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">offer-comparison-analyzer</div>
+            <div class="skill-item-desc">Compares competing job offers across base salary, bonus, equity, remote flexibility, and benefits.</div>
+          </div>
+          <span class="skill-item-category">Interviews &amp; Offers</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">daily-job-workflow</div>
+            <div class="skill-item-desc">Drives the daily discovery, qualification, and submission routine from daily-job-search-workflow.md.</div>
+          </div>
+          <span class="skill-item-category">Job Market Intelligence</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">job-description-analyzer</div>
+            <div class="skill-item-desc">Extracts hard skills, soft skills, seniority levels, and hidden requirements from raw job postings.</div>
+          </div>
+          <span class="skill-item-category">Job Market Intelligence</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">linkedin-profile-optimizer</div>
+            <div class="skill-item-desc">Aligns LinkedIn headlines, About sections, and featured media with the master resume invariants.</div>
+          </div>
+          <span class="skill-item-category">Job Market Intelligence</span>
+        </div>
+
+        <div class="skill-item">
+          <div>
+            <div class="skill-item-name">reference-list-builder</div>
+            <div class="skill-item-desc">Generates formatted, professional professional reference dossiers tailored to target positions.</div>
+          </div>
+          <span class="skill-item-category">Job Market Intelligence</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Resume Showcase Section -->
+  <section id="resume" class="hub-container section-band">
+    <div class="persona-switcher-bar no-print">
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-semibold uppercase text-gray-500">Archetype:</span>
+        <div class="persona-pills">
+          <button class="btn-pill-sm active" data-persona="fullstack">Fullstack Engineer</button>
+          <button class="btn-pill-sm" data-persona="devops">DevOps &amp; Cloud</button>
+          <button class="btn-pill-sm" data-persona="designer">Product Designer</button>
+          <button class="btn-pill-sm" data-persona="finance">Finance &amp; Controlling</button>
+          <button class="btn-pill-sm" data-persona="engineering">Mechanical Systems</button>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button class="btn-pill-sm" onclick="toggleAtsMode()">Toggle ATS Mode</button>
+        <button class="btn-pill-sm" onclick="window.print()">Print / PDF</button>
+      </div>
+    </div>
+
+    <div id="resume-paper">
+      <div id="resumeContent" class="max-w-4xl mx-auto p-6 bg-stone-50 shadow-md dark:bg-stone-950 overflow-hidden">
 
     <header id="header" class="border-b pb-6 mb-6"> <!-- Section: Header -->
       <div class="relative flex flex-col items-center gap-4 sm:flex-row sm:justify-start sm:gap-6 md:gap-10">
@@ -754,11 +1186,48 @@
     </div>
 
   </div>
+    </div> <!-- close #resume-paper -->
+  </section> <!-- close #resume -->
+
+  <!-- Download Starter Kit CTA Band -->
+  <section id="download" class="hub-container section-band no-print">
+    <div class="cta-band-light">
+      <h2>Get Started with WebResume &amp; Career Engine</h2>
+      <p class="text-sm text-gray-600 max-w-xl mx-auto mb-6">Download the complete standalone open-source kit including the master resume template, profile configurations, all 5 AI prompts, 24 agent skills, and the Python automation engine.</p>
+      <a href="./download/resume-template-starter.zip" download class="btn-primary" style="margin-bottom: 24px;">Download Starter Kit (ZIP)</a>
+      <div class="text-xs text-gray-500 flex justify-center items-center gap-4 mt-6 flex-wrap">
+        <span>1. Clone / Unzip</span>
+        <span>·</span>
+        <span>2. Edit config/profile.json</span>
+        <span>·</span>
+        <span>3. Run python jobs/engine.py</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Footer -->
+  <footer class="hub-footer no-print">
+    <div class="hub-container hub-footer-inner">
+      <div>
+        <strong>Masri Systems</strong> · Career Hub &amp; WebResume Engine (MIT License)
+      </div>
+      <ul class="footer-links">
+        <li><a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer">Portfolio</a></li>
+        <li><a href="https://masrisystems.com" target="_blank" rel="noopener noreferrer">Master Resume</a></li>
+        <li><a href="#prompts">Prompts</a></li>
+        <li><a href="#workflows">Skills</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div id="hub-toast"></div>
+
   <footer id="footer"
     class="text-center text-xs text-gray-500 mt-10 fixed bottom-0 right-0 px-2 pt-2 text-xs text-gray-600 z-[9999]">
     <!-- Section: Footer -->
-            <div class="print-signature">
-      <a href="https://stefan-kramer.example.com" target="_blank" rel="noopener noreferrer">https://stefan-kramer.example.com</a>
+    <div class="print-signature">
+      <a href="https://career.masrisystems.com" target="_blank" rel="noopener noreferrer">https://career.masrisystems.com</a>
     </div>
   </footer>
  
