@@ -1,4 +1,5 @@
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -37,10 +38,39 @@ def load_profile(profile_path: str = None) -> dict:
     return json.loads(cfg_file.read_text(encoding="utf-8"))
 
 
+def sync_profile_to_resume():
+    prof = load_profile()
+    prof_copy = json.loads(json.dumps(prof))
+    if "candidate" in prof_copy and "prohibited_domains" in prof_copy["candidate"]:
+        del prof_copy["candidate"]["prohibited_domains"]
+
+    res_p = BASE_DIR / "resume.html"
+    if res_p.exists():
+        content = res_p.read_text(encoding="utf-8")
+        prof_json = json.dumps(prof_copy, indent=2, ensure_ascii=False)
+        content = re.sub(
+            r'<script id="profile-data" type="application/json">.*?</script>',
+            f'<script id="profile-data" type="application/json">{prof_json}</script>',
+            content,
+            flags=re.DOTALL,
+        )
+        res_p.write_text(content, encoding="utf-8")
+
+
 def sync_stylesheets():
     style_src = BASE_DIR / "style.css"
+    js_src = BASE_DIR / "resume.js"
+    ROLES_HTML_DIR.mkdir(parents=True, exist_ok=True)
+    RESUMES_DIR.mkdir(parents=True, exist_ok=True)
     if style_src.exists():
-        ROLES_HTML_DIR.mkdir(parents=True, exist_ok=True)
-        RESUMES_DIR.mkdir(parents=True, exist_ok=True)
         shutil.copy2(style_src, ROLES_HTML_DIR / "style.css")
         shutil.copy2(style_src, RESUMES_DIR / "style.css")
+    if js_src.exists():
+        shutil.copy2(js_src, ROLES_HTML_DIR / "resume.js")
+        shutil.copy2(js_src, RESUMES_DIR / "resume.js")
+    for img in BASE_DIR.glob("*.webp"):
+        shutil.copy2(img, ROLES_HTML_DIR / img.name)
+        shutil.copy2(img, RESUMES_DIR / img.name)
+    sync_profile_to_resume()
+
+

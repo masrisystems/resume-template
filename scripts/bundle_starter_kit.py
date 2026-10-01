@@ -12,6 +12,7 @@ def build_starter_kit():
     include_files = [
         "index.html",
         "resume.html",
+        "resume.js",
         "download.html",
         "style.css",
         "hub.js",

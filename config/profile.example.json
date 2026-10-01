@@ -1,8 +1,8 @@
 {
   "candidate": {
     "name": "Alex Morgan",
-    "title_en": "Senior Fullstack Engineer",
-    "title_de": "Senior Fullstack Entwickler",
+    "title_en": "Senior Fullstack Engineer & AI Solutions Architect",
+    "title_de": "Senior Fullstack Entwickler & KI Lösungsarchitekt",
     "address_street": "Musterstraße 123",
     "address_city": "10115 Berlin",
     "postal_code": "10115",
@@ -12,6 +12,61 @@
     "links_url": "https://links.example.com",
     "prohibited_domains": [
       "resume.example.com"
+    ],
+    "degree": {
+      "en": "(B.Sc. Computer Science)",
+      "de": "(B.Sc. Informatik)"
+    },
+    "subtitle": {
+      "en": "Senior Fullstack Engineer · PHP 8+, Laravel & Vue.js · Cloud & MCP Tools",
+      "de": "Senior Fullstack Entwickler · PHP 8+, Laravel & Vue.js · Cloud & MCP Tools"
+    },
+    "summary": {
+      "en": "Senior Fullstack Engineer with 6+ years of experience engineering high-performance web applications, scalable cloud architectures, and intelligent AI agent workflows. Deep expertise in PHP 8+, Laravel, Vue 3, TypeScript, and modern DevOps pipelines. Based in Berlin and open to hybrid or remote senior engineering opportunities.",
+      "de": "Senior Fullstack Entwickler mit über 6 Jahren Erfahrung in der Konzeption hochperformanter Webanwendungen, skalierbarer Cloud-Architekturen und intelligenter KI-Agenten-Workflows. Fundierte Expertise in PHP 8+, Laravel, Vue 3, TypeScript und modernen DevOps Pipelines. Ansässig in Berlin und offen für hybride oder remote Senior-Ingenieurpositionen."
+    },
+    "avatar": "./alex-morgan-profile.webp",
+    "links": [
+      {
+        "label": {
+          "en": "alex.morgan@example.com",
+          "de": "alex.morgan@example.com"
+        },
+        "url": "mailto:alex.morgan@example.com",
+        "type": "email"
+      },
+      {
+        "label": {
+          "en": "+49 151 12345678",
+          "de": "+49 151 12345678"
+        },
+        "url": "tel:+4915112345678",
+        "type": "phone"
+      },
+      {
+        "label": {
+          "en": "LinkedIn",
+          "de": "LinkedIn"
+        },
+        "url": "https://www.linkedin.com/in/alex-morgan-example",
+        "type": "web"
+      },
+      {
+        "label": {
+          "en": "GitHub",
+          "de": "GitHub"
+        },
+        "url": "https://github.com/alex-morgan-example",
+        "type": "web"
+      },
+      {
+        "label": {
+          "en": "Portfolio",
+          "de": "Portfolio"
+        },
+        "url": "https://links.example.com/",
+        "type": "web"
+      }
     ]
   },
   "invariants": {
@@ -84,8 +139,305 @@
   ],
   "best_practices": [
     "Suchfilter 'Neueste zuerst' / 'Letzte 7 Tage' verwenden, um frühzeitig im Bewerbungsprozess präsent zu sein.",
-    "Keine Junior-Filter nutzen — Fokus auf Mid- und Senior-Positionen (5+ Jahre Erfahrung).",
-    "Direktbewerbung auf Firmenportalen oder per E-Mail bevorzugen, wenn Stellen auf Aggregatoren gelistet sind.",
+    "Fokus auf Fullstack Entwickler, Senior Software Engineer und Cloud Architekt Positionen.",
+    "Reale Open-Source-Beiträge, API-Performance und CI/CD Pipelines im Anschreiben quantifizieren.",
     "Bewerbungsunterlagen über die standardisierte jobs/engine.py Pipeline generieren und validieren."
-  ]
+  ],
+  "experience": [
+    {
+      "id": "current-role",
+      "title": {
+        "en": "Lead Fullstack & AI Solutions Engineer",
+        "de": "Lead Fullstack & KI Lösungsentwickler"
+      },
+      "company": {
+        "en": "CloudScale Solutions GmbH (Hybrid Berlin)",
+        "de": "CloudScale Solutions GmbH (Hybrid Berlin)"
+      },
+      "period": {
+        "en": "Jan 2024 – Present",
+        "de": "Jan. 2024 – Heute"
+      },
+      "bullets": [
+        {
+          "en": "Architected cloud-native microservices and high-throughput REST APIs in <strong>PHP 8 & Laravel</strong>, reducing query latency by 35%.",
+          "de": "Architektur cloud-nativer Microservices und hochperformanter REST APIs in <strong>PHP 8 & Laravel</strong> mit Reduktion der Abfragelatenz um 35 %.",
+          "supplemental": false
+        },
+        {
+          "en": "Designed and deployed reactive customer portals in <strong>Vue 3, Inertia.js & Tailwind CSS</strong>, achieving Google Lighthouse scores of 98+.",
+          "de": "Konzeption und Bereitstellung reaktiver Kundenportale mit <strong>Vue 3, Inertia.js & Tailwind CSS</strong> und Google Lighthouse Scores von 98+.",
+          "supplemental": false
+        },
+        {
+          "en": "Engineered automated CI/CD pipelines via <strong>GitHub Actions & Docker Compose</strong>, cutting deployment times from 45 to 8 minutes.",
+          "de": "Automatisierung von CI/CD Pipelines über <strong>GitHub Actions & Docker Compose</strong> mit einer Verkürzung der Bereitstellungszeit von 45 auf 8 Minuten.",
+          "supplemental": false
+        },
+        {
+          "en": "Developed custom <strong>MCP Tools (Model Context Protocol)</strong> integrating LLM coding agents into team development routines.",
+          "de": "Entwicklung maßgeschneiderter <strong>MCP Tools (Model Context Protocol)</strong> zur Integration von KI Coding-Agenten in bestehende Team-Routinen.",
+          "supplemental": true
+        }
+      ]
+    },
+    {
+      "id": "brainkets-role",
+      "title": {
+        "en": "Senior Fullstack Developer",
+        "de": "Senior Fullstack Entwickler"
+      },
+      "company": {
+        "en": "Brainkets Digital Agency (Remote)",
+        "de": "Brainkets Digitalagentur (Remote)"
+      },
+      "period": {
+        "en": "Mar 2021 – Dec 2023",
+        "de": "März 2021 – Dez. 2023"
+      },
+      "bullets": [
+        {
+          "en": "Delivered 12+ enterprise e-commerce and SaaS platforms using <strong>Shopware 6, Symfony & Vue.js</strong>.",
+          "de": "Realisierung von über 12 Enterprise E-Commerce- und SaaS-Plattformen auf Basis von <strong>Shopware 6, Symfony & Vue.js</strong>.",
+          "supplemental": false
+        },
+        {
+          "en": "Optimized complex MySQL relational databases, adding automated indexing and Redis caching to handle 500k+ monthly active users.",
+          "de": "Optimierung relationaler MySQL Datenbanken durch automatische Indexierung und Redis Caching für über 500.000 monatlich aktive Nutzer.",
+          "supplemental": false
+        },
+        {
+          "en": "Mentored junior engineers in test-driven development (TDD) using <strong>Pest & PHPUnit</strong> with 90%+ code coverage.",
+          "de": "Fachliche Anleitung von Nachwuchsentwicklern in testgetriebener Entwicklung (TDD) mit <strong>Pest & PHPUnit</strong> bei über 90 % Testabdeckung.",
+          "supplemental": true
+        }
+      ]
+    },
+    {
+      "id": "side-projects-role",
+      "title": {
+        "en": "Independent Engineering & Open Source Projects",
+        "de": "Freiberufliche Softwareprojekte & Open Source"
+      },
+      "company": null,
+      "period": {
+        "en": "May 2019 – Present",
+        "de": "Mai 2019 – Heute"
+      },
+      "bullets": [
+        {
+          "en": "Authored and maintained popular open-source packages for Laravel, Node.js, and TypeScript with 50k+ downloads.",
+          "de": "Entwicklung und Pflege populärer Open-Source-Pakete für Laravel, Node.js und TypeScript mit über 50.000 Downloads.",
+          "supplemental": false
+        },
+        {
+          "en": "Built full-stack serverless tools on AWS (Lambda, DynamoDB, S3) and Cloudflare Workers.",
+          "de": "Umsetzung serverloser Fullstack-Tools auf AWS (Lambda, DynamoDB, S3) und Cloudflare Workers.",
+          "supplemental": false
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "heading": {
+        "en": "Frontend & UI Architecture",
+        "de": "Frontend & UI-Architektur"
+      },
+      "items": [
+        {
+          "en": "<strong>Vue.js 3, Nuxt 3 & Inertia.js</strong> · Composition API, Pinia State Management, SSR & Hydration",
+          "de": "<strong>Vue.js 3, Nuxt 3 & Inertia.js</strong> · Composition API, Pinia State Management, SSR & Hydratisierung"
+        },
+        {
+          "en": "<strong>TypeScript, JavaScript (ESNext) & Modern Web APIs</strong> · Reactive UI architecture & client performance",
+          "de": "<strong>TypeScript, JavaScript (ESNext) & Moderne Web APIs</strong> · Reaktive UI-Architektur & Client-Performance"
+        },
+        {
+          "en": "<strong>Tailwind CSS, HTML5 & WCAG Barrierefreiheit</strong> · Core Web Vitals 95+, responsive design & CSS Grid",
+          "de": "<strong>Tailwind CSS, HTML5 & WCAG Barrierefreiheit</strong> · Core Web Vitals 95+, Responsive Design & CSS Grid"
+        }
+      ],
+      "supplemental": false
+    },
+    {
+      "heading": {
+        "en": "Backend & API Architecture",
+        "de": "Backend & API-Architektur"
+      },
+      "items": [
+        {
+          "en": "<strong>PHP 8+ & Laravel</strong> · Eloquent ORM, Service Layer, Queues, Jobs & Event-driven design",
+          "de": "<strong>PHP 8+ & Laravel</strong> · Eloquent ORM, Service Layer, Queues, Jobs & ereignisgesteuerte Architektur"
+        },
+        {
+          "en": "<strong>REST APIs, GraphQL & OpenAPI</strong> · Scalable endpoint design, OAuth2 / Sanctum & webhook pipelines",
+          "de": "<strong>REST APIs, GraphQL & OpenAPI</strong> · Skalierbares Endpunkt-Design, OAuth2 / Sanctum & Webhook Pipelines"
+        },
+        {
+          "en": "<strong>Node.js, Express & Python</strong> · Asynchronous backend services, microservices & CLI automation",
+          "de": "<strong>Node.js, Express & Python</strong> · Asynchrone Backend-Services, Microservices & CLI-Automatisierung"
+        },
+        {
+          "en": "<strong>Database Architecture</strong> · PostgreSQL, MySQL 8, Redis Caching, Schema Migrations & Query Optimization",
+          "de": "<strong>Datenbank-Architektur</strong> · PostgreSQL, MySQL 8, Redis Caching, Schema-Migrationen & Query-Optimierung"
+        }
+      ],
+      "supplemental": false
+    },
+    {
+      "heading": {
+        "en": "DevOps, Container & Automation",
+        "de": "DevOps, Container & Automatisierung"
+      },
+      "items": [
+        {
+          "en": "<strong>Docker & Docker Compose</strong> · Multi-stage container builds & reproducible development environments",
+          "de": "<strong>Docker & Docker Compose</strong> · Multi-Stage Container Builds & reproduzierbare Entwicklungsumgebungen"
+        },
+        {
+          "en": "<strong>CI/CD Pipelines</strong> · GitHub Actions & GitLab CI for automated linting, test runners & zero-downtime deploy",
+          "de": "<strong>CI/CD Pipelines</strong> · GitHub Actions & GitLab CI für automatisiertes Linting, Testing & Zero-Downtime Deploy"
+        },
+        {
+          "en": "<strong>Linux & Cloud Infrastructure</strong> · Nginx, PHP-FPM, SSL/TLS, AWS (EC2, S3, RDS) & DigitalOcean",
+          "de": "<strong>Linux & Cloud-Infrastruktur</strong> · Nginx, PHP-FPM, SSL/TLS, AWS (EC2, S3, RDS) & DigitalOcean"
+        },
+        {
+          "en": "<strong>MCP Tools & AI Agent Workflows</strong> · Model Context Protocol tooling, Claude Code & AI-assisted developer workflows",
+          "de": "<strong>MCP Tools & KI-Agenten-Workflows</strong> · Model Context Protocol Werkzeuge, Claude Code & KI-unterstützte Workflows"
+        }
+      ],
+      "supplemental": false
+    }
+  ],
+  "education": [
+    {
+      "degree": {
+        "en": "B.Sc. in Computer Science",
+        "de": "B.Sc. in Informatik"
+      },
+      "institution": {
+        "en": "Technical University of Berlin",
+        "de": "Technische Universität Berlin"
+      },
+      "period": {
+        "en": "2016 – 2020",
+        "de": "2016 – 2020"
+      },
+      "grade": {
+        "en": "Final Grade: 1.4",
+        "de": "Abschlussnote: 1,4"
+      },
+      "description": {
+        "en": "Focus areas: Distributed Software Systems, Cloud Computing, and Relational Database Optimization.",
+        "de": "Studienschwerpunkte: Verteilte Softwaresysteme, Cloud Computing und relationale Datenbank-Optimierung."
+      }
+    }
+  ],
+  "academic_achievements": [
+    {
+      "en": "Dean's List Award for Academic Excellence in Distributed Systems (2019)",
+      "de": "Dean's List Auszeichnung für herausragende akademische Leistungen in verteilten Systemen (2019)"
+    },
+    {
+      "en": "Bachelor's Thesis: High-Throughput RESTful API Architecture with Asynchronous Queue Workers (Grade 1.0)",
+      "de": "Bachelorarbeit: Hochperformante RESTful API-Architekturen mit asynchronen Queue Workern (Note 1,0)"
+    }
+  ],
+  "certifications": {
+    "verify_url": "https://links.example.com/certificates.html",
+    "items": [
+      {
+        "title": {
+          "en": "<strong>AWS Certified Solutions Architect – Associate</strong>",
+          "de": "<strong>AWS Certified Solutions Architect – Associate</strong>"
+        },
+        "year": "2024"
+      },
+      {
+        "title": {
+          "en": "<strong>Certified Kubernetes Application Developer (CKAD)</strong>",
+          "de": "<strong>Certified Kubernetes Application Developer (CKAD)</strong>"
+        },
+        "year": "2023"
+      }
+    ]
+  },
+  "languages": [
+    {
+      "en": "German: Native (C2)",
+      "de": "Deutsch: Muttersprache (C2)"
+    },
+    {
+      "en": "English: Fluent / Professional (C1)",
+      "de": "Englisch: Verhandlungssicher (C1)"
+    }
+  ],
+  "other_info": [
+    {
+      "en": "Full legal EU/German work authorization; Driver's license Class B.",
+      "de": "Vollständige EU/Deutsche Arbeitserlaubnis; Führerschein Klasse B."
+    },
+    {
+      "en": "Available for 100% remote positions nationwide or hybrid setups in Berlin.",
+      "de": "Verfügbar für 100% Remote-Positionen deutschlandweit oder Hybrid in Berlin."
+    }
+  ],
+  "hobbies": [
+    {
+      "en": "Open Source Software Development & MCP Tools",
+      "de": "Open-Source-Softwareentwicklung & MCP Tools"
+    },
+    {
+      "en": "Bouldering & Cycling",
+      "de": "Bouldern & Radfahren"
+    }
+  ],
+  "ui_labels": {
+    "work_experience": {
+      "en": "Work Experience",
+      "de": "Berufserfahrung"
+    },
+    "technical_skills": {
+      "en": "Technical Skills & Competences",
+      "de": "Fachliche Kompetenzen"
+    },
+    "education": {
+      "en": "Education & Qualifications",
+      "de": "Bildung"
+    },
+    "academic_achievements": {
+      "en": "Academic Achievements",
+      "de": "Akademische Leistungen"
+    },
+    "certifications": {
+      "en": "Certifications & Professional Development",
+      "de": "Zertifikate & Weiterbildung"
+    },
+    "verify_online": {
+      "en": "Verify online →",
+      "de": "Online verifizieren →"
+    },
+    "languages": {
+      "en": "Languages",
+      "de": "Sprachen"
+    },
+    "other_info": {
+      "en": "Other",
+      "de": "Sonstiges"
+    },
+    "hobbies": {
+      "en": "Hobbies",
+      "de": "Hobbys"
+    },
+    "download_cv": {
+      "en": "Download CV (PDF)",
+      "de": "Lebenslauf als PDF herunterladen"
+    },
+    "view_linkedin": {
+      "en": "View LinkedIn",
+      "de": "LinkedIn ansehen"
+    }
+  }
 }

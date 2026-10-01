@@ -26,9 +26,20 @@ class DOMStructureParser(HTMLParser):
         filtered_attrs = []
         attrs_dict = dict(attrs)
         for k, v in attrs:
-            if k in ("data-lang-en", "data-lang-de"):
+            if k.startswith("data-lang-"):
                 continue
-            if tag == "meta" and k == "content" and ("og:title" in attrs_dict.values() or "twitter:title" in attrs_dict.values()):
+            if tag == "meta" and k == "content" and any(
+                x in attrs_dict.values()
+                for x in [
+                    "og:title",
+                    "twitter:title",
+                    "description",
+                    "og:description",
+                    "twitter:description",
+                    "og:image",
+                    "twitter:image",
+                ]
+            ):
                 continue
             if k == "id":
                 self.interactive_ids.add(v)
@@ -83,6 +94,9 @@ def validate_resume_file(tailored_path: Path, master_path: Path = MASTER_INDEX) 
                 f"{block_type.capitalize()} block count mismatch: master={len(m_blocks)}, tailored={len(t_blocks)}"
             )
         for idx, (ms, ts) in enumerate(zip(m_blocks, t_blocks)):
+            # Skip comparing the dynamic payload inside profile-data script
+            if 'id="profile-data"' in ms or 'type="application/json"' in ms:
+                continue
             if ms != ts:
                 raise ValueError(f"{block_type.capitalize()} block {idx} differs between master and {tailored_path}")
 
@@ -99,9 +113,6 @@ def validate_resume_file(tailored_path: Path, master_path: Path = MASTER_INDEX) 
         "resumeContent",
         "header",
         "work-experience",
-        "current-role",
-        "brainkets-role",
-        "side-projects-role",
         "technical-skills",
         "education",
         "academic-achievements",
@@ -137,7 +148,9 @@ def get_resume_config(config: dict) -> dict:
 
 def generate_resume_html(res_cfg: dict, master_html: str = None) -> str:
     c = master_html if master_html is not None else MASTER_INDEX.read_text(encoding="utf-8")
-    cand_name = load_profile().get("candidate", {}).get("name", "Alex Morgan")
+    profile = load_profile()
+    cand = profile.get("candidate", {})
+    cand_name = cand.get("name", "Candidate")
 
     title = res_cfg.get("title", f"{cand_name} | {res_cfg.get('subtitle_de', 'Fullstack Developer')} — Resume").replace(
         "{candidate_name}", cand_name
@@ -149,77 +162,57 @@ def generate_resume_html(res_cfg: dict, master_html: str = None) -> str:
     c = re.sub(r'<meta property="og:title" content=".*?" />', f'<meta property="og:title" content="{og_title}" />', c, count=1)
     c = re.sub(r'<meta name="twitter:title" content=".*?" />', f'<meta name="twitter:title" content="{twitter_title}" />', c, count=1)
 
-    sub_re = r'          <p class="mt-1 font-semibold text-\[#a9583e\] dark:text-\[#e8a55a\]".*?</p>'
-    if not re.search(sub_re, c, re.DOTALL):
-        raise ValueError("Could not find subtitle block in master index.html")
+    if "summary_en" in res_cfg:
+        c = re.sub(r'<meta name="description" content=".*?" />', f'<meta name="description" content="{res_cfg["summary_en"]}" />', c, count=1)
+        c = re.sub(r'<meta property="og:description" content=".*?" />', f'<meta property="og:description" content="{res_cfg["summary_en"]}" />', c, count=1)
+        c = re.sub(r'<meta name="twitter:description" content=".*?" />', f'<meta name="twitter:description" content="{res_cfg["summary_en"]}" />', c, count=1)
+
+    # Clone profile and overlay tailored role fields
+    role_profile = json.loads(json.dumps(profile))
+    if "candidate" not in role_profile:
+        role_profile["candidate"] = {}
+
+    if "subtitle_en" in res_cfg or "subtitle_de" in res_cfg:
+        if not isinstance(role_profile["candidate"].get("subtitle"), dict):
+            role_profile["candidate"]["subtitle"] = {}
+        if "subtitle_en" in res_cfg:
+            role_profile["candidate"]["subtitle"]["en"] = res_cfg["subtitle_en"]
+        if "subtitle_de" in res_cfg:
+            role_profile["candidate"]["subtitle"]["de"] = res_cfg["subtitle_de"]
+
+    if "summary_en" in res_cfg or "summary_de" in res_cfg:
+        if not isinstance(role_profile["candidate"].get("summary"), dict):
+            role_profile["candidate"]["summary"] = {}
+        if "summary_en" in res_cfg:
+            role_profile["candidate"]["summary"]["en"] = res_cfg["summary_en"]
+        if "summary_de" in res_cfg:
+            role_profile["candidate"]["summary"]["de"] = res_cfg["summary_de"]
+
+    role_skills = []
+    for key in ["skills_frontend", "skills_backend", "skills_devops", "skills_secondary"]:
+        if key in res_cfg:
+            sec = res_cfg[key]
+            h_en = sec.get("heading_en", sec.get("heading_display", ""))
+            h_de = sec.get("heading_de", sec.get("heading_display", ""))
+            role_skills.append({
+                "heading": {"en": h_en, "de": h_de},
+                "items": [{"en": it, "de": it} for it in sec.get("items", [])],
+                "supplemental": False,
+            })
+    if role_skills:
+        role_profile["skills"] = role_skills
+
+    if "prohibited_domains" in role_profile.get("candidate", {}):
+        del role_profile["candidate"]["prohibited_domains"]
+
+    role_json_str = json.dumps(role_profile, indent=2, ensure_ascii=False)
     c = re.sub(
-        sub_re,
-        f'          <p class="mt-1 font-semibold text-[#a9583e] dark:text-[#e8a55a]"\n            data-lang-en="{res_cfg["subtitle_en"]}"\n            data-lang-de="{res_cfg["subtitle_de"]}">\n            {res_cfg["subtitle_en"]}\n          </p>',
+        r'<script id="profile-data" type="application/json">.*?</script>',
+        f'<script id="profile-data" type="application/json">{role_json_str}</script>',
         c,
         count=1,
         flags=re.DOTALL,
     )
-
-    sum_re = r'          <p class="mt-2 max-w-2xl text-sm text-gray-700 dark:text-gray-300".*?</p>'
-    if not re.search(sum_re, c, re.DOTALL):
-        raise ValueError("Could not find summary block in master index.html")
-    c = re.sub(
-        sum_re,
-        f'          <p class="mt-2 max-w-2xl text-sm text-gray-700 dark:text-gray-300"\n            data-lang-en="{res_cfg["summary_en"]}"\n            data-lang-de="{res_cfg["summary_de"]}">\n            {res_cfg["summary_en"]}\n          </p>',
-        c,
-        count=1,
-        flags=re.DOTALL,
-    )
-
-    def make_skills(h_en, h_de, h_disp, items):
-        lis = "\n".join(f"            <li>{it}</li>" for it in items)
-        return (
-            f'        <div>\n'
-            f'          <h4 class="font-semibold" data-lang-en="{h_en}" data-lang-de="{h_de}">\n'
-            f'            {h_disp}\n'
-            f'          </h4>\n'
-            f'          <ul class="list-disc ml-5">\n{lis}\n          </ul>\n'
-            f'        </div>'
-        )
-
-    sections = [
-        (
-            "skills_frontend",
-            2,
-            r'        <div>\s*<h4 class="font-semibold" data-lang-en="Frontend \(Primary\)" data-lang-de="Frontend \(Primär\)">.*?</ul>\s*</div>',
-        ),
-        (
-            "skills_backend",
-            4,
-            r'        <div>\s*<h4 class="font-semibold" data-lang-en="Backend \(Primary\)" data-lang-de="Backend \(Primär\)">.*?</ul>\s*</div>',
-        ),
-        (
-            "skills_devops",
-            5,
-            r'        <div>\s*<h4 class="font-semibold" data-lang-en="DevOps & Tools" data-lang-de="DevOps & Werkzeuge">.*?</ul>\s*</div>',
-        ),
-        (
-            "skills_secondary",
-            2,
-            r'        <div>\s*<h4 class="font-semibold" data-lang-en="Secondary / Previous Stack" data-lang-de="Sekundär-Stack &amp; Frühere Technologien">.*?</ul>\s*</div>',
-        ),
-    ]
-
-    for key, expected_count, regex in sections:
-        cfg = res_cfg[key]
-        if len(cfg["items"]) != expected_count:
-            raise ValueError(f"{key} must have exactly {expected_count} items for DOM parity, got {len(cfg['items'])}")
-        block = make_skills(cfg["heading_en"], cfg["heading_de"], cfg["heading_display"], cfg["items"])
-        c = re.sub(regex, block, c, count=1, flags=re.DOTALL)
-
-    replacements = {
-        "Shopware 6.6": "Shopware",
-        "Laravel 12 / Vue 3 / Inertia": "Laravel / Vue.js / Inertia",
-        "Vue.js 3": "Vue.js",
-        "Vue 3": "Vue.js",
-    }
-    for old, new in replacements.items():
-        c = c.replace(old, new)
     return c
 
 

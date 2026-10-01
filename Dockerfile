@@ -15,9 +15,11 @@ WORKDIR /usr/share/caddy
 # Copy static assets and built download package
 COPY index.html ./index.html
 COPY resume.html ./resume.html
+COPY resume.js ./resume.js
 COPY download.html ./download.html
 COPY style.css ./style.css
 COPY hub.js ./hub.js
+COPY config ./config
 COPY alex-morgan-profile.webp ./alex-morgan-profile.webp
 COPY stefan-kramer-profile.webp ./stefan-kramer-profile.webp
 COPY robots.txt ./robots.txt
