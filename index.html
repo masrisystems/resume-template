@@ -151,9 +151,9 @@
     <div class="cream-callout-card">
       <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
         <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;">Daily Job Discovery &amp; Application Routine</h2>
-        <span class="nav-tag nav-tag-sop">SOP · 20-Min Daily Cycle</span>
+        <span class="nav-tag nav-tag-sop">SOP · 20-Min Daily Habit</span>
       </div>
-      <p class="text-sm text-gray-700 mb-6 max-w-3xl">A disciplined 4-stage, 8-step daily routine designed to qualify and prepare complete application packages for target vacancies scoring &ge; 9.0/10 while strictly preserving master resume integrity. Governed by <code class="font-mono text-xs">daily-job-search-workflow.md</code>.</p>
+      <p class="text-sm text-gray-700 mb-6 max-w-3xl">A simple, 20-minute daily habit designed for fresh graduates and busy professionals. Instead of spending 4 hours scrolling job boards and sending 50 generic resumes that get ignored, you find 2 high-matching vacancies every morning, verify you can actually do the job, and generate 100% tailored, ATS-ready application packages before 08:20 AM.</p>
 
       <!-- Interactive 20-Min Workflow Simulation Console -->
       <div class="workflow-sim-container">
@@ -197,11 +197,11 @@
           <div class="workflow-scrub-steps">
             <button class="scrub-step-btn active" data-step="1" onclick="jumpToSimStage(1)">
               <span class="scrub-step-num">1</span>
-              <span class="scrub-step-label">Stage 1 · Active Sourcing</span>
+              <span class="scrub-step-label">Stage 1 · Spot Fresh Jobs</span>
             </button>
             <button class="scrub-step-btn" data-step="2" onclick="jumpToSimStage(2)">
               <span class="scrub-step-num">2</span>
-              <span class="scrub-step-label">Stage 2 · Fit Scoring</span>
+              <span class="scrub-step-label">Stage 2 · Check Your Fit</span>
             </button>
             <button class="scrub-step-btn" data-step="3" onclick="jumpToSimStage(3)">
               <span class="scrub-step-num">3</span>
@@ -209,7 +209,7 @@
             </button>
             <button class="scrub-step-btn" data-step="4" onclick="jumpToSimStage(4)">
               <span class="scrub-step-num">4</span>
-              <span class="scrub-step-label">Stage 4 · QA &amp; Ledger</span>
+              <span class="scrub-step-label">Stage 4 · Submit &amp; Relax</span>
             </button>
           </div>
         </div>
@@ -222,11 +222,11 @@
               <span class="workflow-stage-badge">Stage 1</span>
               <span class="text-xs text-gray-400 font-mono">08:00 - 08:05</span>
             </div>
-            <h3 class="workflow-stage-title">Deduplication &amp; Active Sourcing</h3>
-            <p class="workflow-stage-desc">Scan target portals and venture directories while filtering out past applications.</p>
+            <h3 class="workflow-stage-title">Spot Fresh Jobs &amp; Skip Old Ones</h3>
+            <p class="workflow-stage-desc">Find 10–15 newly posted openings from the last 24 hours. Automatically filter out companies you already applied to so you never send duplicates.</p>
             <ul class="workflow-steps-list">
-              <li><strong>Step 1: Dedupe Tracker</strong> — Read <code class="font-mono text-xs">jobs/job_matches.md</code> to build normalized company and URL sets; eliminate duplicates instantly.</li>
-              <li><strong>Step 2: Boolean Sourcing</strong> — Query LinkedIn DE, StepStone, Indeed, Techstars Directory, and HTGF Newsroom using pre-configured search queries.</li>
+              <li><strong>Step 1: Check Application History</strong> — Scan your simple tracker (<code class="font-mono text-xs">jobs/job_matches.md</code>) to instantly eliminate any company or role you already applied to.</li>
+              <li><strong>Step 2: 1-Click Search Sweeps</strong> — Open pre-filtered Google, LinkedIn, StepStone, and startup links to uncover active vacancies posted today.</li>
             </ul>
           </div>
 
@@ -236,11 +236,11 @@
               <span class="workflow-stage-badge">Stage 2</span>
               <span class="text-xs text-gray-400 font-mono">08:05 - 08:10</span>
             </div>
-            <h3 class="workflow-stage-title">Qualification Scoring &amp; Preservation</h3>
-            <p class="workflow-stage-desc">Rank vacancies against candidate invariants and preserve authentic job postings.</p>
+            <h3 class="workflow-stage-title">Check Your Fit &amp; Pick The Top 2</h3>
+            <p class="workflow-stage-desc">Don't waste time spraying 50 random applications. Grade vacancies from 0 to 10 and only focus on roles you are actually qualified to win.</p>
             <ul class="workflow-steps-list">
-              <li><strong>Step 3: Weighted Scoring</strong> — Compute 70% required / 30% preferred criteria score (0-10 scale). Filter dealbreakers and map to Canonical Role Archetype.</li>
-              <li><strong>Step 4: Evidence Archiving</strong> — Save raw description to <code class="font-mono text-xs">jobs/job_descriptions/[slug].txt</code> and benchmark salary against kununu evidence.</li>
+              <li><strong>Step 3: Grade Your Fit (9/10 Rule)</strong> — Score required skills (70%) vs nice-to-haves (30%). Disqualify jobs with impossible dealbreakers (e.g. 10 years experience).</li>
+              <li><strong>Step 4: Save Job Details &amp; Check Pay</strong> — Save the full job description text before it expires, and check typical salaries on Kununu or Glassdoor to verify fair compensation.</li>
             </ul>
           </div>
 
@@ -250,11 +250,11 @@
               <span class="workflow-stage-badge">Stage 3</span>
               <span class="text-xs text-gray-400 font-mono">08:10 - 08:15</span>
             </div>
-            <h3 class="workflow-stage-title">Automated Generation &amp; QA Gates</h3>
-            <p class="workflow-stage-desc">Compile tailored HTML resumes, DIN-5008 cover letters, and high-fidelity PDFs.</p>
+            <h3 class="workflow-stage-title">Auto-Generate Resume &amp; Cover Letter</h3>
+            <p class="workflow-stage-desc">Stop spending 3 hours manually editing Word files. Let automation create custom, ATS-friendly application packages in seconds.</p>
             <ul class="workflow-steps-list">
-              <li><strong>Step 5: Resume Hydration</strong> — Initialize config and generate tailored resume with 100% DOM structure parity and zero schema bloat.</li>
-              <li><strong>Step 6: DIN-5008 Cover Letter</strong> — Enforce STAR hook, 3 key problems solved, under 300 words, 0 n-gram overlap, burstiness range &ge; 20, and candidate invariants.</li>
+              <li><strong>Step 5: Tailored ATS Resume</strong> — Generates a clean, ATS-compliant resume highlighting the exact projects and skills the employer asked for — zero formatting bugs.</li>
+              <li><strong>Step 6: DIN-5008 German Cover Letter</strong> — Writes a punchy, 1-page cover letter (&lt;300 words) solving 3 key employer problems with real proof, then exports to crisp PDF.</li>
             </ul>
           </div>
 
@@ -264,11 +264,11 @@
               <span class="workflow-stage-badge">Stage 4</span>
               <span class="text-xs text-gray-400 font-mono">08:15 - 08:20</span>
             </div>
-            <h3 class="workflow-stage-title">Pipeline Tracking &amp; Zero-Bloat Review</h3>
-            <p class="workflow-stage-desc">Update application matrix and evaluate master resume improvements.</p>
+            <h3 class="workflow-stage-title">Submit, Record It &amp; You're Done!</h3>
+            <p class="workflow-stage-desc">Upload your PDFs directly to the employer's official website, log the date in your tracker, and finish before morning coffee.</p>
             <ul class="workflow-steps-list">
-              <li><strong>Step 7: Tracker Update</strong> — Append row to <code class="font-mono text-xs">jobs/job_matches.md</code> with direct submission status and official apply link.</li>
-              <li><strong>Step 8: Zero-Bloat Review</strong> — Review daily work logs against master resume: 0 new sections, 0 new bullets, 0 word-count growth.</li>
+              <li><strong>Step 7: Log in Application Tracker</strong> — Add the company name, apply link, and date so you always know when to follow up and avoid messy spreadsheets.</li>
+              <li><strong>Step 8: Close Your Laptop &amp; Relax</strong> — 2 top-tier, custom applications dispatched in under 20 minutes. Zero burnout, maximum interview callbacks!</li>
             </ul>
           </div>
         </div>
@@ -576,7 +576,66 @@ Phase 5 (Logistics &amp; Closing): Generate 3 highly specific, insightful questi
         <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
       </div>
 
-      <!-- Prompt 5: Daily Job Workflow -->
+      <!-- Prompt 5: Google Job Search Flow (Direct ATS & Boolean Dorking) -->
+      <div class="prompt-card surface-mint">
+        <div>
+          <div class="prompt-card-header">
+            <h3 class="prompt-card-title">Google Direct ATS Sourcing</h3>
+            <span class="prompt-card-models">Google · Perplexity · GPT-4o</span>
+          </div>
+          <p class="prompt-card-desc">Finds hidden, direct company openings on Personio, Greenhouse, and Lever via Google Dorking — bypassing middlemen and agency spam.</p>
+          <div class="prompt-code-preview"># Rolle: Google Search &amp; Direct ATS Sourcing Specialist
+# Dorks: site:personio.de | site:join.com | site:greenhouse.io
+# Filter: Entry Level, Absolvent, Junior · -Zeitarbeit -Headhunter</div>
+          <pre class="prompt-raw" style="display:none;"># Role &amp; Expertise
+You are an Executive Tech Sourcing Specialist and Google Search Architect. Your mission is to find verified, direct-employer job openings for fresh graduates and technical professionals by executing Google Dorking techniques and querying native Applicant Tracking Systems (ATS). You bypass recruitment agencies, outdated aggregator reposts, and third-party spam.
+
+# Candidate Context
+Read the candidate profile in @config/profile.json:
+- Target Profession: {{PROFESSION}} (e.g. Junior Fullstack Entwickler, Frontend Developer, Cloud DevOps)
+- Target Technologies: {{TECH_STACK}} (e.g. TypeScript, Vue.js, React, Python, Docker)
+- Target Location &amp; Commute: {{LOCATION}} (e.g. Oldenburg + 25 km commute or 100% Remote Deutschland)
+- Target Salary / Invariant: {{TARGET_SALARY}} (e.g. 52.500 € brutto/Jahr)
+- Notice Period / Availability: {{NOTICE_PERIOD}} (e.g. 3 Monate zum Monatsende)
+
+# Execution Phase 1: Google Dorking for Direct ATS Portals
+Execute precision Google searches directly targeting company ATS platforms where applications go straight to the hiring manager:
+1. Target ATS Portals:
+   site:personio.de | site:join.com | site:greenhouse.io | site:lever.co | site:workwise.io | site:recruitee.com | site:onlyfy.jobs
+2. Job Title &amp; Seniority Filter (Include Graduate/Entry Level keywords):
+   ("Junior" OR "Absolvent" OR "Entry Level" OR "Berufseinsteiger" OR "Associate" OR "Fullstack" OR "Softwareentwickler")
+3. Required Skills / Tech Keywords:
+   ("TypeScript" OR "Python" OR "Vue" OR "React" OR "Laravel")
+4. Location &amp; Remote Preference:
+   ("{{LOCATION}}" OR "Remote Deutschland" OR "Homeoffice")
+5. Exclusion of Middlemen &amp; Agencies (Negative Keywords):
+   -Zeitarbeit -Personalvermittlung -Headhunter -Personalberatung -Vermittlung -Freelance -Praktikant
+6. Freshness Parameter:
+   Filter results to the last 24 hours to 7 days.
+
+# Execution Phase 2: Google for Jobs Direct Launch Queries
+Generate 3 pre-built Google Search URLs that open the interactive Google for Jobs interface directly:
+1. https://www.google.com/search?q={{PROFESSION}}+{{LOCATION}}+jobs&amp;ibp=htl;jobs
+2. https://www.google.com/search?q={{TECH_STACK}}+Junior+Developer+Remote+Deutschland+jobs&amp;ibp=htl;jobs
+3. https://www.google.com/search?q=site:personio.de+{{PROFESSION}}+{{LOCATION}}&amp;ibp=htl;jobs
+
+# Execution Phase 3: Kununu Employer &amp; Salary Due Diligence via Google
+For every promising employer found, run a 60-second background check:
+1. Kununu Reputation Check:
+   Google query: site:kununu.com/de "{{COMPANY_NAME}}"
+   - Evaluate Score (Target: &gt;= 3.7 / 5.0) and recommendation rate (&gt;= 70%).
+2. Salary Reality Benchmark:
+   Google query: site:kununu.com/de "{{COMPANY_NAME}}" "Gehalt" OR "{{PROFESSION}}"
+   - Verify if their typical compensation matches candidate invariant (e.g. 52.500 € brutto).
+
+# Execution Phase 4: Output for Application Tracking Ledger (@jobs/job_matches.md)
+Format top qualifying opportunities as continuous Markdown rows ready to be appended:
+| Job Title | Company Name | Location | Job Type | Status | Match Score (0-10) | Match Justification | Skill Gap | Salary Range | Apply Link |</pre>
+        </div>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+      <!-- Prompt 6: Daily Job Workflow -->
       <div class="prompt-card surface-soft">
         <div>
           <div class="prompt-card-header">
@@ -602,7 +661,7 @@ Execution Stages:
         <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
       </div>
 
-      <!-- Prompt 6: Daily Search Links for Any Profession -->
+      <!-- Prompt 7: Daily Search Links for Any Profession -->
       <div class="prompt-card surface-mint">
         <div>
           <div class="prompt-card-header">
@@ -653,7 +712,7 @@ Erstellen Sie eine vollständige Markdown-Datei 'workflows/search_links/daily-jo
         <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
       </div>
 
-      <!-- Prompt 7: Canonical Role Archetype Extraction -->
+      <!-- Prompt 8: Canonical Role Archetype Extraction -->
       <div class="prompt-card surface-peach">
         <div>
           <div class="prompt-card-header">

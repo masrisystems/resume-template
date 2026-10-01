@@ -206,6 +206,34 @@ class TestCareerHub(unittest.TestCase):
         self.assertIn("function renderSimStage", js)
         self.assertIn("function jumpToSimStage", js)
 
+    def test_13_google_flow_prompt_and_simplified_stages(self):
+        # 1. Prompt files exist
+        prompt_md = os.path.join(self.root_dir, "jobs", "prompts", "google_job_search_flow_prompt.md")
+        prompt_txt = os.path.join(self.root_dir, "jobs", "prompts", "google_job_search_flow_prompt.txt")
+        self.assertTrue(os.path.exists(prompt_md), "Missing google_job_search_flow_prompt.md")
+        self.assertTrue(os.path.exists(prompt_txt), "Missing google_job_search_flow_prompt.txt")
+
+        with open(prompt_md, "r", encoding="utf-8") as f:
+            md_text = f.read()
+        self.assertIn("Google Dorking", md_text)
+        self.assertIn("personio.de", md_text)
+
+        # 2. Check index.html prompt library card
+        with open(self.index_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        soup = BeautifulSoup(content, "html.parser")
+        
+        prompt_titles = [h3.get_text(strip=True) for h3 in soup.select("#prompts .prompt-card-title")]
+        self.assertTrue(any("Google Direct ATS" in title for title in prompt_titles), f"Google Direct ATS prompt card missing from #prompts. Found: {prompt_titles}")
+
+        # 3. Check simplified, accessible stage card titles
+        stage_titles = [h3.get_text(strip=True) for h3 in soup.select(".workflow-stage-card .workflow-stage-title")]
+        self.assertEqual(len(stage_titles), 4)
+        self.assertIn("Spot Fresh Jobs & Skip Old Ones", stage_titles[0])
+        self.assertIn("Check Your Fit & Pick The Top 2", stage_titles[1])
+        self.assertIn("Auto-Generate Resume & Cover Letter", stage_titles[2])
+        self.assertIn("Submit, Record It & You're Done!", stage_titles[3])
+
 if __name__ == "__main__":
     unittest.main()
 

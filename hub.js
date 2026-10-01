@@ -525,20 +525,20 @@ const SIM_STAGES = [
     step: 1,
     time: "08:00 AM",
     elapsed: "00:00 / 20:00",
-    title: "Stage 1 · Deduplication & Active Sourcing",
-    tagline: "Scanned 14 vacancies across LinkedIn DE, StepStone & HTGF · 12 duplicates discarded",
+    title: "Stage 1 · Spot Fresh Jobs & Skip Old Ones",
+    tagline: "Scanned 14 newly posted openings across Google, LinkedIn & StepStone · 12 duplicates skipped",
     logLines: [
-      { tag: "CMD", cls: "text-blue-500", text: "python -m engine.cli dedupe-sourcing --tracker jobs/job_matches.md" },
-      { tag: "SOURCE", cls: "text-amber-500", text: "Query: site:de.linkedin.com/jobs (\"Fullstack Entwickler\" OR \"Python\") Oldenburg" },
-      { tag: "DEDUPE", cls: "text-sky-400", text: "Loaded 14 active job postings across 3 portals." },
-      { tag: "FILTER", cls: "text-purple-400", text: "12 applications already in jobs/job_matches.md ledger -> Discarded." },
-      { tag: "TARGET 1", cls: "text-emerald-400", text: "energy & meteo systems GmbH · Full-Stack Softwareentwickler (Oldenburg)" },
-      { tag: "TARGET 2", cls: "text-emerald-400", text: "CEWE Stiftung & Co. KGaA · Senior Fullstack Entwickler (Oldenburg)" }
+      { tag: "CHECK", cls: "text-blue-500", text: "Reading jobs/job_matches.md application tracker to prevent double applications." },
+      { tag: "SEARCH", cls: "text-amber-500", text: "Google & LinkedIn Query: (\"Fullstack Entwickler\" OR \"Python\") Oldenburg (Last 24h)" },
+      { tag: "DISCOVERY", cls: "text-sky-400", text: "Discovered 14 active job postings matching degree & core stack." },
+      { tag: "FILTER", cls: "text-purple-400", text: "12 companies already in your tracking ledger -> Skipped automatically." },
+      { tag: "TOP PICK 1", cls: "text-emerald-400", text: "energy & meteo systems GmbH · Full-Stack Softwareentwickler (Oldenburg)" },
+      { tag: "TOP PICK 2", cls: "text-emerald-400", text: "CEWE Stiftung & Co. KGaA · Senior Fullstack Entwickler (Oldenburg)" }
     ],
     stats: [
-      { label: "Portals Scanned", value: "3 Active" },
-      { label: "Postings Scanned", value: "14 Found" },
-      { label: "Deduplicated", value: "12 Filtered" },
+      { label: "Portals Scanned", value: "3 Portals" },
+      { label: "New Postings", value: "14 Found" },
+      { label: "Duplicates Skipped", value: "12 Filtered" },
       { label: "Qualifying Leads", value: "2 Targets" }
     ]
   },
@@ -546,63 +546,62 @@ const SIM_STAGES = [
     step: 2,
     time: "08:05 AM",
     elapsed: "05:00 / 20:00",
-    title: "Stage 2 · Qualification Scoring & Evidence Archiving",
-    tagline: "Weighted Criteria Fit: 70% Required (100%) + 30% Preferred (95%) = 9.85 / 10 Match",
+    title: "Stage 2 · Check Your Fit & Pick The Top 2",
+    tagline: "Graded fit: 100% Required Skills Match + 95% Preferred Match = 9.8 / 10 Score",
     logLines: [
-      { tag: "CMD", cls: "text-blue-500", text: "python -m engine.cli score-vacancy --role fullstack_laravel --target energy_meteo" },
-      { tag: "REQUIRED", cls: "text-emerald-400", text: "Required (70%): Python (1.0), TypeScript (1.0), PostgreSQL (1.0) -> 6/6 (100%)" },
-      { tag: "PREFERRED", cls: "text-emerald-400", text: "Preferred (30%): Docker & CI/CD Pipelines (1.0), Redis (0.9) -> 3.8/4 (95%)" },
-      { tag: "COMMUTE", cls: "text-amber-400", text: "Priority 1 Local Commute (~2.5 km Oldenburg, 5-7 min bike ride)" },
-      { tag: "ARCHIVE", cls: "text-sky-400", text: "Saved raw vacancy text to jobs/job_descriptions/2026-09-26_energymeteo.txt" },
-      { tag: "SCORE", cls: "text-emerald-300 font-bold", text: "Weighted Match Score: 9.8 / 10 -> Threshold (>= 9.0) Met! Proceed to Generation." }
+      { tag: "ANALYZE", cls: "text-blue-500", text: "Evaluating job requirements against candidate profile (@config/profile.json)..." },
+      { tag: "MUST HAVES", cls: "text-emerald-400", text: "Required Skills (70%): Python (1.0), TypeScript (1.0), PostgreSQL (1.0) -> 100% Match!" },
+      { tag: "NICE TO HAVES", cls: "text-emerald-400", text: "Preferred Skills (30%): Docker & CI/CD Pipelines (1.0), Redis (0.9) -> 95% Match!" },
+      { tag: "COMMUTE", cls: "text-amber-400", text: "Priority 1 Local Commute: ~2.5 km in Oldenburg (5-7 min bike ride)" },
+      { tag: "SALARY", cls: "text-sky-400", text: "Kununu check: 54.000 € – 62.000 € -> Matches candidate invariant (52.500 € brutto)" },
+      { tag: "FIT SCORE", cls: "text-emerald-300 font-bold", text: "Overall Fit Score: 9.8 / 10 -> Meets the 9/10 Quality Rule! Ready to generate." }
     ],
     stats: [
-      { label: "Match Score", value: "9.8 / 10" },
-      { label: "Required Criteria", value: "100% Fit" },
-      { label: "Preferred Criteria", value: "95% Fit" },
-      { label: "Commute Tier", value: "Priority 1" }
+      { label: "Fit Score", value: "9.8 / 10" },
+      { label: "Must-Haves Match", value: "100% Fit" },
+      { label: "Commute", value: "5 Min Bike" },
+      { label: "Kununu Check", value: "Verified Fair" }
     ]
   },
   {
     step: 3,
     time: "08:10 AM",
     elapsed: "10:00 / 20:00",
-    title: "Stage 3 · Automated Application Generation & QA Gates",
-    tagline: "Headless Chromium compilation: 100% DOM parity HTML resume + DIN-5008 cover letter + PDF",
+    title: "Stage 3 · Auto-Generate Resume & Cover Letter",
+    tagline: "Zero manual Word editing: Tailored ATS Resume + DIN-5008 Cover Letter + High-Res PDF",
     logLines: [
-      { tag: "CMD", cls: "text-blue-500", text: "python jobs/engine.py run --config jobs/configs/2026-09-26_energymeteo.json" },
-      { tag: "INVARIANTS", cls: "text-purple-400", text: "Mohamad Masri | Salary: 52.500 € brutto | Notice: 3 Monate zum Monatsende" },
-      { tag: "RESUME", cls: "text-emerald-400", text: "Wrote tailored HTML resume: jobs/resumes/2026-09-26_energymeteo.html (0 schema bloat)" },
-      { tag: "COVER LETTER", cls: "text-emerald-400", text: "DIN-5008 letter compiled: STAR achievement hook, 3 key problems solved, 284 words" },
-      { tag: "PDF ENGINE", cls: "text-sky-400", text: "Headless Chromium rendered A4 DIN-5008 PDF: Mohamad_Masri_Lebenslauf.pdf (38.4 KB)" },
-      { tag: "VALIDATE", cls: "text-emerald-300 font-bold", text: "0 DOM structural errors, 0 n-gram repetition, burstiness score 24.2 -> 100% PASSED" }
+      { tag: "ENGINE", cls: "text-blue-500", text: "Running unified engine: python jobs/engine.py run --config 2026-09-26_energymeteo.json" },
+      { tag: "PROFILE", cls: "text-purple-400", text: "Candidate: Mohamad Masri | Notice Period: 3 Monate | Target: 52.500 € brutto" },
+      { tag: "RESUME", cls: "text-emerald-400", text: "Generated tailored HTML resume: jobs/resumes/2026-09-26_energymeteo.html (ATS-compliant)" },
+      { tag: "COVER LETTER", cls: "text-emerald-400", text: "Crafted DIN-5008 letter: STAR achievement hook, 3 key problems solved, 284 words" },
+      { tag: "PDF EXPORT", cls: "text-sky-400", text: "Headless Chromium rendered A4 DIN-5008 PDF: Mohamad_Masri_Lebenslauf.pdf (38.4 KB)" },
+      { tag: "QUALITY GATE", cls: "text-emerald-300 font-bold", text: "0 formatting errors, 0 robotic buzzwords, 100% ATS DOM Parity -> Ready to submit!" }
     ],
     stats: [
-      { label: "HTML Resumes", value: "100% Parity" },
+      { label: "Tailored Resume", value: "100% ATS Ready" },
       { label: "Cover Letter", value: "DIN-5008 (284w)" },
       { label: "PDF Size", value: "38.4 KB" },
-      { label: "Schema Bloat", value: "0% Clean" }
+      { label: "Time Saved", value: "~2.5 Hours" }
     ]
   },
   {
     step: 4,
     time: "08:15 AM",
     elapsed: "15:00 / 20:00",
-    title: "Stage 4 · Pipeline Ledger Update & Zero-Bloat Review",
-    tagline: "Updated jobs/job_matches.md matrix · Master resume integrity 100% preserved",
+    title: "Stage 4 · Submit, Record It & You're Done!",
+    tagline: "Uploaded to company portal · Logged in tracking ledger · Done in 18 minutes!",
     logLines: [
-      { tag: "CMD", cls: "text-blue-500", text: "python -m engine.cli append-ledger --status APPLIED --company \"energy & meteo systems\"" },
-      { tag: "LEDGER", cls: "text-sky-400", text: "Appended: | 2026-09-26 | energy & meteo systems | 9.8/10 | Applied (Direct Portal) |" },
-      { tag: "QA CHECK", cls: "text-emerald-400", text: "Master resume diff: 0 new sections, 0 new bullets, 0 word-count growth." },
-      { tag: "QA CHECK", cls: "text-emerald-400", text: "Spaced compounds verified: REST APIs, CI/CD Pipelines, MCP Tools, Fullstack Entwickler." },
-      { tag: "QA CHECK", cls: "text-emerald-400", text: "Full legal EU/German work authorization & Class B driver's license verified." },
-      { tag: "SUCCESS", cls: "text-emerald-300 font-bold", text: "2 Complete Application Packages Dispatched in 18m 42s · Morning Coffee Time!" }
+      { tag: "SUBMIT", cls: "text-blue-500", text: "Uploaded PDF resume & cover letter to energy & meteo systems official portal." },
+      { tag: "TRACKER", cls: "text-sky-400", text: "Logged in jobs/job_matches.md: | 2026-09-26 | energy & meteo systems | 9.8/10 | Applied |" },
+      { tag: "INTEGRITY", cls: "text-emerald-400", text: "Master resume protected: 0 new sections, 0 new bullets, 0 word-count growth." },
+      { tag: "COMPLIANCE", cls: "text-emerald-400", text: "Spaced compounds verified: REST APIs, CI/CD Pipelines, MCP Tools, Fullstack Entwickler." },
+      { tag: "SUCCESS", cls: "text-emerald-300 font-bold", text: "2 High-Fit Applications Sent in 18m 42s · Enjoy your morning coffee!" }
     ],
     stats: [
-      { label: "Ledger Status", value: "Appended" },
-      { label: "Master Diff", value: "0 Bullets" },
-      { label: "QA Checkpoints", value: "4/4 Verified" },
-      { label: "Cycle Duration", value: "18m 42s" }
+      { label: "Applications Sent", value: "2 Complete" },
+      { label: "Total Time", value: "18m 42s" },
+      { label: "Tracker Status", value: "Logged" },
+      { label: "Next Action", value: "Enjoy Coffee" }
     ]
   }
 ];
