@@ -27,6 +27,8 @@ def build_starter_kit():
     ]
 
     include_dirs = [
+        "assets",
+        "workflows",
         "config",
         "engine",
         "jobs/prompts",

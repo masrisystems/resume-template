@@ -18,10 +18,29 @@ class TestCareerHub(unittest.TestCase):
             content = f.read()
 
         soup = BeautifulSoup(content, "html.parser")
-        required_ids = ["hero", "prompts", "workflows", "resume", "download"]
+        required_ids = [
+            "hero",
+            "daily-workflow",
+            "brief-showcase",
+            "prompts",
+            "cover-letters",
+            "engine",
+            "workflows",
+            "resume",
+            "download"
+        ]
         for req_id in required_ids:
             elem = soup.find(id=req_id)
             self.assertIsNotNone(elem, f"Missing section #{req_id} in index.html")
+
+        # Verify all nav links point to existing IDs
+        nav = soup.find(id="top-nav")
+        self.assertIsNotNone(nav, "Missing #top-nav")
+        for a in nav.select(".nav-links a"):
+            href = a.get("href", "")
+            if href.startswith("#"):
+                anchor_id = href.lstrip("#")
+                self.assertIsNotNone(soup.find(id=anchor_id), f"Nav link {href} points to non-existent ID #{anchor_id}")
 
     def test_02_zero_emojis_invariant(self):
         with open(self.index_path, "r", encoding="utf-8") as f:
@@ -39,7 +58,7 @@ class TestCareerHub(unittest.TestCase):
             content = f.read()
         soup = BeautifulSoup(content, "html.parser")
         prompt_cards = soup.select(".prompt-card")
-        self.assertGreaterEqual(len(prompt_cards), 5, f"Expected at least 5 prompt cards, found {len(prompt_cards)}")
+        self.assertGreaterEqual(len(prompt_cards), 7, f"Expected at least 7 prompt cards, found {len(prompt_cards)}")
 
     def test_04_print_isolation(self):
         with open(self.index_path, "r", encoding="utf-8") as f:
@@ -77,6 +96,9 @@ class TestCareerHub(unittest.TestCase):
         self.assertIn("function copyPrompt", js_content)
         self.assertIn("function switchPersona", js_content)
         self.assertIn("function toggleAtsMode", js_content)
+        self.assertIn("function copyEngineCommand", js_content)
+        self.assertIn("function switchBrief", js_content)
+        self.assertIn("function switchCoverLetterPersona", js_content)
 
         # Zero emojis invariant in JS
         emoji_pattern = re.compile(
@@ -108,6 +130,26 @@ class TestCareerHub(unittest.TestCase):
         self.assertNotIn('id="resumeContent"', index_content, "index.html must not inline #resumeContent")
         self.assertIn('id="resume-paper"', index_content, "index.html must maintain #resume-paper preview container")
         self.assertIn('id="resumeFrame"', index_content, "index.html must embed #resumeFrame preview")
+
+    def test_09_folder_organization_and_assets(self):
+        # Verify profiles folder
+        profiles_dir = os.path.join(self.root_dir, "assets", "profiles")
+        self.assertTrue(os.path.isdir(profiles_dir), "assets/profiles/ must exist")
+        self.assertTrue(os.path.exists(os.path.join(profiles_dir, "alex-morgan-profile.webp")), "Missing alex-morgan-profile.webp in assets/profiles")
+        self.assertTrue(os.path.exists(os.path.join(profiles_dir, "stefan-kramer-profile.webp")), "Missing stefan-kramer-profile.webp in assets/profiles")
+
+        # Verify workflows and search_links folder
+        workflows_dir = os.path.join(self.root_dir, "workflows")
+        self.assertTrue(os.path.isdir(workflows_dir), "workflows/ directory must exist")
+        self.assertTrue(os.path.exists(os.path.join(workflows_dir, "daily-job-search-workflow.md")), "workflows/daily-job-search-workflow.md must exist")
+
+        search_links_dir = os.path.join(workflows_dir, "search_links")
+        self.assertTrue(os.path.isdir(search_links_dir), "workflows/search_links/ directory must exist")
+        for prof in ["designer", "devops", "engineering", "finance"]:
+            self.assertTrue(
+                os.path.exists(os.path.join(search_links_dir, f"daily-job-search-links-{prof}.md")),
+                f"Missing search links for {prof}"
+            )
 
 if __name__ == "__main__":
     unittest.main()

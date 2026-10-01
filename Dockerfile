@@ -22,6 +22,8 @@ COPY hub.js ./hub.js
 COPY config ./config
 COPY alex-morgan-profile.webp ./alex-morgan-profile.webp
 COPY stefan-kramer-profile.webp ./stefan-kramer-profile.webp
+COPY assets ./assets
+COPY workflows ./workflows
 COPY robots.txt ./robots.txt
 COPY jobs/roles ./jobs/roles
 COPY --from=builder /build/download/resume-template-starter.zip ./download/resume-template-starter.zip

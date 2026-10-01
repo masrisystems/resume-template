@@ -817,12 +817,408 @@ html.dark.pdf-export-active body #resumeContent *,
   transform: translateY(0);
 }
 
+/* Workflow & Pipeline Showcase */
+.workflow-pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.workflow-stage-card {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color 0.15s ease;
+}
+
+.workflow-stage-card:hover {
+  border-color: var(--color-primary);
+}
+
+.workflow-stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+}
+
+.workflow-stage-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-surface-soft);
+  color: var(--color-primary);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-hairline);
+}
+
+.workflow-stage-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.workflow-stage-desc {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.45;
+  margin-bottom: var(--spacing-sm);
+}
+
+.workflow-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--color-body);
+}
+
+.workflow-steps-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.workflow-steps-list li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* Morning Action Brief & Results Showcase */
+.brief-container {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.brief-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-hairline);
+  margin-bottom: var(--spacing-lg);
+}
+
+.brief-headline {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.brief-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.brief-packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.brief-pkg-card {
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brief-pkg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-sm);
+}
+
+.brief-pkg-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1.35;
+}
+
+.brief-pkg-score {
+  font-size: 14px;
+  font-weight: 700;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.brief-pkg-details {
+  font-size: 12.5px;
+  color: var(--color-body);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--spacing-md);
+}
+
+.brief-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brief-detail-label {
+  font-weight: 600;
+  color: var(--color-ink);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.brief-assets-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.brief-asset-chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 11px;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.brief-asset-chip:hover {
+  border-color: var(--color-primary);
+  text-decoration: none;
+}
+
+.brief-qa-box {
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.brief-qa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-sm);
+  font-size: 12.5px;
+  margin-top: var(--spacing-xs);
+}
+
+.brief-qa-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brief-qa-item span:first-child {
+  font-weight: 600;
+  color: var(--color-ink);
+  font-size: 11.5px;
+}
+
+.brief-qa-item span:last-child {
+  color: var(--color-muted);
+}
+
+/* Cover Letter Showcase */
+.cover-letter-paper {
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 40px;
+  max-width: 760px;
+  margin: var(--spacing-lg) auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  font-family: "Lato", sans-serif;
+  line-height: 1.6;
+}
+
+.din-sender-block {
+  font-size: 11.5px;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.din-recipient-block {
+  font-size: 13.5px;
+  color: #1e293b;
+  margin-bottom: 24px;
+  line-height: 1.45;
+}
+
+.din-date-line {
+  text-align: right;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.din-subject-line {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 18px;
+}
+
+.din-body-p {
+  font-size: 13.5px;
+  color: #334155;
+  margin-bottom: 14px;
+  line-height: 1.65;
+}
+
+.din-invariants-callout {
+  background: #f8fafc;
+  border-left: 3px solid var(--color-primary);
+  padding: 10px 14px;
+  margin: 16px 0;
+  font-size: 13px;
+  color: #334155;
+}
+
+.din-signature-block {
+  margin-top: 24px;
+  font-size: 13.5px;
+  color: #1e293b;
+}
+
+/* Engine Architecture & CLI Grid */
+.engine-architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.engine-module-card {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.engine-module-name {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.engine-module-role {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+
+.engine-module-desc {
+  font-size: 12px;
+  color: var(--color-muted);
+  line-height: 1.45;
+}
+
+.engine-command-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.engine-command-card {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.engine-command-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+
+.engine-command-desc {
+  font-size: 12.5px;
+  color: var(--color-muted);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.engine-command-code {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 12px;
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-hairline);
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink);
+  overflow-x: auto;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
 /* Print Isolation Override */
 @media print {
   #top-nav,
   #hero,
   #coral-card,
   #prompts,
+  #daily-workflow,
+  #brief-showcase,
+  #cover-letters,
+  #engine,
   #workflows,
   #download,
   #hub-toast,
