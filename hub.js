@@ -517,11 +517,264 @@ function switchCoverLetterPersona(personaKey) {
   showToast(`Loaded cover letter: ${personaKey}`);
 }
 
+// ==========================================
+// Interactive 20-Min Workflow Simulation Engine
+// ==========================================
+const SIM_STAGES = [
+  {
+    step: 1,
+    time: "08:00 AM",
+    elapsed: "00:00 / 20:00",
+    title: "Stage 1 · Deduplication & Active Sourcing",
+    tagline: "Scanned 14 vacancies across LinkedIn DE, StepStone & HTGF · 12 duplicates discarded",
+    logLines: [
+      { tag: "CMD", cls: "text-blue-500", text: "python -m engine.cli dedupe-sourcing --tracker jobs/job_matches.md" },
+      { tag: "SOURCE", cls: "text-amber-500", text: "Query: site:de.linkedin.com/jobs (\"Fullstack Entwickler\" OR \"Python\") Oldenburg" },
+      { tag: "DEDUPE", cls: "text-sky-400", text: "Loaded 14 active job postings across 3 portals." },
+      { tag: "FILTER", cls: "text-purple-400", text: "12 applications already in jobs/job_matches.md ledger -> Discarded." },
+      { tag: "TARGET 1", cls: "text-emerald-400", text: "energy & meteo systems GmbH · Full-Stack Softwareentwickler (Oldenburg)" },
+      { tag: "TARGET 2", cls: "text-emerald-400", text: "CEWE Stiftung & Co. KGaA · Senior Fullstack Entwickler (Oldenburg)" }
+    ],
+    stats: [
+      { label: "Portals Scanned", value: "3 Active" },
+      { label: "Postings Scanned", value: "14 Found" },
+      { label: "Deduplicated", value: "12 Filtered" },
+      { label: "Qualifying Leads", value: "2 Targets" }
+    ]
+  },
+  {
+    step: 2,
+    time: "08:05 AM",
+    elapsed: "05:00 / 20:00",
+    title: "Stage 2 · Qualification Scoring & Evidence Archiving",
+    tagline: "Weighted Criteria Fit: 70% Required (100%) + 30% Preferred (95%) = 9.85 / 10 Match",
+    logLines: [
+      { tag: "CMD", cls: "text-blue-500", text: "python -m engine.cli score-vacancy --role fullstack_laravel --target energy_meteo" },
+      { tag: "REQUIRED", cls: "text-emerald-400", text: "Required (70%): Python (1.0), TypeScript (1.0), PostgreSQL (1.0) -> 6/6 (100%)" },
+      { tag: "PREFERRED", cls: "text-emerald-400", text: "Preferred (30%): Docker & CI/CD Pipelines (1.0), Redis (0.9) -> 3.8/4 (95%)" },
+      { tag: "COMMUTE", cls: "text-amber-400", text: "Priority 1 Local Commute (~2.5 km Oldenburg, 5-7 min bike ride)" },
+      { tag: "ARCHIVE", cls: "text-sky-400", text: "Saved raw vacancy text to jobs/job_descriptions/2026-09-26_energymeteo.txt" },
+      { tag: "SCORE", cls: "text-emerald-300 font-bold", text: "Weighted Match Score: 9.8 / 10 -> Threshold (>= 9.0) Met! Proceed to Generation." }
+    ],
+    stats: [
+      { label: "Match Score", value: "9.8 / 10" },
+      { label: "Required Criteria", value: "100% Fit" },
+      { label: "Preferred Criteria", value: "95% Fit" },
+      { label: "Commute Tier", value: "Priority 1" }
+    ]
+  },
+  {
+    step: 3,
+    time: "08:10 AM",
+    elapsed: "10:00 / 20:00",
+    title: "Stage 3 · Automated Application Generation & QA Gates",
+    tagline: "Headless Chromium compilation: 100% DOM parity HTML resume + DIN-5008 cover letter + PDF",
+    logLines: [
+      { tag: "CMD", cls: "text-blue-500", text: "python jobs/engine.py run --config jobs/configs/2026-09-26_energymeteo.json" },
+      { tag: "INVARIANTS", cls: "text-purple-400", text: "Mohamad Masri | Salary: 52.500 € brutto | Notice: 3 Monate zum Monatsende" },
+      { tag: "RESUME", cls: "text-emerald-400", text: "Wrote tailored HTML resume: jobs/resumes/2026-09-26_energymeteo.html (0 schema bloat)" },
+      { tag: "COVER LETTER", cls: "text-emerald-400", text: "DIN-5008 letter compiled: STAR achievement hook, 3 key problems solved, 284 words" },
+      { tag: "PDF ENGINE", cls: "text-sky-400", text: "Headless Chromium rendered A4 DIN-5008 PDF: Mohamad_Masri_Lebenslauf.pdf (38.4 KB)" },
+      { tag: "VALIDATE", cls: "text-emerald-300 font-bold", text: "0 DOM structural errors, 0 n-gram repetition, burstiness score 24.2 -> 100% PASSED" }
+    ],
+    stats: [
+      { label: "HTML Resumes", value: "100% Parity" },
+      { label: "Cover Letter", value: "DIN-5008 (284w)" },
+      { label: "PDF Size", value: "38.4 KB" },
+      { label: "Schema Bloat", value: "0% Clean" }
+    ]
+  },
+  {
+    step: 4,
+    time: "08:15 AM",
+    elapsed: "15:00 / 20:00",
+    title: "Stage 4 · Pipeline Ledger Update & Zero-Bloat Review",
+    tagline: "Updated jobs/job_matches.md matrix · Master resume integrity 100% preserved",
+    logLines: [
+      { tag: "CMD", cls: "text-blue-500", text: "python -m engine.cli append-ledger --status APPLIED --company \"energy & meteo systems\"" },
+      { tag: "LEDGER", cls: "text-sky-400", text: "Appended: | 2026-09-26 | energy & meteo systems | 9.8/10 | Applied (Direct Portal) |" },
+      { tag: "QA CHECK", cls: "text-emerald-400", text: "Master resume diff: 0 new sections, 0 new bullets, 0 word-count growth." },
+      { tag: "QA CHECK", cls: "text-emerald-400", text: "Spaced compounds verified: REST APIs, CI/CD Pipelines, MCP Tools, Fullstack Entwickler." },
+      { tag: "QA CHECK", cls: "text-emerald-400", text: "Full legal EU/German work authorization & Class B driver's license verified." },
+      { tag: "SUCCESS", cls: "text-emerald-300 font-bold", text: "2 Complete Application Packages Dispatched in 18m 42s · Morning Coffee Time!" }
+    ],
+    stats: [
+      { label: "Ledger Status", value: "Appended" },
+      { label: "Master Diff", value: "0 Bullets" },
+      { label: "QA Checkpoints", value: "4/4 Verified" },
+      { label: "Cycle Duration", value: "18m 42s" }
+    ]
+  }
+];
+
+let currentSimStage = 1;
+let simPlaying = false;
+let simInterval = null;
+let simSpeed = 1;
+
+function escapeSimHtml(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function renderSimStage(stageNum) {
+  currentSimStage = stageNum;
+  const stage = SIM_STAGES[stageNum - 1];
+  if (!stage) return;
+
+  // 1. Update active card highlight
+  document.querySelectorAll('.workflow-stage-card').forEach(card => {
+    const cardStage = parseInt(card.dataset.stage, 10);
+    if (cardStage === stageNum) {
+      card.classList.add('sim-active');
+    } else {
+      card.classList.remove('sim-active');
+    }
+  });
+
+  // 2. Update scrub bar steps & fill width
+  document.querySelectorAll('.scrub-step-btn').forEach(btn => {
+    const step = parseInt(btn.dataset.step, 10);
+    if (step === stageNum) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  const fill = document.getElementById('workflow-scrub-fill');
+  if (fill) {
+    fill.style.width = `${(stageNum / 4) * 100}%`;
+  }
+
+  // 3. Update clock & elapsed
+  const clockEl = document.getElementById('sim-clock');
+  const elapsedEl = document.getElementById('sim-elapsed');
+  if (clockEl) clockEl.textContent = stage.time;
+  if (elapsedEl) elapsedEl.textContent = stage.elapsed;
+
+  // 4. Render Telemetry in Monitor
+  const monitor = document.getElementById('sim-stage-monitor');
+  if (monitor) {
+    let statsHtml = stage.stats.map(s => `
+      <div class="sim-stat-chip">
+        <span class="sim-stat-label">${s.label}</span>
+        <span class="sim-stat-value">${s.value}</span>
+      </div>
+    `).join('');
+
+    let logHtml = stage.logLines.map(line => `
+      <div class="sim-log-row font-mono text-xs">
+        <span class="sim-log-tag ${line.cls}">[${line.tag}]</span>
+        <span class="sim-log-text">${escapeSimHtml(line.text)}</span>
+      </div>
+    `).join('');
+
+    monitor.innerHTML = `
+      <div class="sim-monitor-header">
+        <div class="flex items-center gap-2">
+          <span class="sim-live-pulse"></span>
+          <span class="font-semibold text-sm text-slate-800 dark:text-slate-100">${stage.title}</span>
+        </div>
+        <div class="text-xs text-slate-500 dark:text-slate-400 font-mono">${stage.tagline}</div>
+      </div>
+      <div class="sim-stats-grid">${statsHtml}</div>
+      <div class="sim-terminal-screen">${logHtml}</div>
+    `;
+  }
+}
+
+function toggleWorkflowSimulation() {
+  if (simPlaying) {
+    pauseWorkflowSimulation();
+  } else {
+    startWorkflowSimulation();
+  }
+}
+
+function startWorkflowSimulation() {
+  simPlaying = true;
+  updatePlayButtonUI();
+  if (simInterval) clearInterval(simInterval);
+
+  const duration = Math.max(800, 3200 / simSpeed);
+  simInterval = setInterval(() => {
+    let nextStage = currentSimStage + 1;
+    if (nextStage > 4) {
+      nextStage = 1;
+    }
+    renderSimStage(nextStage);
+  }, duration);
+}
+
+function pauseWorkflowSimulation() {
+  simPlaying = false;
+  updatePlayButtonUI();
+  if (simInterval) {
+    clearInterval(simInterval);
+    simInterval = null;
+  }
+}
+
+function resetWorkflowSimulation() {
+  pauseWorkflowSimulation();
+  renderSimStage(1);
+}
+
+function jumpToSimStage(stageNum) {
+  pauseWorkflowSimulation();
+  renderSimStage(stageNum);
+}
+
+function setSimSpeed(speed) {
+  simSpeed = speed;
+  document.querySelectorAll('.sim-speed-btn').forEach(btn => {
+    if (parseInt(btn.dataset.speed, 10) === speed) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  if (simPlaying) {
+    startWorkflowSimulation();
+  }
+}
+
+function updatePlayButtonUI() {
+  const playIcon = document.getElementById('sim-play-icon');
+  const pauseIcon = document.getElementById('sim-pause-icon');
+  const label = document.getElementById('sim-play-label');
+  if (playIcon && pauseIcon && label) {
+    if (simPlaying) {
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
+      label.textContent = 'Pause Simulation';
+    } else {
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
+      label.textContent = currentSimStage === 4 ? 'Replay 20-Min Simulation' : 'Play 20-Min Simulation';
+    }
+  }
+}
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) {
     lucide.createIcons();
   }
+
+  // Initialize Simulation Deck Stage 1
+  renderSimStage(1);
+
+  // Bind stage card clicks
+  document.querySelectorAll('.workflow-stage-card').forEach((card, idx) => {
+    card.setAttribute('data-stage', (idx + 1).toString());
+    card.addEventListener('click', () => {
+      jumpToSimStage(idx + 1);
+    });
+  });
 
   // Bind persona switcher clicks for resume
   document.querySelectorAll('.persona-pills .btn-pill-sm').forEach(pill => {
@@ -547,3 +800,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+

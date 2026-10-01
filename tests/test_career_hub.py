@@ -184,7 +184,30 @@ class TestCareerHub(unittest.TestCase):
         self.assertEqual(footer_gh.get("href"), "https://github.com/masrisystems/resume-template")
         self.assertIsNotNone(footer_gh.find("svg"), "Footer GitHub link must contain SVG icon")
 
+    def test_12_workflow_simulation_deck(self):
+        with open(self.index_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        soup = BeautifulSoup(content, "html.parser")
+
+        # Simulation controls
+        self.assertIsNotNone(soup.find(id="sim-play-btn"), "Missing #sim-play-btn")
+        self.assertIsNotNone(soup.find(id="sim-clock"), "Missing #sim-clock")
+        self.assertIsNotNone(soup.find(id="workflow-scrub-fill"), "Missing #workflow-scrub-fill")
+        self.assertIsNotNone(soup.find(id="sim-stage-monitor"), "Missing #sim-stage-monitor")
+
+        # Verify all 4 stage cards have data-stage
+        stage_cards = soup.select(".workflow-stage-card[data-stage]")
+        self.assertEqual(len(stage_cards), 4, "Expected 4 workflow-stage-cards with data-stage attribute")
+
+        # Verify hub.js functions
+        with open(self.hub_js_path, "r", encoding="utf-8") as f:
+            js = f.read()
+        self.assertIn("function toggleWorkflowSimulation", js)
+        self.assertIn("function renderSimStage", js)
+        self.assertIn("function jumpToSimStage", js)
+
 if __name__ == "__main__":
     unittest.main()
+
 
 

@@ -155,61 +155,127 @@
       </div>
       <p class="text-sm text-gray-700 mb-6 max-w-3xl">A disciplined 4-stage, 8-step daily routine designed to qualify and prepare complete application packages for target vacancies scoring &ge; 9.0/10 while strictly preserving master resume integrity. Governed by <code class="font-mono text-xs">daily-job-search-workflow.md</code>.</p>
 
-      <div class="workflow-pipeline-grid">
-        <!-- Stage 1 -->
-        <div class="workflow-stage-card">
-          <div class="workflow-stage-header">
-            <span class="workflow-stage-badge">Stage 1</span>
-            <span class="text-xs text-gray-400 font-mono">08:00 - 08:05</span>
+      <!-- Interactive 20-Min Workflow Simulation Console -->
+      <div class="workflow-sim-container">
+        <div class="workflow-sim-controls">
+          <div class="flex items-center gap-2">
+            <button id="sim-play-btn" class="btn-primary btn-sim-play" onclick="toggleWorkflowSimulation()" aria-label="Play or Pause Workflow Simulation">
+              <svg id="sim-play-icon" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="sim-pause-icon" class="h-4 w-4 hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              <span id="sim-play-label">Play 20-Min Simulation</span>
+            </button>
+            <button class="btn-secondary btn-sim-reset" onclick="resetWorkflowSimulation()" title="Reset to Stage 1">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              <span>Reset</span>
+            </button>
           </div>
-          <h3 class="workflow-stage-title">Deduplication &amp; Active Sourcing</h3>
-          <p class="workflow-stage-desc">Scan target portals and venture directories while filtering out past applications.</p>
-          <ul class="workflow-steps-list">
-            <li><strong>Step 1: Dedupe Tracker</strong> — Read <code class="font-mono text-xs">jobs/job_matches.md</code> to build normalized company and URL sets; eliminate duplicates instantly.</li>
-            <li><strong>Step 2: Boolean Sourcing</strong> — Query LinkedIn DE, StepStone, Indeed, Techstars Directory, and HTGF Newsroom using pre-configured search queries.</li>
-          </ul>
+
+          <!-- Routine Clock & Elapsed Indicators -->
+          <div class="flex items-center gap-2 font-mono text-xs flex-wrap">
+            <div class="sim-clock-badge">
+              <span class="text-gray-400 text-[10px] uppercase tracking-wider">Routine Clock</span>
+              <span id="sim-clock" class="font-bold text-[#cc785c] dark:text-sky-400 text-sm">08:00 AM</span>
+            </div>
+            <div class="sim-timer-badge">
+              <span class="text-gray-400 text-[10px] uppercase tracking-wider">Elapsed</span>
+              <span id="sim-elapsed" class="font-semibold text-gray-700 dark:text-gray-300">00:00 / 20:00</span>
+            </div>
+            <div class="sim-speed-selector flex items-center gap-1 bg-white dark:bg-[#1c2635] p-1 rounded border border-gray-200 dark:border-[#2a3b52]">
+              <span class="text-[10px] text-gray-400 uppercase px-1">Speed:</span>
+              <button class="sim-speed-btn active" data-speed="1" onclick="setSimSpeed(1)">1x</button>
+              <button class="sim-speed-btn" data-speed="2" onclick="setSimSpeed(2)">2x</button>
+              <button class="sim-speed-btn" data-speed="4" onclick="setSimSpeed(4)">4x</button>
+            </div>
+          </div>
         </div>
 
-        <!-- Stage 2 -->
-        <div class="workflow-stage-card">
-          <div class="workflow-stage-header">
-            <span class="workflow-stage-badge">Stage 2</span>
-            <span class="text-xs text-gray-400 font-mono">08:05 - 08:10</span>
+        <!-- Scrubbable Stage Step Timeline -->
+        <div class="workflow-scrub-bar">
+          <div class="workflow-scrub-track">
+            <div id="workflow-scrub-fill" class="workflow-scrub-fill" style="width: 25%;"></div>
           </div>
-          <h3 class="workflow-stage-title">Qualification Scoring &amp; Preservation</h3>
-          <p class="workflow-stage-desc">Rank vacancies against candidate invariants and preserve authentic job postings.</p>
-          <ul class="workflow-steps-list">
-            <li><strong>Step 3: Weighted Scoring</strong> — Compute 70% required / 30% preferred criteria score (0-10 scale). Filter dealbreakers and map to Canonical Role Archetype.</li>
-            <li><strong>Step 4: Evidence Archiving</strong> — Save raw description to <code class="font-mono text-xs">jobs/job_descriptions/[slug].txt</code> and benchmark salary against kununu evidence.</li>
-          </ul>
+          <div class="workflow-scrub-steps">
+            <button class="scrub-step-btn active" data-step="1" onclick="jumpToSimStage(1)">
+              <span class="scrub-step-num">1</span>
+              <span class="scrub-step-label">Stage 1 · Active Sourcing</span>
+            </button>
+            <button class="scrub-step-btn" data-step="2" onclick="jumpToSimStage(2)">
+              <span class="scrub-step-num">2</span>
+              <span class="scrub-step-label">Stage 2 · Fit Scoring</span>
+            </button>
+            <button class="scrub-step-btn" data-step="3" onclick="jumpToSimStage(3)">
+              <span class="scrub-step-num">3</span>
+              <span class="scrub-step-label">Stage 3 · Auto Generation</span>
+            </button>
+            <button class="scrub-step-btn" data-step="4" onclick="jumpToSimStage(4)">
+              <span class="scrub-step-num">4</span>
+              <span class="scrub-step-label">Stage 4 · QA &amp; Ledger</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Stage 3 -->
-        <div class="workflow-stage-card">
-          <div class="workflow-stage-header">
-            <span class="workflow-stage-badge">Stage 3</span>
-            <span class="text-xs text-gray-400 font-mono">08:10 - 08:15</span>
+        <!-- The 4 Stage Cards Grid -->
+        <div class="workflow-pipeline-grid">
+          <!-- Stage 1 -->
+          <div class="workflow-stage-card sim-active" data-stage="1">
+            <div class="workflow-stage-header">
+              <span class="workflow-stage-badge">Stage 1</span>
+              <span class="text-xs text-gray-400 font-mono">08:00 - 08:05</span>
+            </div>
+            <h3 class="workflow-stage-title">Deduplication &amp; Active Sourcing</h3>
+            <p class="workflow-stage-desc">Scan target portals and venture directories while filtering out past applications.</p>
+            <ul class="workflow-steps-list">
+              <li><strong>Step 1: Dedupe Tracker</strong> — Read <code class="font-mono text-xs">jobs/job_matches.md</code> to build normalized company and URL sets; eliminate duplicates instantly.</li>
+              <li><strong>Step 2: Boolean Sourcing</strong> — Query LinkedIn DE, StepStone, Indeed, Techstars Directory, and HTGF Newsroom using pre-configured search queries.</li>
+            </ul>
           </div>
-          <h3 class="workflow-stage-title">Automated Generation &amp; QA Gates</h3>
-          <p class="workflow-stage-desc">Compile tailored HTML resumes, DIN-5008 cover letters, and high-fidelity PDFs.</p>
-          <ul class="workflow-steps-list">
-            <li><strong>Step 5: Resume Hydration</strong> — Initialize config and generate tailored resume with 100% DOM structure parity and zero schema bloat.</li>
-            <li><strong>Step 6: DIN-5008 Cover Letter</strong> — Enforce STAR hook, 3 key problems solved, under 300 words, 0 n-gram overlap, burstiness range &ge; 20, and candidate invariants.</li>
-          </ul>
+
+          <!-- Stage 2 -->
+          <div class="workflow-stage-card" data-stage="2">
+            <div class="workflow-stage-header">
+              <span class="workflow-stage-badge">Stage 2</span>
+              <span class="text-xs text-gray-400 font-mono">08:05 - 08:10</span>
+            </div>
+            <h3 class="workflow-stage-title">Qualification Scoring &amp; Preservation</h3>
+            <p class="workflow-stage-desc">Rank vacancies against candidate invariants and preserve authentic job postings.</p>
+            <ul class="workflow-steps-list">
+              <li><strong>Step 3: Weighted Scoring</strong> — Compute 70% required / 30% preferred criteria score (0-10 scale). Filter dealbreakers and map to Canonical Role Archetype.</li>
+              <li><strong>Step 4: Evidence Archiving</strong> — Save raw description to <code class="font-mono text-xs">jobs/job_descriptions/[slug].txt</code> and benchmark salary against kununu evidence.</li>
+            </ul>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="workflow-stage-card" data-stage="3">
+            <div class="workflow-stage-header">
+              <span class="workflow-stage-badge">Stage 3</span>
+              <span class="text-xs text-gray-400 font-mono">08:10 - 08:15</span>
+            </div>
+            <h3 class="workflow-stage-title">Automated Generation &amp; QA Gates</h3>
+            <p class="workflow-stage-desc">Compile tailored HTML resumes, DIN-5008 cover letters, and high-fidelity PDFs.</p>
+            <ul class="workflow-steps-list">
+              <li><strong>Step 5: Resume Hydration</strong> — Initialize config and generate tailored resume with 100% DOM structure parity and zero schema bloat.</li>
+              <li><strong>Step 6: DIN-5008 Cover Letter</strong> — Enforce STAR hook, 3 key problems solved, under 300 words, 0 n-gram overlap, burstiness range &ge; 20, and candidate invariants.</li>
+            </ul>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="workflow-stage-card" data-stage="4">
+            <div class="workflow-stage-header">
+              <span class="workflow-stage-badge">Stage 4</span>
+              <span class="text-xs text-gray-400 font-mono">08:15 - 08:20</span>
+            </div>
+            <h3 class="workflow-stage-title">Pipeline Tracking &amp; Zero-Bloat Review</h3>
+            <p class="workflow-stage-desc">Update application matrix and evaluate master resume improvements.</p>
+            <ul class="workflow-steps-list">
+              <li><strong>Step 7: Tracker Update</strong> — Append row to <code class="font-mono text-xs">jobs/job_matches.md</code> with direct submission status and official apply link.</li>
+              <li><strong>Step 8: Zero-Bloat Review</strong> — Review daily work logs against master resume: 0 new sections, 0 new bullets, 0 word-count growth.</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Stage 4 -->
-        <div class="workflow-stage-card">
-          <div class="workflow-stage-header">
-            <span class="workflow-stage-badge">Stage 4</span>
-            <span class="text-xs text-gray-400 font-mono">08:15 - 08:20</span>
-          </div>
-          <h3 class="workflow-stage-title">Pipeline Tracking &amp; Zero-Bloat Review</h3>
-          <p class="workflow-stage-desc">Update application matrix and evaluate master resume improvements.</p>
-          <ul class="workflow-steps-list">
-            <li><strong>Step 7: Tracker Update</strong> — Append row to <code class="font-mono text-xs">jobs/job_matches.md</code> with direct submission status and official apply link.</li>
-            <li><strong>Step 8: Zero-Bloat Review</strong> — Review daily work logs against master resume: 0 new sections, 0 new bullets, 0 word-count growth.</li>
-          </ul>
+        <!-- Live Stage Telemetry & Output Console -->
+        <div id="sim-stage-monitor" class="workflow-sim-monitor">
+          <!-- Dynamic Telemetry rendered by JS based on active stage -->
         </div>
       </div>
     </div>
