@@ -27,6 +27,8 @@ class TestCareerHub(unittest.TestCase):
             "engine",
             "workflows",
             "resume",
+            "faq",
+            "share",
             "download"
         ]
         for req_id in required_ids:

@@ -1,4 +1,5 @@
 User-agent: *
+Allow: /
 Disallow: /drafts/
 Disallow: /temp/
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://career.masrisystems.com/sitemap.xml

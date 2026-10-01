@@ -758,6 +758,20 @@ function updatePlayButtonUI() {
   }
 }
 
+// 1-Click Clipboard Copy for Share URL
+function copyShareUrl(btn) {
+  const urlToCopy = "https://career.masrisystems.com";
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(urlToCopy).then(() => {
+      showToast("Link copied to clipboard! Share it with your friends.");
+    }).catch(() => {
+      showToast("Copy: " + urlToCopy);
+    });
+  } else {
+    showToast("Copy: " + urlToCopy);
+  }
+}
+
 // Mobile Navigation Drawer Controller
 function toggleMobileNav() {
   const drawer = document.getElementById('nav-drawer');

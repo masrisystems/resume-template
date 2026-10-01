@@ -2615,6 +2615,146 @@ html.dark #hub-toast,
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
 }
 
+/* FAQ Component (Airtable Editorial Dialect) */
+.faq-card-container {
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+html.dark .faq-card-container,
+.dark .faq-card-container {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.faq-item:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+html.dark .faq-item,
+.dark .faq-item {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+html.dark .faq-item:hover,
+.dark .faq-item:hover {
+  border-color: #475569;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.faq-question {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-top: 0;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+html.dark .faq-question,
+.dark .faq-question {
+  color: #f8fafc;
+}
+
+.faq-answer {
+  font-size: 14px;
+  color: var(--color-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+html.dark .faq-answer,
+.dark .faq-answer {
+  color: #cbd5e1;
+}
+
+/* Viral Referral & Share Strip */
+.share-card {
+  background: linear-gradient(135deg, #181d26 0%, #0d1218 100%);
+  border-radius: var(--radius-lg);
+  padding: 48px 24px;
+  text-align: center;
+  border: 1px solid #2a3b52;
+}
+
+.share-btn-cluster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-share {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-share:hover {
+  transform: translateY(-1px);
+}
+
+.btn-share-whatsapp {
+  background: #25d366;
+  color: #ffffff !important;
+}
+.btn-share-whatsapp:hover {
+  background: #22bf5b;
+}
+
+.btn-share-linkedin {
+  background: #0a66c2;
+  color: #ffffff !important;
+}
+.btn-share-linkedin:hover {
+  background: #095196;
+}
+
+.btn-share-x {
+  background: #000000;
+  color: #ffffff !important;
+  border: 1px solid #334155;
+}
+.btn-share-x:hover {
+  background: #111827;
+  border-color: #475569;
+}
+
+.btn-share-copy {
+  background: #334155;
+  color: #f8fafc;
+  border: none;
+}
+.btn-share-copy:hover {
+  background: #475569;
+}
+
 /* Print Isolation Override */
 @media print {
   #top-nav,
@@ -2626,6 +2766,8 @@ html.dark #hub-toast,
   #cover-letters,
   #engine,
   #workflows,
+  #faq,
+  #share,
   #download,
   #hub-toast,
   .persona-switcher-bar,
