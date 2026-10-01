@@ -600,9 +600,11 @@ function setTheme(theme) {
   const htmlElement = document.documentElement;
   if (theme === 'dark') {
     htmlElement.classList.add('dark');
+    if (document.body) document.body.classList.add('dark');
     localStorage.setItem('theme', 'dark');
   } else {
     htmlElement.classList.remove('dark');
+    if (document.body) document.body.classList.remove('dark');
     localStorage.setItem('theme', 'light');
   }
 }

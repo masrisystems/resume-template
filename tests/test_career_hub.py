@@ -151,5 +151,22 @@ class TestCareerHub(unittest.TestCase):
                 f"Missing search links for {prof}"
             )
 
+    def test_10_theme_and_button_affordances(self):
+        with open(self.index_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        soup = BeautifulSoup(content, "html.parser")
+
+        # Verify theme toggle in top-nav
+        theme_toggle = soup.find(id="theme-toggle-nav-btn")
+        self.assertIsNotNone(theme_toggle, "Missing #theme-toggle-nav-btn in top navigation")
+
+        # Verify .btn-secondary-on-dark is linked to a valid download
+        btn_secondary = soup.select_one(".btn-secondary-on-dark")
+        self.assertIsNotNone(btn_secondary, "Missing .btn-secondary-on-dark")
+        href = btn_secondary.get("href", "")
+        self.assertTrue(href.endswith(".zip"), f".btn-secondary-on-dark href must point to zip file, got '{href}'")
+        self.assertTrue(btn_secondary.has_attr("download"), ".btn-secondary-on-dark should have download attribute")
+
 if __name__ == "__main__":
     unittest.main()
+

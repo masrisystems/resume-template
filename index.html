@@ -50,7 +50,7 @@
 </head>
 
 <body id="pdf-content"
-  class="text-stone-900 font-sans leading-relaxed bg-stone-100 dark:bg-stone-800 dark:text-neutral-300 overflow-x-hidden">
+  class="text-stone-900 font-sans leading-relaxed bg-white dark:bg-[#0b0f17] dark:text-slate-200 overflow-x-hidden">
 
   <script type="application/ld+json">
       {
@@ -89,248 +89,6 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="./style.css">
 
-  <style>
-    /* Recruiter-first ordering while preserving the original resume content. */
-    #work-experience { display: flex; flex-direction: column; }
-    #work-experience > h2 { order: 0; }
-    #current-role { order: 1; }
-    #brainkets-role { order: 2; }
-    #side-projects-role { order: 3; }
-    .job-fair-supplemental { display: none; }
-    .contact-link { overflow-wrap: anywhere; }
-
-    /* On-screen Title divider lines */
-    h1 {
-      border-bottom: none !important;
-      padding-bottom: 0 !important;
-    }
-
-    h2,
-    .title-font {
-      display: block;
-      border-bottom: 1.5px solid #0f172a;
-      padding-bottom: 6px;
-      margin-bottom: 10px;
-      line-height: 1.4;
-    }
-
-    html.dark h2,
-    html.dark .title-font {
-      border-bottom-color: #475569;
-    }
-
-    /* PDF export active rules */
-    .pdf-export-active .no-print,
-    .pdf-export-active .no-print *,
-    #resumeContent.pdf-export-active .no-print,
-    #resumeContent.pdf-export-active .no-print * {
-      display: none !important;
-    }
-
-    .pdf-export-active,
-    .pdf-export-active body {
-      background: white !important;
-    }
-
-    .pdf-export-active #resumeContent {
-      background: white !important;
-      color: #0f172a !important;
-    }
-
-    .pdf-export-active header#header,
-    .pdf-export-active #header {
-      border-bottom: 1.5px solid #0f172a !important;
-      padding-bottom: 8px !important;
-      margin-bottom: 8px !important;
-    }
-
-    .pdf-export-active h1 {
-      border-bottom: none !important;
-      padding-bottom: 0 !important;
-    }
-
-    .pdf-export-active h2,
-    .pdf-export-active .title-font {
-      border-bottom: 1.5px solid #0f172a !important;
-      padding-bottom: 6px !important;
-      margin-bottom: 8px !important;
-      line-height: 1.35 !important;
-    }
-
-    html.dark.pdf-export-active body #resumeContent *,
-    .pdf-export-active #resumeContent *,
-    .pdf-export-active p,
-    .pdf-export-active span,
-    .pdf-export-active li,
-    .pdf-export-active div,
-    .pdf-export-active .text-gray-700,
-    .pdf-export-active .text-gray-600,
-    .pdf-export-active .text-gray-500,
-    .pdf-export-active .dark\:text-gray-300,
-    .pdf-export-active .dark\:text-gray-400 {
-      color: #0f172a !important;
-    }
-
-    .pdf-export-active a,
-    .pdf-export-active .contact-link {
-      color: #cc785c !important;
-      text-decoration: none !important;
-    }
-
-    .pdf-export-active .text-\[\#a9583e\],
-    .pdf-export-active .dark\:text-\[\#e8a55a\] {
-      color: #a9583e !important;
-    }
-
-    .pdf-export-active .print-signature {
-      display: block !important;
-    }
-
-    @page {
-      size: A4;
-      margin: 6mm 8mm;
-    }
-
-    @media print {
-      .no-print,
-      .no-print *,
-      blockquote {
-        display: none !important;
-      }
-      .job-fair-supplemental { display: none !important; }
-
-      body {
-        background: white !important;
-        font-size: 9pt !important;
-        line-height: 1.35 !important;
-        color: #0f172a !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-      }
-
-      #resumeContent {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        box-shadow: none !important;
-        background: white !important;
-        color: #0f172a !important;
-      }
-
-      /* Title divider lines */
-      html.dark body #resumeContent header#header,
-      body #resumeContent header#header,
-      header#header,
-      #header {
-        border-bottom: 1.5px solid #0f172a !important;
-        padding-bottom: 8px !important;
-        margin-bottom: 8px !important;
-      }
-
-      html.dark body #resumeContent h1,
-      body #resumeContent h1,
-      h1 {
-        border-bottom: none !important;
-        padding-bottom: 0 !important;
-      }
-
-      html.dark body #resumeContent h2,
-      html.dark body #resumeContent .title-font,
-      body #resumeContent h2,
-      body #resumeContent .title-font,
-      h2,
-      .title-font {
-        border-bottom: 1.5px solid #0f172a !important;
-        padding-bottom: 5px !important;
-        margin-bottom: 8px !important;
-        line-height: 1.35 !important;
-      }
-
-      /* Compact vertical rhythm to ensure 2-page fit */
-      section {
-        margin-bottom: 6px !important;
-      }
-
-      #work-experience > div,
-      #side-projects-role,
-      #current-role,
-      #brainkets-role {
-        margin-bottom: 6px !important;
-      }
-
-      h2 {
-        font-size: 1.15rem !important;
-      }
-
-      h3 {
-        font-size: 0.95rem !important;
-      }
-
-      ul {
-        margin-top: 2px !important;
-      }
-
-      li {
-        margin-bottom: 1px !important;
-        line-height: 1.35 !important;
-      }
-
-      /* Ensure all text descriptions, dates, and details are crisp, dark ink */
-      html.dark body #resumeContent .dark\:text-gray-300,
-      html.dark body #resumeContent .dark\:text-gray-400,
-      html.dark body #resumeContent .dark\:text-neutral-300,
-      html.dark body #resumeContent .text-gray-700,
-      html.dark body #resumeContent .text-gray-600,
-      html.dark body #resumeContent .text-gray-500,
-      html.dark body #resumeContent *,
-      body #resumeContent *,
-      #resumeContent p,
-      #resumeContent span,
-      #resumeContent li,
-      #resumeContent div,
-      #resumeContent strong,
-      .text-gray-700,
-      .text-gray-600,
-      .text-gray-500,
-      .text-stone-900,
-      .dark\:text-gray-300,
-      .dark\:text-gray-400,
-      .dark\:text-neutral-300 {
-        color: #0f172a !important;
-      }
-
-      /* Subtitle and links in brand accent */
-      html.dark body #resumeContent a,
-      html.dark body #resumeContent a *,
-      body #resumeContent a,
-      body #resumeContent a *,
-      .contact-link,
-      a.contact-link {
-        color: #cc785c !important;
-        text-decoration: none !important;
-      }
-
-      html.dark body #resumeContent .text-\[\#a9583e\],
-      html.dark body #resumeContent .dark\:text-\[\#e8a55a\],
-      body #resumeContent .text-\[\#a9583e\],
-      body #resumeContent .dark\:text-\[\#e8a55a\] {
-        color: #a9583e !important;
-      }
-
-      #certifications ul {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        column-gap: 1.5rem !important;
-        row-gap: 0.15rem !important;
-      }
-
-      .print-signature {
-        display: block !important;
-      }
-    }
-  </style>
-
   <!-- Top Navigation (Pinned Editorial Header) -->
   <nav id="top-nav" class="no-print">
     <div class="hub-container top-nav-inner">
@@ -350,9 +108,13 @@
         <li><a href="#resume" class="nav-link">Web Resume</a></li>
       </ul>
       <div class="nav-controls">
+        <button id="theme-toggle-nav-btn" class="btn-pill-sm" onclick="toggleTheme()" aria-label="Toggle Theme">
+          <span class="theme-label-light hidden dark:inline">Light</span>
+          <span class="theme-label-dark inline dark:hidden">Dark</span>
+        </button>
         <button id="lang-toggle-nav-btn" class="btn-pill-sm" onclick="switchLanguage()">EN / DE</button>
         <a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-pill-sm">Portfolio</a>
-        <a href="#download" class="btn-primary btn-nav-cta">Download Kit</a>
+        <a href="./download/resume-template-starter.zip" download="resume-template-starter.zip" class="btn-primary btn-nav-cta">Download Kit</a>
       </div>
     </div>
   </nav>
@@ -374,7 +136,7 @@
     <div class="signature-coral-card">
       <h2>Production-Grade Career Engineering</h2>
       <p>Built to bridge the gap between ATS parsers, recruiter evaluation, and modern AI automation. Combines clean semantic HTML with 7 battle-tested prompt suites, automated Python headless Chromium compilation, and daily intake pipelines.</p>
-      <a href="#download" class="btn-secondary-on-dark">Download Starter Kit (ZIP)</a>
+      <a href="./download/resume-template-starter.zip" download="resume-template-starter.zip" class="btn-secondary-on-dark">Download Starter Kit (ZIP)</a>
     </div>
   </div>
 
@@ -383,7 +145,7 @@
     <div class="cream-callout-card">
       <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
         <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;">Daily Job Discovery &amp; Application Routine</h2>
-        <span class="nav-tag" style="background:#fef3c7; color:#92400e; border-color:#fde68a;">SOP · 20-Min Daily Cycle</span>
+        <span class="nav-tag nav-tag-sop">SOP · 20-Min Daily Cycle</span>
       </div>
       <p class="text-sm text-gray-700 mb-6 max-w-3xl">A disciplined 4-stage, 8-step daily routine designed to qualify and prepare complete application packages for target vacancies scoring &ge; 9.0/10 while strictly preserving master resume integrity. Governed by <code class="font-mono text-xs">daily-job-search-workflow.md</code>.</p>
 
@@ -455,7 +217,7 @@
         <p class="text-sm text-gray-600 max-w-2xl">Interactive Morning Action Brief generated by the daily automation engine. Demonstrates verified atomic application packages across diverse technical disciplines.</p>
       </div>
       <!-- Domain Tabs -->
-      <div class="brief-tabs flex items-center gap-1 bg-stone-200 dark:bg-stone-700 p-1 rounded-md">
+      <div class="brief-tabs flex items-center gap-1 bg-slate-100 dark:bg-[#131b26] p-1 rounded-md border border-slate-200 dark:border-[#223145]">
         <button class="btn-pill-sm active" data-brief="fullstack">Fullstack (Production Run)</button>
         <button class="btn-pill-sm" data-brief="devops">Cloud DevOps</button>
         <button class="btn-pill-sm" data-brief="designer">Product Design</button>
@@ -476,7 +238,7 @@
         </div>
       </div>
 
-      <div class="text-xs text-gray-700 dark:text-gray-300 mb-6 bg-stone-50 dark:bg-stone-800 p-3 rounded border border-stone-200 dark:border-stone-700" id="brief-result">
+      <div class="text-xs text-gray-700 dark:text-gray-300 mb-6 bg-slate-50 dark:bg-[#0d141e] p-3 rounded border border-slate-200 dark:border-[#223145]" id="brief-result">
         Result: 2 complete, fully verified application packages generated, validated, and exported to print-ready HTML and high-fidelity PDF.
       </div>
 
@@ -605,21 +367,21 @@
       <div class="brief-qa-box">
         <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">Human-in-the-Loop Pre-Submission Checklist</h4>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
-          <div class="p-3 bg-white dark:bg-stone-800 rounded border border-stone-200 dark:border-stone-700">
+          <div class="p-3 bg-white dark:bg-[#131b26] rounded border border-slate-200 dark:border-[#223145]">
             <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1">Availability &amp; Kündigungsfrist:</span>
             <span class="text-gray-600 dark:text-gray-400" id="brief-chk-avail">3 Monate zum Monatsende (im Einvernehmen gern auch kurzfristiger durch Aufhebungsvereinbarung). Frühester regulärer Starttermin: 01.01.2027.</span>
           </div>
-          <div class="p-3 bg-white dark:bg-stone-800 rounded border border-stone-200 dark:border-stone-700">
+          <div class="p-3 bg-white dark:bg-[#131b26] rounded border border-slate-200 dark:border-[#223145]">
             <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1">Target Compensation:</span>
             <span class="text-gray-600 dark:text-gray-400" id="brief-chk-salary">52.500 € brutto / Jahr (52.500 Euro)</span>
           </div>
-          <div class="p-3 bg-white dark:bg-stone-800 rounded border border-stone-200 dark:border-stone-700">
+          <div class="p-3 bg-white dark:bg-[#131b26] rounded border border-slate-200 dark:border-[#223145]">
             <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1">Required Document Uploads:</span>
             <span class="text-gray-600 dark:text-gray-400" id="brief-chk-uploads">Anschreiben-PDF + Lebenslauf-PDF + ZAB Zeugnisbewertung (B.Sc. Informatik Gleichwertigkeit)</span>
           </div>
         </div>
 
-        <div class="mt-3 p-3 bg-white dark:bg-stone-800 rounded border border-stone-200 dark:border-stone-700 text-xs">
+        <div class="mt-3 p-3 bg-white dark:bg-[#131b26] rounded border border-slate-200 dark:border-[#223145] text-xs">
           <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1">Stage 8 Master Resume Maintenance Review:</span>
           <span class="text-gray-600 dark:text-gray-400" id="brief-maintenance-text">No master-resume change recommended today. Netto-Änderung Sektionen: 0 · Netto-Änderung Bullets: 0 · Wortanzahl-Delta: 0. Master index.html bleibt unberührt und geschützt.</span>
         </div>
@@ -894,7 +656,7 @@ Erstellen Sie ein valides JSON-Dokument unter 'jobs/roles/{{ROLE_ID}}.json' mit 
         <p class="text-sm text-gray-600 max-w-2xl">Production-grade German cover letters generated by the automation engine. Formatted in accordance with DIN-5008, featuring STAR achievement hooks, technical problem solving, and automated contractual invariants injection.</p>
       </div>
       <!-- Cover Letter Persona Switcher Tabs -->
-      <div class="cover-letter-tabs flex items-center gap-1 bg-stone-200 dark:bg-stone-700 p-1 rounded-md">
+      <div class="cover-letter-tabs flex items-center gap-1 bg-slate-100 dark:bg-[#131b26] p-1 rounded-md border border-slate-200 dark:border-[#223145]">
         <button class="btn-pill-sm active" data-letter="fullstack">Fullstack Developer</button>
         <button class="btn-pill-sm" data-letter="designer">Product Designer</button>
         <button class="btn-pill-sm" data-letter="devops">DevOps Engineer</button>
@@ -928,7 +690,7 @@ Erstellen Sie ein valides JSON-Dokument unter 'jobs/roles/{{ROLE_ID}}.json' mit 
       </div>
 
       <!-- Salutation -->
-      <div class="font-semibold text-gray-900 mb-4" id="din-salutation">
+      <div class="font-semibold text-gray-900 dark:text-white mb-4" id="din-salutation">
         Sehr geehrte Frau Jobst,
       </div>
 
@@ -959,7 +721,7 @@ Erstellen Sie ein valides JSON-Dokument unter 'jobs/roles/{{ROLE_ID}}.json' mit 
   <section id="engine" class="hub-container section-band no-print">
     <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
       <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;">Python Automation Engine Architecture</h2>
-      <span class="nav-tag" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">Modular CLI Engine · Python 3.10+</span>
+      <span class="nav-tag nav-tag-cli">Modular CLI Engine · Python 3.10+</span>
     </div>
     <p class="text-sm text-gray-600 mb-6 max-w-3xl">The repository includes a decoupled Python automation engine (<code class="font-mono text-xs">jobs/engine.py</code> and <code class="font-mono text-xs">engine/*</code>). It automates candidate config hydration, canonical role compilation, ATS structural validation, DIN-5008 cover letter rendering, and headless Chromium vector PDF compilation.</p>
 
@@ -1074,7 +836,7 @@ Erstellen Sie ein valides JSON-Dokument unter 'jobs/roles/{{ROLE_ID}}.json' mit 
     <div class="mb-6">
       <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
         <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;">24 Specialized Career Agent Skills</h2>
-        <span class="nav-tag" style="background:#f3e8ff; color:#6b21a8; border-color:#e9d5ff;">Portable Agent Skills · skills/*</span>
+        <span class="nav-tag nav-tag-skills">Portable Agent Skills · skills/*</span>
       </div>
       <p class="text-sm text-gray-600 max-w-3xl">Modular, interoperable career skills adhering to the portable agent standard. Compatible with Claude Code, Antigravity, and OpenAI Codex across resume tailoring, market research, cover letters, and interview coaching.</p>
     </div>
@@ -1299,8 +1061,8 @@ Erstellen Sie ein valides JSON-Dokument unter 'jobs/roles/{{ROLE_ID}}.json' mit 
       </div>
     </div>
 
-    <div id="resume-paper" style="background: white; border: 1px solid var(--color-hairline, #e2e8f0); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px -2px rgba(0,0,0,0.08);">
-      <iframe id="resumeFrame" src="./resume.html" title="Master Web Resume Template" style="width: 100%; height: 1050px; border: none; display: block; background: #ffffff;"></iframe>
+    <div id="resume-paper">
+      <iframe id="resumeFrame" src="./resume.html" title="Master Web Resume Template" style="width: 100%; height: 1050px; border: none; display: block;"></iframe>
     </div>
   </section>
 
@@ -1338,46 +1100,45 @@ Erstellen Sie ein valides JSON-Dokument unter 'jobs/roles/{{ROLE_ID}}.json' mit 
 
   <div id="hub-toast"></div>
 
-  <footer id="footer"
-    class="text-center text-xs text-gray-500 mt-10 fixed bottom-0 right-0 px-2 pt-2 text-xs text-gray-600 z-[9999]">
-    <!-- Section: Footer -->
-    <div class="print-signature">
-      <a href="https://career.masrisystems.com" target="_blank" rel="noopener noreferrer">https://career.masrisystems.com</a>
-    </div>
-  </footer>
- 
-  <div class="fixed top-4 right-4 flex flex-col space-y-3 no-print">  <!-- Language and Theme Buttons -->
-    <button onClick="switchLanguage()"
-      class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
-      aria-label="Switch Language">
-      <i data-lucide="languages" class="w-5 h-5 text-gray-700 dark:text-gray-400"></i>
-    </button>
-
-    <button id="theme-toggle"
-      class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
-      aria-label="Toggle Theme">
-      <i data-lucide="sun-moon" class="w-5 h-5 text-gray-700 dark:text-gray-400"></i>
-    </button>
-  </div>
-
 <!-- Production version -->
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
-  lucide.createIcons();
+  if (window.lucide) {
+    lucide.createIcons();
+  }
 </script>
-<!-- Toggle Theme -->
+<!-- Theme Management & Iframe Synchronization -->
 <script>
-  const themeToggleBtn = document.getElementById("theme-toggle");
   const htmlElement = document.documentElement;
 
   function setTheme(theme) {
     if (theme === "dark") {
       htmlElement.classList.add("dark");
+      document.body.classList.add("dark");
       localStorage.setItem("theme", "dark");
     } else {
       htmlElement.classList.remove("dark");
+      document.body.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
+    // Synchronize iframe resume if present
+    const iframe = document.getElementById("resumeFrame");
+    if (iframe && iframe.contentDocument) {
+      try {
+        if (theme === "dark") {
+          iframe.contentDocument.documentElement.classList.add("dark");
+          iframe.contentDocument.body.classList.add("dark");
+        } else {
+          iframe.contentDocument.documentElement.classList.remove("dark");
+          iframe.contentDocument.body.classList.remove("dark");
+        }
+      } catch (e) {}
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = htmlElement.classList.contains("dark");
+    setTheme(isDark ? "light" : "dark");
   }
 
   const storedTheme = localStorage.getItem("theme");
@@ -1389,13 +1150,22 @@ Erstellen Sie ein valides JSON-Dokument unter 'jobs/roles/{{ROLE_ID}}.json' mit 
     setTheme("light");
   }
 
-  themeToggleBtn.addEventListener("click", () => {
-    if (htmlElement.classList.contains("dark")) {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
-  });
+  // Ensure iframe inherits theme whenever it finishes loading
+  const resumeIframe = document.getElementById("resumeFrame");
+  if (resumeIframe) {
+    resumeIframe.addEventListener("load", () => {
+      const activeTheme = htmlElement.classList.contains("dark") ? "dark" : "light";
+      try {
+        if (activeTheme === "dark") {
+          resumeIframe.contentDocument.documentElement.classList.add("dark");
+          resumeIframe.contentDocument.body.classList.add("dark");
+        } else {
+          resumeIframe.contentDocument.documentElement.classList.remove("dark");
+          resumeIframe.contentDocument.body.classList.remove("dark");
+        }
+      } catch (e) {}
+    });
+  }
 </script>
 
 <!-- Toggle Language -->

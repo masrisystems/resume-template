@@ -27,6 +27,7 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
 
   <!-- Tailwind CDN (for prototyping only) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -49,7 +50,7 @@
 </head>
 
 <body id="pdf-content"
-  class="text-stone-900 font-sans leading-relaxed bg-stone-100 dark:bg-stone-800 dark:text-neutral-300 overflow-x-hidden">
+  class="text-stone-900 font-sans leading-relaxed bg-white dark:bg-[#0b0f17] dark:text-slate-200 overflow-x-hidden">
 
   <!-- Embedded Profile Data (Single Source of Truth) -->
   <script id="profile-data" type="application/json">{
@@ -854,7 +855,7 @@
     }
   </style>
 
-  <div id="resumeContent" class="max-w-4xl mx-auto p-6 bg-stone-50 shadow-md dark:bg-stone-950 overflow-hidden">
+  <div id="resumeContent" class="max-w-4xl mx-auto p-6 bg-white shadow-md dark:bg-[#131b26] dark:border dark:border-[#223145] overflow-hidden">
 
     <header id="header" class="border-b pb-6 mb-6"> <!-- Section: Header -->
       <div class="relative flex flex-col items-center gap-4 sm:flex-row sm:justify-start sm:gap-6 md:gap-10">
