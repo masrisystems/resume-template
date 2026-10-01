@@ -6,24 +6,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
-  <meta name="description" content="Alex Morgan — Senior Fullstack Engineer specializing in Laravel, PHP, Vue.js, TypeScript, Cloud Architecture, and AI assisted software delivery." />
-  <meta name="author" content="Alex Morgan" />
-  <title>Alex Morgan | Senior AI & Fullstack Product Engineer — Resume</title>
-  <link rel="canonical" href="https://portfolio.example.com/" />
+  <meta name="description" content="Stefan Kramer — Senior Mechanical &amp; Renewable Energy Systems Engineer specializing in CAD design, CFD simulation, thermal systems, and battery storage (BESS)." />
+  <meta name="author" content="Stefan Kramer" />
+  <title>Stefan Kramer | Senior AI & Fullstack Product Engineer — Resume</title>
+  <link rel="canonical" href="https://stefan-kramer.example.com/" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Alex Morgan | Senior AI & Fullstack Product Engineer" />
-  <meta property="og:description" content="Senior Fullstack Engineer in Berlin specializing in Laravel, PHP, Vue.js, TypeScript and scalable cloud software." />
+  <meta property="og:title" content="Stefan Kramer | Senior AI & Fullstack Product Engineer" />
+  <meta property="og:description" content="Senior Mechanical &amp; Renewable Energy Systems Engineer in Stuttgart specializing in CAD, CFD simulation, thermal systems, and BESS." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://portfolio.example.com" />
-  <meta property="og:image" content="https://portfolio.example.com/alex-morgan-profile.webp" />
+  <meta property="og:url" content="https://stefan-kramer.example.com" />
+  <meta property="og:image" content="https://stefan-kramer.example.com/stefan-kramer-profile.webp" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Alex Morgan | Senior AI & Fullstack Product Engineer" />
-  <meta name="twitter:description" content="Senior Fullstack Engineer in Berlin specializing in Laravel, PHP, Vue.js, TypeScript and scalable cloud software." />
-  <meta name="twitter:image" content="https://portfolio.example.com/alex-morgan-profile.webp" />
+  <meta name="twitter:title" content="Stefan Kramer | Senior AI & Fullstack Product Engineer" />
+  <meta name="twitter:description" content="Senior Mechanical &amp; Renewable Energy Systems Engineer in Stuttgart specializing in CAD, CFD simulation, thermal systems, and BESS." />
+  <meta name="twitter:image" content="https://stefan-kramer.example.com/stefan-kramer-profile.webp" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display+SC&display=swap" rel="stylesheet" />
@@ -55,22 +55,22 @@
       {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Alex Morgan",
-        "url": "https://portfolio.example.com",
-        "jobTitle": "Senior Fullstack Engineer",
-        "email": "mailto:alex.morgan@example.com",
-        "telephone": "+49 151 12345678",
+        "name": "Stefan Kramer",
+        "url": "https://stefan-kramer.example.com",
+        "jobTitle": "Senior Mechanical & Renewable Energy Systems Engineer",
+        "email": "mailto:stefan.kramer@example.com",
+        "telephone": "+49 711 98765432",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Berlin",
+          "addressLocality": "Stuttgart",
           "addressCountry": "DE"
         },
         "sameAs": [
-          "https://www.linkedin.com/in/alex-morgan-example",
-          "https://github.com/alex-morgan-example",
-          "https://links.example.com/"
+          "https://www.linkedin.com/in/stefan-kramer-example",
+          "https://www.xing.com/profile/Stefan_Kramer_example",
+          "https://links.stefan-kramer.example.com/"
         ],
-        "description": "Senior Fullstack Engineer specializing in Laravel, PHP, Vue.js, TypeScript, DevOps and enterprise software."
+        "description": "Senior Mechanical & Renewable Energy Systems Engineer specializing in CAD design, CFD simulation, FEM analysis, and commercial battery storage systems (BESS)."
       }
     </script>
 
@@ -91,14 +91,20 @@
     .contact-link { overflow-wrap: anywhere; }
 
     /* On-screen Title divider lines */
-    h1,
-    h2,
-    .title-font {
-      border-bottom: 1.5px solid #0f172a;
-      padding-bottom: 2px;
+    h1 {
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
     }
 
-    html.dark h1,
+    h2,
+    .title-font {
+      display: block;
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
     html.dark h2,
     html.dark .title-font {
       border-bottom-color: #475569;
@@ -123,11 +129,23 @@
     }
 
     .pdf-export-active header#header,
-    .pdf-export-active #header,
-    .pdf-export-active h1,
+    .pdf-export-active #header {
+      border-bottom: 1.5px solid #0f172a !important;
+      padding-bottom: 8px !important;
+      margin-bottom: 8px !important;
+    }
+
+    .pdf-export-active h1 {
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+    }
+
     .pdf-export-active h2,
     .pdf-export-active .title-font {
       border-bottom: 1.5px solid #0f172a !important;
+      padding-bottom: 6px !important;
+      margin-bottom: 8px !important;
+      line-height: 1.35 !important;
     }
 
     html.dark.pdf-export-active body #resumeContent *,
@@ -202,17 +220,22 @@
       }
 
       html.dark body #resumeContent h1,
+      body #resumeContent h1,
+      h1 {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+      }
+
       html.dark body #resumeContent h2,
       html.dark body #resumeContent .title-font,
-      body #resumeContent h1,
       body #resumeContent h2,
       body #resumeContent .title-font,
-      h1,
       h2,
       .title-font {
         border-bottom: 1.5px solid #0f172a !important;
-        padding-bottom: 2px !important;
-        margin-bottom: 4px !important;
+        padding-bottom: 5px !important;
+        margin-bottom: 8px !important;
+        line-height: 1.35 !important;
       }
 
       /* Compact vertical rhythm to ensure 2-page fit */
@@ -303,9 +326,9 @@
 
     <header id="header" class="border-b pb-6 mb-6"> <!-- Section: Header -->
       <div class="relative flex flex-col items-center gap-4 sm:flex-row sm:justify-start sm:gap-6 md:gap-10">
-        <img class="h-16 w-16 rounded-full object-cover object-[75%_20%] sm:h-16 sm:w-16 shadow-sm" style="object-position: 75% 20%;" crossorigin="anonymous" src="./alex-morgan-profile.webp" alt="Alex Morgan - Senior Fullstack Engineer Profile" />
+        <img class="h-16 w-16 rounded-full object-cover object-[75%_20%] sm:h-16 sm:w-16 shadow-sm" style="object-position: 75% 20%;" crossorigin="anonymous" src="./stefan-kramer-profile.webp" alt="Stefan Kramer - Senior Mechanical &amp; Renewable Energy Systems Engineer" />
         <div class="grow w-full text-center sm:text-start">
-          <h1 class="text-2xl font-bold md:text-3xl">Alex Morgan <span class="text-base md:text-lg font-normal text-gray-500 dark:text-gray-400 font-sans" data-lang-en="(B.Sc. Computer Science)" data-lang-de="(B.Sc. Informatik)">(B.Sc. Computer Science)</span></h1>
+          <h1 class="text-2xl font-bold md:text-3xl">Stefan Kramer <span class="text-base md:text-lg font-normal text-gray-500 dark:text-gray-400 font-sans" data-lang-en="(M.Sc. Mechanical Engineering)" data-lang-de="(M.Sc. Maschinenbau)">(M.Sc. Mechanical Engineering)</span></h1>
           <p class="mt-1 font-semibold text-[#a9583e] dark:text-[#e8a55a]"
             data-lang-en="Senior AI & Fullstack Product Engineer · TypeScript, Python & LLM Workflows · MCP Tools & Cloud"
             data-lang-de="Senior AI & Fullstack Product Engineer · TypeScript, Python & LLM Workflows · MCP Tools & Cloud">
@@ -317,23 +340,23 @@
             Senior AI & Fullstack Product Engineer with 5+ years of experience building autonomous developer tooling, production RAG pipelines, and enterprise web applications. Deep expertise in TypeScript, Python, and the Model Context Protocol (MCP), alongside daily orchestration of agentic AI systems (Claude Code, Cursor). Proven track record in vector search, API gateway architecture, Docker containerization, and automated CI/CD pipelines. 100% remote resident in Germany.
           </p>
           <nav class="mt-3 flex flex-wrap justify-center gap-x-3 gap-y-1 text-sm sm:justify-start" aria-label="Contact and professional profiles">
-            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" href="mailto:alex.morgan@example.com">alex.morgan@example.com</a>
+            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" href="mailto:stefan.kramer@example.com">stefan.kramer@example.com</a>
             <span aria-hidden="true">·</span>
-            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" href="tel:+4915112345678">+49 151 12345678</a>
+            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" href="tel:+4971198765432">+49 711 98765432</a>
             <span aria-hidden="true">·</span>
-            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/alex-morgan-example">LinkedIn</a>
+            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/stefan-kramer-example">LinkedIn</a>
             <span aria-hidden="true">·</span>
-            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" target="_blank" rel="noopener noreferrer" href="https://github.com/alex-morgan-example">GitHub</a>
+            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" target="_blank" rel="noopener noreferrer" href="https://www.xing.com/profile/Stefan_Kramer_example">XING</a>
             <span aria-hidden="true">·</span>
-            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" target="_blank" rel="noopener noreferrer" href="https://links.example.com/">Portfolio</a>
+            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" target="_blank" rel="noopener noreferrer" href="https://links.stefan-kramer.example.com/">Portfolio</a>
           </nav>
           <div class="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start no-print">
-            <button type="button" onclick="downloadPdfHandler()"
+            <button type="button" id="downloadPdf" onclick="downloadPdfHandler()"
               class="rounded-md bg-[#cc785c] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#a9583e] focus:outline-none focus:ring-2 focus:ring-[#cc785c] focus:ring-offset-2"
               data-lang-en="Download CV (PDF)" data-lang-de="Lebenslauf als PDF herunterladen">
               Download CV (PDF)
             </button>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/alex-morgan-example"
+            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/stefan-kramer-example"
               class="rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold hover:border-[#cc785c] hover:text-[#a9583e] dark:border-gray-700 dark:hover:border-[#e8a55a] dark:hover:text-[#e8a55a]"
               data-lang-en="View LinkedIn" data-lang-de="LinkedIn ansehen">View LinkedIn</a>
           </div>
@@ -347,206 +370,191 @@
       </h2>
       <div id="side-projects-role" class="mb-6">
         <h3 class="font-bold">
-          <span data-lang-en="Selected Freelance &amp; Personal Projects (Part-time · Remote)" 
-                data-lang-de="Ausgewählte Freelance- &amp; persönliche Projekte (Teilzeit · Remote)">
-            Selected Freelance &amp; Personal Projects (Part-time · Remote)
+          <span data-lang-en="Consulting &amp; Independent Engineering Projects (Part-time · Remote)" 
+                data-lang-de="Beratung &amp; Unabhängige Ingenieurprojekte (Teilzeit · Remote)">
+            Consulting &amp; Independent Engineering Projects (Part-time · Remote)
           </span>
         </h3>
         <p class="text-sm text-gray-600">
              <span data-lang-en="May 2020 – Present" data-lang-de="Mai 2020 – Heute">May 2020 – Present</span>
         </p>
         <ul class="list-disc ml-5 mt-2 text-sm">
-          <li data-lang-en="AI &amp; Agentic Coding – Engineered multi agent workflows (<strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Antigravity</strong>) and custom <strong>MCP tools</strong> for accelerated full-stack delivery."
-              data-lang-de="KI &amp; Agentic Coding – Entwicklung von Multi Agent Workflows (<strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Antigravity</strong>) und individuellen <strong>MCP Tools</strong> für beschleunigte Fullstack Auslieferung.">
-            AI &amp; Agentic Coding – Engineered multi agent workflows (<strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Antigravity</strong>) and custom <strong>MCP tools</strong> for accelerated full-stack delivery.
+          <li data-lang-en="Energy System Modeling – Modeled industrial battery energy storage systems (BESS) and microgrid dynamics using <strong>MATLAB Simulink</strong> and Python."
+              data-lang-de="Energiesystem-Modellierung – Modellierung industrieller Batteriespeicher (BESS) und Microgrid Dynamik mit <strong>MATLAB Simulink</strong> und Python.">
+            Energy System Modeling – Modeled industrial battery energy storage systems (BESS) and microgrid dynamics using <strong>MATLAB Simulink</strong> and Python.
           </li>
-          <li data-lang-en="CI/CD Pipeline – Containerised Laravel/Vue apps with <strong>Docker</strong> and automated deployments via <strong>GitHub Actions</strong>, enabling clean continuous delivery."
-              data-lang-de="CI/CD Pipelines – Containerisierung von Laravel/Vue Anwendungen mit <strong>Docker</strong> und automatisierte Deployments via <strong>GitHub Actions</strong> für saubere Continuous Delivery.">
-            CI/CD Pipeline – Containerised Laravel/Vue apps with <strong>Docker</strong> and automated deployments via <strong>GitHub Actions</strong>, enabling clean continuous delivery.
+          <li data-lang-en="Thermal CFD Optimization – Conducted conjugate heat transfer simulations for power inverter enclosures in <strong>ANSYS Fluent</strong>, enhancing cooling performance by 22%."
+              data-lang-de="Thermische CFD Optimierung – Simulation gekoppelter Wärmeübertragung für Wechselrichtergehäuse in <strong>ANSYS Fluent</strong> mit einer Kühlleistungssteigerung um 22 %.">
+            Thermal CFD Optimization – Conducted conjugate heat transfer simulations for power inverter enclosures in <strong>ANSYS Fluent</strong>, enhancing cooling performance by 22%.
           </li>
-          <li class="job-fair-supplemental" data-lang-en="AI Powered Reviews – Integrated AI review generation using local models (<strong>Ollama</strong>) and cloud LLMs to enrich product pages."
-              data-lang-de="KI gestützte Bewertungen – Integration von KI Review Generierung mit lokalen Modellen (<strong>Ollama</strong>) und Cloud-LLMs zur Anreicherung von Produktseiten.">
-            AI Powered Reviews – Integrated AI review generation using local models (<strong>Ollama</strong>) and cloud LLMs to enrich product pages.
+          <li class="job-fair-supplemental" data-lang-en="Energy Auditing (DIN EN 16247-1) – Conducted comprehensive industrial energy efficiency audits, identifying over 350 MWh in annual savings."
+              data-lang-de="Energieaudits (DIN EN 16247-1) – Durchführung umfassender industrieller Energieeffizienzaudits mit Identifikation von über 350 MWh jährlichem Einsparpotenzial.">
+            Energy Auditing (DIN EN 16247-1) – Conducted comprehensive industrial energy efficiency audits, identifying over 350 MWh in annual savings.
           </li>
-          <li data-lang-en="Fullstack Platforms – Built <strong>Laravel / Vue.js / Inertia</strong> apps with automated <strong>Stripe Connect</strong> onboarding and payout pipelines."
-              data-lang-de="Fullstack Plattformen – Entwicklung von <strong>Laravel / Vue.js / Inertia</strong>-Apps mit automatisierter <strong>Stripe Connect</strong>-Onboarding- und Payout-Architektur.">
-            Fullstack Platforms – Built <strong>Laravel / Vue.js / Inertia</strong> apps with automated <strong>Stripe Connect</strong> onboarding and payout pipelines.
+          <li data-lang-en="CAD Prototyping – Designed custom aluminum structural mounts and waterproof sensor housings in <strong>SolidWorks</strong>, validated via rapid 3D prototyping."
+              data-lang-de="CAD Prototyping – Konstruktion modularer Aluminiumhalterungen und wasserdichter Sensorgehäuse in <strong>SolidWorks</strong>, validiert durch 3D Prototypenbau.">
+            CAD Prototyping – Designed custom aluminum structural mounts and waterproof sensor housings in <strong>SolidWorks</strong>, validated via rapid 3D prototyping.
           </li>
-          <li class="job-fair-supplemental" data-lang-en="3D Web Assets &amp; Modeling – Created and integrated generative 3D models (<strong>Tripo AI</strong>) for interactive product and web visualizations."
-              data-lang-de="3D-Web-Assets &amp; Modellierung – Erstellung und Integration generativer 3D-Modelle (<strong>Tripo AI</strong>) für interaktive Produkt- und Web-Visualisierungen.">
-            3D Web Assets &amp; Modeling – Created and integrated generative 3D models (<strong>Tripo AI</strong>) for interactive product and web visualizations.
+          <li class="job-fair-supplemental" data-lang-en="Techno-economic Feasibility – Developed automated LCOE (Levelized Cost of Electricity) calculation models for commercial photovoltaic rooftop arrays."
+              data-lang-de="Wirtschaftlichkeitsanalysen – Entwicklung automatisierter LCOE Stromgestehungskosten-Modelle für gewerbliche Photovoltaik Dachanlagen.">
+            Techno-economic Feasibility – Developed automated LCOE (Levelized Cost of Electricity) calculation models for commercial photovoltaic rooftop arrays.
           </li>
-          <li data-lang-en="Infrastructure &amp; DevOps – Managed self-hosted Linux infrastructure (Uberspace) including email, database management, backups, and hosting maintenance."
-              data-lang-de="Infrastruktur &amp; DevOps – Administration einer selbst gehosteten Linux Infrastruktur (Uberspace) inkl. E-Mail, Datenbankmanagement, Backups und Hosting-Wartung.">
-            Infrastructure &amp; DevOps – Managed self-hosted Linux infrastructure (Uberspace) including email, database management, backups, and hosting maintenance.
+          <li data-lang-en="Standards &amp; Quality – Ensured full compliance with Machinery Directive 2006/42/EC and Low Voltage Directive 2014/35/EU across all prototype iterations."
+              data-lang-de="Normen &amp; Qualität – Sicherstellung der Konformität mit Maschinenrichtlinie 2006/42/EG und Niederspannungsrichtlinie 2014/35/EU über alle Prototypenphasen.">
+            Standards &amp; Quality – Ensured full compliance with Machinery Directive 2006/42/EC and Low Voltage Directive 2014/35/EU across all prototype iterations.
           </li>
-          <li class="job-fair-supplemental" data-lang-en="Production Deployments – Deployed and maintained apps like Kimai (Time-tracking/Invoicing), Uptime-Kuma (Monitoring), and a digital garden blog."
-              data-lang-de="Produktive Bereitstellungen – Bereitstellung und Wartung produktiver Apps wie Kimai (Zeiterfassung/Rechnungsstellung), Uptime-Kuma (Monitoring) und einem Digital-Garden-Blog.">
-            Production Deployments – Deployed and maintained apps like Kimai, Uptime-Kuma, and a digital garden blog.
+          <li class="job-fair-supplemental" data-lang-en="Continuous Learning – Deepening expertise in grid integration protocols, hydrogen electrolysis systems, and modular battery cell chemistries."
+              data-lang-de="Kontinuierliche Weiterbildung – Aktive Vertiefung in Netzintegrationsprotokolle, Wasserstoff-Elektrolysesysteme und modulare Batteriezellchemien.">
+            Continuous Learning – Deepening expertise in grid integration protocols, hydrogen electrolysis systems, and modular battery cell chemistries.
           </li>
-          <li class="job-fair-supplemental" data-lang-en="Continuous Learning – Deepening expertise in <strong>Shopware</strong>, <strong>Pimcore</strong>, <strong>Symfony</strong>, <strong>S3</strong>, <strong>OpenSearch</strong>, <strong>Redis</strong>, <strong>MariaDB</strong>, and <strong>Upsun</strong>."
-              data-lang-de="Kontinuierliche Weiterbildung – Aktive Vertiefung in <strong>Shopware</strong>, <strong>Pimcore</strong>, <strong>Symfony</strong>, <strong>AWS S3</strong>, <strong>OpenSearch</strong>, <strong>Redis</strong>, <strong>MariaDB</strong> und <strong>Upsun</strong>.">
-            Continuous Learning – Deepening expertise in <strong>Shopware</strong>, <strong>Pimcore</strong>, <strong>Symfony</strong>, <strong>S3</strong>, <strong>OpenSearch</strong>, <strong>Redis</strong>, <strong>MariaDB</strong>, and <strong>Upsun</strong>.
-          </li>
-          <li class="job-fair-supplemental" data-lang-en="AI &amp; Workflow Engineering – Built a centralized <strong>Command Center / Mission Control</strong>; engineered multi agent workflows using <strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Antigravity</strong>, and custom <strong>Agent Skills &amp; Extensions</strong>."
-              data-lang-de="KI- &amp; Workflow-Engineering – Entwicklung eines zentralen <strong>Command Centers / Mission Controls</strong>; Multi Agent Workflows mit <strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Antigravity</strong> sowie maßgeschneiderten <strong>Agent Skills &amp; Extensions</strong>.">
-            AI &amp; Workflow Engineering – Built a centralized <strong>Command Center / Mission Control</strong>; engineered multi agent workflows using <strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Antigravity</strong>, and custom <strong>Agent Skills &amp; Extensions</strong>.
-          </li>
-          <li data-lang-en="Mentoring &amp; Code Reviews – Conducted structured code reviews, promoted Clean Code standards, and mentored developers in Python and TypeScript."
-              data-lang-de="Mentoring &amp; Code Reviews – Durchführung strukturierter Code Reviews, Einhaltung von Clean-Code-Standards und Mentoring in Python und TypeScript.">
-            Mentoring &amp; Code Reviews – Conducted structured code reviews, promoted Clean Code standards, and mentored developers in Python and TypeScript.
+          <li data-lang-en="Technical Mentoring – Mentored junior design engineers in GD&amp;T tolerance stack-up analysis and finite element meshing best practices."
+              data-lang-de="Technisches Mentoring – Fachliche Anleitung von Nachwuchsingenieuren in Form- und Lagetoleranzen (GD&amp;T) sowie Best Practices der FEM Vernetzung.">
+            Technical Mentoring – Mentored junior design engineers in GD&amp;T tolerance stack-up analysis and finite element meshing best practices.
           </li>
         </ul>
       </div>
       <div id="current-role" class="mb-6">
         <h3 class="font-bold">
-          <span data-lang-en="Software Developer" data-lang-de="Softwareentwickler">Software Developer</span>
-          · CloudCommerce Solutions GmbH (Hybrid)
+          <span data-lang-en="Senior Systems &amp; Development Engineer" data-lang-de="Senior Entwicklungsingenieur Energiesysteme">Senior Systems &amp; Development Engineer</span>
+          · CleanTech Dynamics GmbH (Hybrid Stuttgart)
         </h3>
         <p class="text-sm text-gray-600">
           <span data-lang-en="Apr 2024 – Present" data-lang-de="Apr. 2024 – Heute">Apr 2024 – Present</span>
         </p>
         <ul class="list-disc ml-5 mt-2 text-sm">
-          <li data-lang-en="Enterprise Architecture – Built <strong>Shopware</strong> plugins and async <strong>Pimcore</strong> sync via <strong>Symfony Messenger</strong>, <strong>OpenSearch</strong> &amp; <strong>Redis</strong>."
-              data-lang-de="Enterprise Architektur – Entwicklung von <strong>Shopware</strong>-Plugins und asynchroner <strong>Pimcore</strong>-Synchronisation via <strong>Symfony Messenger</strong>, <strong>OpenSearch</strong> &amp; <strong>Redis</strong>.">
-            Enterprise Architecture – Built <strong>Shopware</strong> plugins and async <strong>Pimcore</strong> sync via <strong>Symfony Messenger</strong>, <strong>OpenSearch</strong> &amp; <strong>Redis</strong>.
+          <li data-lang-en="Battery Storage Architecture – Spearheaded mechanical and thermal packaging of multi-megawatt commercial BESS containers, boosting energy density by 18%."
+              data-lang-de="Batteriespeicher-Architektur – Technische Leitung des mechanischen und thermischen Packagings von Multi Megawatt BESS Großspeichercontainern mit 18 % höherer Energiedichte.">
+            Battery Storage Architecture – Spearheaded mechanical and thermal packaging of multi-megawatt commercial BESS containers, boosting energy density by 18%.
           </li>
-          <li data-lang-en="Enterprise Software Development – Built Vue.js / Inertia.js / Laravel solutions for 13 enterprise shops; reduced database query time by 40% via <strong>Redis</strong> caching and optimized Eloquent relationships."
-              data-lang-de="Enterprise Software Entwicklung – Skalierbare Vue.js / Inertia.js / Laravel-Lösungen für 13 Enterprise Shops; Reduzierung der Datenbankabfragezeit um 40 % durch <strong>Redis</strong>-Caching und optimierte Eloquent-Beziehungen.">
-            Enterprise Software Development – Built Vue.js / Inertia.js / Laravel solutions for 13 enterprise shops; reduced database query time by 40% via <strong>Redis</strong> caching and optimized Eloquent relationships.
+          <li data-lang-en="CAD Enclosure Design – Modeled complete structural frames, HVAC ducting, and liquid cooling distribution blocks in <strong>Siemens NX</strong>, cutting assembly time by 25%."
+              data-lang-de="CAD Konstruktion – Modellierung tragender Rahmenstrukturen, Klimatechnik-Kanäle und Flüssigkeitskühlplatten in <strong>Siemens NX</strong> mit 25 % reduzierter Montagezeit.">
+            CAD Enclosure Design – Modeled complete structural frames, HVAC ducting, and liquid cooling distribution blocks in <strong>Siemens NX</strong>, cutting assembly time by 25%.
           </li>
-          <li data-lang-en="CI/CD &amp; Docker – Containerised Laravel/Vue apps with <strong>Docker</strong>; set up <strong>GitHub Actions</strong> pipelines for automated, clean deployments."
-              data-lang-de="CI/CD &amp; Docker – Containerisierung von Laravel/Vue Anwendungen mit <strong>Docker</strong> und Einrichtung von <strong>GitHub Actions</strong>-Pipelines für automatisierte, saubere Deployments.">
-            CI/CD &amp; Docker – Containerised Laravel/Vue apps with <strong>Docker</strong>; set up <strong>GitHub Actions</strong> pipelines for automated, clean deployments.
+          <li data-lang-en="FEM Structural Verification – Executed static, modal, and fatigue simulations in <strong>ANSYS Mechanical</strong> to ensure seismic resistance and transport load compliance."
+              data-lang-de="FEM Festigkeitsberechnung – Durchführung statischer, modaler und Betriebsfestigkeitsanalysen in <strong>ANSYS Mechanical</strong> zur Absicherung gegen Erdbeben- und Transportlasten.">
+            FEM Structural Verification – Executed static, modal, and fatigue simulations in <strong>ANSYS Mechanical</strong> to ensure seismic resistance and transport load compliance.
           </li>
-          <li class="job-fair-supplemental" data-lang-en="Figma Design – Created UI/UX designs and prototypes in Figma to streamline development and ensure visual consistency."
-              data-lang-de="Figma Design – Erstellung von High-Fidelity UI/UX Designs und Prototypen in Figma zur Optimierung des Entwicklungsprozesses und Sicherstellung visueller Konsistenz.">
-            Figma Design – Created UI/UX designs and prototypes in Figma to streamline development and ensure visual consistency.
+          <li class="job-fair-supplemental" data-lang-en="Design for Manufacturing (DFM) – Optimized sheet metal stamped components and extruded aluminum profiles, reducing unit fabrication costs by 12%."
+              data-lang-de="Design for Manufacturing (DFM) – Fertigungsgerechte Optimierung von Blechbiegeteilen und Strangpressprofilen zur Senkung der Stückkosten um 12 %.">
+            Design for Manufacturing (DFM) – Optimized sheet metal stamped components and extruded aluminum profiles, reducing unit fabrication costs by 12%.
           </li>
-          <li data-lang-en="Performance Optimization – Cut page load time by 15 s by resolving N+1 query chains in Laravel and offloading report generation to queued background jobs."
-              data-lang-de="Performance-Optimierung – Reduzierung der Initialladezeit um über 15 Sek. durch Beseitigung von N+1-Abfrageketten in Laravel und Auslagerung von Reportgenerierung in Hintergrund-Jobs (Queues).">
-            Performance Optimization – Cut page load time by 15 s by resolving N+1 query chains in Laravel and offloading report generation to queued background jobs.
+          <li data-lang-en="Test Bench Validation – Established comprehensive test bench procedures and sensor instrumentation (PT100, strain gauges, flow meters) for thermal runaway containment."
+              data-lang-de="Prüfstandsvalidierung – Aufbau systematischer Prüfstandsversuche und Messtechnik (PT100, Dehnungsmessstreifen, Durchflussmesser) zur Verifikation des Thermomanagements.">
+            Test Bench Validation – Established comprehensive test bench procedures and sensor instrumentation (PT100, strain gauges, flow meters) for thermal runaway containment.
           </li>
-          <li data-lang-en="Clean Code &amp; Feature Development – Built custom packages with GraphQL and Inertia.js, optimizing existing code by over 60%."
-              data-lang-de="Clean Code &amp; Feature-Entwicklung – Erstellung maßgeschneiderter Pakete und Implementierung von Funktionen mit GraphQL und Inertia.js; Code-Optimierung von über 60 %.">
-            Clean Code &amp; Feature Development – Built custom packages with GraphQL and Inertia.js, optimizing existing code by over 60%.
+          <li data-lang-en="CE Certification &amp; Compliance – Led risk assessment workshops (FMEA) and authored technical dossiers for CE conformity under the Machinery Directive 2006/42/EC."
+              data-lang-de="CE Zertifizierung &amp; Compliance – Leitung von FMEA Risikoanalysen und Erstellung technischer Dokumentationen für die CE Konformität gemäß Maschinenrichtlinie 2006/42/EG.">
+            CE Certification &amp; Compliance – Led risk assessment workshops (FMEA) and authored technical dossiers for CE conformity under the Machinery Directive 2006/42/EC.
           </li>
-          <li class="job-fair-supplemental" data-lang-en="Version Control – Followed GitFlow for structured development workflows (Git, GitFlow, Lazygit, Jira)."
-              data-lang-de="Versionskontrolle – Einhaltung von GitFlow für strukturierte Entwicklungs-Workflows (Git, GitFlow, Lazygit, Jira).">
-            Version Control – Followed GitFlow for structured development workflows (Git, GitFlow, Lazygit, Jira).
+          <li class="job-fair-supplemental" data-lang-en="Supplier Quality Management – Conducted technical audits and PPAP sampling approvals for structural steel and cooling system suppliers."
+              data-lang-de="Lieferantenqualifizierung – Technische Audits und Bemusterungen (PPAP) von Fertigungspartnern für Stahlbau und Kältetechnikkomponenten.">
+            Supplier Quality Management – Conducted technical audits and PPAP sampling approvals for structural steel and cooling system suppliers.
           </li>
-          <li class="job-fair-supplemental" data-lang-en="Application Architecture – Applied design patterns to optimize application structure and enhance long-term scalability."
-              data-lang-de="Anwendungsarchitektur – Anwendung von Design Patterns zur Optimierung der Systemstruktur und Verbesserung der Skalierbarkeit.">
-            Applied Design Patterns to optimize application architecture and enhance scalability.
+          <li class="job-fair-supplemental" data-lang-en="Stage-Gate Product Delivery – Steered cross-functional milestones between electrical engineering, automation, and procurement on schedule."
+              data-lang-de="Stage-Gate Produktentwicklung – Termingerechte Steuerung meilensteinbasierter Entwicklungsprozesse an den Schnittstellen zu Elektrotechnik und Einkauf.">
+            Stage-Gate Product Delivery – Steered cross-functional milestones between electrical engineering, automation, and procurement on schedule.
           </li>
         </ul>
       </div>
 
       <div id="brainkets-role" class="mb-6">
         <h3 class="font-bold">
-          <span data-lang-en="Full Stack Developer – InnoTech Agency (Hybrid)" data-lang-de="Fullstack Entwickler – InnoTech Agency (Hybrid)">Full Stack Developer – InnoTech Agency (Hybrid)</span>
+          <span data-lang-en="Mechanical Development Engineer – SüdTech Engineering AG (Stuttgart)" data-lang-de="Entwicklungsingenieur Maschinenbau – SüdTech Engineering AG (Stuttgart)">Mechanical Development Engineer – SüdTech Engineering AG (Stuttgart)</span>
         </h3>
         <p class="text-sm text-gray-600">
-          <span data-lang-en="Jul 2022 – Sep 2023" data-lang-de="Juli 2022 – Sep. 2023">Jul 2022 – Sep 2023</span>
+          <span data-lang-en="Jul 2021 – Mar 2024" data-lang-de="Juli 2021 – März 2024">Jul 2021 – Mar 2024</span>
         </p>
         <ul class="list-disc ml-5 mt-2 text-sm">
           <li
-            data-lang-en="Frontend Development – Developed interactive UIs and scalable enterprise-web applications using React.js, Next.js, and Redux."
-            data-lang-de="Frontend-Entwicklung – Entwicklung interaktiver Benutzeroberflächen und skalierbarer Enterprise-Web-Anwendungen mit React.js, Next.js und Redux.">
-            Frontend Development – Developed interactive UIs and scalable enterprise-web applications using React.js, Next.js, and Redux.
+            data-lang-en="Thermal &amp; Fluid Simulation – Developed 3D steady-state and transient CFD models for commercial heat pump evaporators and refrigerant loops in <strong>ANSYS Fluent</strong>."
+            data-lang-de="Thermische &amp; Strömungssimulation – Entwicklung stationärer und transienter 3D CFD Modelle für Wärmepumpen-Verdampfer und Kältekreisläufe in <strong>ANSYS Fluent</strong>.">
+            Thermal &amp; Fluid Simulation – Developed 3D steady-state and transient CFD models for commercial heat pump evaporators and refrigerant loops in <strong>ANSYS Fluent</strong>.
           </li>
           <li
-            data-lang-en="Backend Development – Built backend components and REST APIs with Yii2 and PHP, following Clean Code guidelines."
-            data-lang-de="Backend-Entwicklung – Erstellung von Backend-Komponenten und REST APIs mit Yii2 und PHP, unter Einhaltung von Clean-Code-Richtlinien.">
-            Backend Development – Built backend components and REST APIs with Yii2 and PHP, following Clean Code guidelines.
+            data-lang-en="CAD Component Development – Designed high-precision die-cast aluminum pump volutes and polymer impeller housings in <strong>SolidWorks</strong> with strict GD&amp;T."
+            data-lang-de="CAD Komponentenentwicklung – Konstruktion hochpräziser Aluminium-Druckgussgehäuse und Spritzguss-Laufräder in <strong>SolidWorks</strong> nach DIN EN ISO 1101.">
+            CAD Component Development – Designed high-precision die-cast aluminum pump volutes and polymer impeller housings in <strong>SolidWorks</strong> with strict GD&amp;T.
           </li>
           <li
-            data-lang-en="UI/UX Implementation – Translated Figma designs into responsive interfaces using HTML, CSS, Tailwind CSS, Material UI, and design systems."
-            data-lang-de="UI/UX-Implementierung – Umsetzung von Figma Designs in responsive Oberflächen mit HTML, CSS, Tailwind CSS, Material UI und Design Systemen.">
-            UI/UX Implementation – Translated Figma designs into responsive interfaces using HTML, CSS, Tailwind CSS, Material UI, and design systems.
+            data-lang-en="Prototype Commissioning – Built physical prototype rigs, calibrated high-accuracy Coriolis flowmeters, and correlated experimental pressure drop curves with CFD data."
+            data-lang-de="Prototypen-Inbetriebnahme – Aufbau von Prüfständen, Kalibrierung von Coriolis-Durchflussmessern und experimenteller Abgleich von Druckverlustkurven mit CFD Daten.">
+            Prototype Commissioning – Built physical prototype rigs, calibrated high-accuracy Coriolis flowmeters, and correlated experimental pressure drop curves with CFD data.
           </li>
           <li
-            data-lang-en="API Integration – Connected frontend components to distributed REST based backend systems (REST APIs, JSON, SQL, Postman)."
-            data-lang-de="API Integration – Verbindung von Frontend-Komponenten mit verteilten REST basierten Backend-Systemen (REST APIs, JSON, SQL, Postman).">
-            API Integration – Connected frontend components to distributed REST based backend systems (REST APIs, JSON, SQL, Postman).
+            data-lang-en="Tolerance Stack-up &amp; FMEA – Led tolerance calculations (worst-case and statistical RSS) and design FMEAs to prevent sealing failures under extreme thermal cycling."
+            data-lang-de="Toleranzanalysen &amp; FMEA – Durchführung statistischer Toleranzkettenanalysen (RSS) und Konstruktions-FMEAs zur Vermeidung von Dichtungsversagen bei Temperaturzyklen.">
+            Tolerance Stack-up &amp; FMEA – Led tolerance calculations (worst-case and statistical RSS) and design FMEAs to prevent sealing failures under extreme thermal cycling.
           </li>
           <li class="job-fair-supplemental"
-            data-lang-en="Agile Collaboration – Actively contributed to software development within an Agile team environment (GitHub, Git, SDLC)."
-            data-lang-de="Agile Zusammenarbeit – Aktiver Beitrag zur Softwareentwicklung in einer agilen Teamumgebung (GitHub, Git, SDLC).">
-            Agile Collaboration – Actively contributed to software development
-            within an Agile team environment (GitHub, Git, SDLC).
+            data-lang-en="Interdisciplinary Collaboration – Partnered with controls software engineers to define sensor placement and actuator response curves."
+            data-lang-de="Interdisziplinäre Zusammenarbeit – Enge Abstimmung mit Regelungstechnikern zur optimalen Sensorplatzierung und Aktor-Kennlinienabstimmung.">
+            Interdisciplinary Collaboration – Partnered with controls software engineers to define sensor placement and actuator response curves.
           </li>
           <li class="job-fair-supplemental"
-            data-lang-en="SEO &amp; Performance Optimization – Enhanced speed and discoverability (SSR, Indexing, Analytics, Meta Optimization)."
-            data-lang-de="SEO &amp; Performance-Optimierung – Verbesserung von Geschwindigkeit und Auffindbarkeit (SSR, Indexierung, Analytics, Meta-Optimierung).">
-            SEO &amp; Performance Optimization – Enhanced speed and
-            discoverability (SSR, Indexing, Analytics, Meta Optimization).
+            data-lang-en="Energy Efficiency Optimization – Enhanced heat transfer coefficient by 16%, securing top-tier ErP energy efficiency classification."
+            data-lang-de="Energieeffizienz-Optimierung – Steigerung des Wärmeübertragungskoeffizienten um 16 % zur Erreichung bester ErP-Effizienzklassen.">
+            Energy Efficiency Optimization – Enhanced heat transfer coefficient by 16%, securing top-tier ErP energy efficiency classification.
           </li>
           <li class="job-fair-supplemental"
-            data-lang-en="Design Patterns – Utilized common Design Patterns during the development of scalable React and PHP backend systems."
-            data-lang-de="Design Patterns – Verwendung gängiger Design Patterns bei der Entwicklung skalierbarer React- und PHP-Backend-Systeme.">
-            Utilized common Design Patterns during the development of scalable
-            React and PHP backend systems.
+            data-lang-en="Engineering Documentation – Authored manufacturing drawings, assembly instructions, and bill of materials (BOM) within Siemens Teamcenter PDM."
+            data-lang-de="Konstruktionsdokumentation – Erstellung von Fertigungszeichnungen, Montageanweisungen und Stücklisten (BOM) im PDM-System Siemens Teamcenter.">
+            Engineering Documentation – Authored manufacturing drawings, assembly instructions, and bill of materials (BOM) within Siemens Teamcenter PDM.
           </li>
           <li
-            data-lang-en="Internship (April '22 – Sep '22) – Gained hands-on experience with JavaScript, React.js, HTML, CSS, and Bootstrap."
-            data-lang-de="Praktikum (April '22 – Sep. '22) – Praktische Erfahrung mit JavaScript, React.js, HTML, CSS und Bootstrap gesammelt.">
-            Internship (April '22 – Sep '22) – Gained hands-on experience with JavaScript, React.js, HTML, CSS, and Bootstrap.
+            data-lang-en="Engineering Internship (Apr '20 – Sep '20) – Performed mechanical stress testing, hydraulic pressure endurance runs, and metallographic material evaluations."
+            data-lang-de="Ingenieurpraktikum (Apr. '20 – Sep. '20) – Durchführung mechanischer Zugprüfungen, hydraulischer Druckdauerläufe und metallografischer Gefügeuntersuchungen.">
+            Engineering Internship (Apr '20 – Sep '20) – Performed mechanical stress testing, hydraulic pressure endurance runs, and metallographic material evaluations.
           </li>
         </ul>
       </div>
     </section>
 
     <section id="technical-skills" class="mb-4 md:mb-8"> <!-- Section: Technical Skills -->
-      <h2 class="text-xl font-semibold mb-2" data-lang-en="Technical Skills" data-lang-de="Technische Fähigkeiten">
-        Technical Skills
+      <h2 class="text-xl font-semibold mb-2" data-lang-en="Technical Skills &amp; Competences" data-lang-de="Fachliche Kompetenzen">
+        Technical Skills &amp; Competences
       </h2>
       <div class="text-sm grid gap-1 space-y-2">
         
-        <!-- PRIMARY SKILLS: VILT Stack (star of the show) -->
         <div>
-          <h4 class="font-semibold" data-lang-en="Frontend & AI Interaction Design (Primary)" data-lang-de="Frontend & KI-Interaktionsdesign (Primär)">
-            Frontend & AI Interaction Design
+          <h4 class="font-semibold" data-lang-en="CAD &amp; Mechanical Design (Primary)" data-lang-de="Konstruktion &amp; CAD (Primär)">
+            CAD &amp; Mechanical Design
           </h4>
           <ul class="list-disc ml-5">
-            <li><strong>Next.js, React, Vue.js & TypeScript</strong> · Streaming UI (Vercel AI SDK), Chat-Interfaces & responsive Dashboards</li>
-            <li>Moderne Webstandards, HTML5, CSS3, Tailwind CSS & Core Web Vitals 95+ · Client-State-Management & Vite Tooling</li>
+            <li><strong>SolidWorks</strong> · <strong>Siemens NX</strong> · Autodesk Inventor · Catia V5</li>
+            <li>Form- und Lagetoleranzen (GD&amp;T nach DIN EN ISO 1101) · Blechkonstruktion · Schweißbaugruppen · Druckguss</li>
           </ul>
         </div>
 
         <div>
-          <h4 class="font-semibold" data-lang-en="AI Engineering, Backend & APIs (Primary)" data-lang-de="KI-Engineering, Backend & APIs (Primär)">
-            AI Engineering, Backend & APIs
+          <h4 class="font-semibold" data-lang-en="Simulation &amp; System Modeling (Primary)" data-lang-de="Simulation &amp; Systemmodellierung (Primär)">
+            Simulation &amp; System Modeling
           </h4>
           <ul class="list-disc ml-5">
-            <li><strong>Entwicklung eigener MCP Tools & MCP Server</strong> · Model Context Protocol Integration für Claude Code, Codex & IDEs</li>
-            <li>Python & TypeScript Backend: FastMCP, FastAPI, Node.js (Express), asynchrone RAG-Pipelines & Embeddings</li>
-            <li>LLM Integration (Anthropic Claude API, OpenAI) · Prompt Engineering, Function Calling & strukturierte JSON Outputs</li>
-            <li>Datenbank-Architektur: PostgreSQL (pgvector), SQLite, Redis In-Memory Caching & relationale Schema-Optimierung</li>
+            <li><strong>ANSYS Mechanical</strong> (FEM Festigkeits- &amp; Betriebsfestigkeitsanalyse) · <strong>ANSYS Fluent</strong> (CFD Strömungssimulation)</li>
+            <li><strong>MATLAB &amp; Simulink</strong> (Regelungstechnik &amp; physikalische Modellierung) · Python (Automatisierung &amp; Datenanalyse)</li>
+            <li>Thermodynamik · Konvektive &amp; konduktive Wärmeübertragung · Strömungsmechanik · Mehrkörpersimulation</li>
           </ul>
         </div>
 
         <div>
-          <h4 class="font-semibold" data-lang-en="DevOps, Container & Agentic Automation" data-lang-de="DevOps, Container & Agentic Automation">
-            DevOps & Automation
+          <h4 class="font-semibold" data-lang-en="Renewable Energy &amp; Systems Engineering" data-lang-de="Erneuerbare Energien &amp; Systemtechnik">
+            Renewable Energy &amp; Systems Engineering
           </h4>
           <ul class="list-disc ml-5">
-            <li>Docker Containerisierung & Docker Compose für modulare AI-Services, Vektordatenbanken und Web-Gateways</li>
-            <li>CI/CD Pipelines mit GitHub Actions & GitLab CI · Automatisierte Code-Reviews, Linter und Evaluierungs-Läufe</li>
-            <li>Linux Serveradministration (Nginx, Reverse Proxies, SSL/TLS, Monitoring & Log-Aggregation)</li>
-            <li>Agentische Softwareentwicklung mit Claude Code CLI, Cursor & autonomen Coding-Agenten im täglichen Einsatz</li>
-            <li>Agile Softwareentwicklung, GitFlow, strukturierte Code Reviews & testgetriebene Entwicklung (TDD)</li>
+            <li>Batteriespeichersysteme (BESS) · Photovoltaik Großanlagen · Windenergieanlagen · Thermomanagement</li>
+            <li>Netzintegration &amp; Smart Grid Schnittstellen · Wechselrichterauslegung · Wasserstoff- &amp; Brennstoffzellensysteme</li>
+            <li>Prüfstandsaufbau · Sensorik (PT100, DMS, Drucktransducer) · Hardware-in-the-Loop (HIL) Tests</li>
           </ul>
         </div>
 
-        <!-- SECONDARY SKILLS: previous experience, deprioritised -->
         <div>
-          <h4 class="font-semibold" data-lang-en="Further Technologies & Background" data-lang-de="Weitere Technologien & Hintergrund">
-            Further Technologies
+          <h4 class="font-semibold" data-lang-en="Standards, Norms &amp; Quality Management" data-lang-de="Normen, Richtlinien &amp; Qualitätsmanagement">
+            Standards, Norms &amp; Quality Management
           </h4>
           <ul class="list-disc ml-5">
-            <li>PHP 8+, Laravel & REST Schnittstellen · Asynchrone Queues (RabbitMQ, Redis) & S3 Object Storage</li>
-            <li>B.Sc. Informatik (ZAB-zertifizierte Bachelor-Gleichwertigkeit) · 100% Remote deutschlandweit verfügbar</li>
+            <li>CE Kennzeichnung · Maschinenrichtlinie 2006/42/EG · Niederspannungsrichtlinie 2014/35/EU · EMV Richtlinie</li>
+            <li>DIN EN 16247-1 (Energieaudits) · FMEA (Konstruktions- &amp; Prozess-FMEA) · Stage-Gate Produktentwicklung · VDI 2221</li>
+            <li>PDM / PLM (Siemens Teamcenter, SAP PLM) · DFM / DFA (Design for Manufacturing &amp; Assembly)</li>
           </ul>
         </div>
 
@@ -555,23 +563,25 @@
             Competences
           </h4>
           <ul class="list-disc ml-5">
-            <li data-lang-en="Teamwork, motivation, flexibility" data-lang-de="Teamfähigkeit, hohe Motivation und Flexibilität">
-              Teamwork, motivation, flexibility
+            <li data-lang-en="Interdisciplinary systems thinking and cross-functional leadership in engineering projects"
+              data-lang-de="Interdisziplinäres Systemdenken und bereichsübergreifende Zusammenarbeit in Engineering-Projekten">
+              Interdisciplinary systems thinking and cross-functional leadership in engineering projects
             </li>
-            <li data-lang-en="Independent, solution-oriented, responsible work style"
-              data-lang-de="Selbstständige, lösungsorientierte und verantwortungsbewusste Arbeitsweise">
-              Independent, solution-oriented, responsible work style
+            <li data-lang-en="Structured, analytical approach to complex thermodynamic and structural challenges"
+              data-lang-de="Strukturierte, analytische Herangehensweise an anspruchsvolle thermodynamische und strukturmechanische Aufgaben">
+              Structured, analytical approach to complex thermodynamic and structural challenges
             </li>
-            <li data-lang-en="IT and process affinity, fast learner, high implementation skills"
-              data-lang-de="Hohe IT- und Prozessaffinität, schnelle Auffassungsgabe und ausgeprägte Umsetzungsstärke">
-              IT and process affinity, fast learner, high implementation skills
+            <li data-lang-en="Hands-on commitment to prototype validation, commissioning, and test bench experimentation"
+              data-lang-de="Hohe Praxisorientierung bei Prototypenvalidierung, Inbetriebnahme und Prüfstandsversuchen">
+              Hands-on commitment to prototype validation, commissioning, and test bench experimentation
             </li>
-            <li data-lang-en="Continuous Learning – Consistently up-to-date with the newest technologies, packages, and stack updates."
-              data-lang-de="Kontinuierliche Weiterbildung – Stets am Puls neuester Frameworks, AI Tools und Stack Updates.">
-              Continuous Learning – Consistently up-to-date with the newest technologies, packages, and stack updates.
+            <li data-lang-en="Continuous professional development in modern decarbonization and green tech technologies"
+              data-lang-de="Kontinuierliche Weiterbildung in modernen Dekarbonisierungs- und Green-Tech-Technologien">
+              Continuous professional development in modern decarbonization and green tech technologies
             </li>
-            <li data-lang-en="Analytical &amp; problem-solving ability" data-lang-de="Analytisches Denkvermögen und ausgeprägte Problemlösungskompetenz">
-              Analytical &amp; problem-solving ability
+            <li data-lang-en="Excellent presentation and stakeholder communication skills in technical and management circles"
+              data-lang-de="Ausgeprägte Kommunikations- und Präsentationsstärke gegenüber Kunden, Lieferanten und Fachgremien">
+              Excellent presentation and stakeholder communication skills in technical and management circles
             </li>
           </ul>
         </div>
@@ -582,24 +592,68 @@
         Education &amp; Qualifications
       </h2>
       <div class="mb-3">
-        <p>
-          <strong>
-            <span data-lang-en="Bachelor of Science (B.Sc.) in Computer Science"
-                  data-lang-de="Bachelor of Science (B.Sc.) in Informatik">
-              Bachelor of Science (B.Sc.) in Computer Science
+        <div class="flex flex-wrap justify-between items-baseline">
+          <p>
+            <strong>
+              <span data-lang-en="Master of Science (M.Sc.) in Mechanical Engineering"
+                    data-lang-de="Master of Science (M.Sc.) in Maschinenbau">
+                Master of Science (M.Sc.) in Mechanical Engineering
+              </span>
+            </strong>
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                  data-lang-en="· University of Stuttgart"
+                  data-lang-de="· Universität Stuttgart">
+              · University of Stuttgart
             </span>
-          </strong>
-          <span class="text-sm text-gray-600"
-                data-lang-en="- Final Grade: 1.7 (With Distinction)"
-                data-lang-de="- Abschlussnote: 1,7 (Mit Auszeichnung)">
-            - Final Grade: 1.7 (With Distinction)
+            <span class="text-sm text-gray-600 dark:text-gray-400"
+                  data-lang-en="- Final Grade: 1.4 (With Distinction)"
+                  data-lang-de="- Abschlussnote: 1,4 (Mit Auszeichnung)">
+              - Final Grade: 1.4 (With Distinction)
+            </span>
+          </p>
+          <span class="text-sm text-gray-600 dark:text-gray-400 font-medium"
+                data-lang-en="10/2018 – 09/2020 (2 years · 4 semesters)"
+                data-lang-de="10/2018 – 09/2020 (2 Jahre · 4 Semester)">
+            10/2018 – 09/2020 (2 years · 4 semesters)
           </span>
-        </p>
+        </div>
         <p class="text-sm mt-1 text-gray-700 dark:text-gray-300"
-          data-lang-en="Focused on software engineering, object-oriented design, distributed systems, algorithms, and database architecture."
-          data-lang-de="Schwerpunkte: Softwaretechnik, objektorientierter Entwurf, verteilte Systeme, Algorithmen und Datenbankarchitektur.">
-          Focused on software engineering, object-oriented design, distributed systems,
-          algorithms, and database architecture.
+          data-lang-en="Specialization in Energy Technology, Computational Fluid Dynamics (CFD), Structural Mechanics (FEM), and Renewable Energy Systems."
+          data-lang-de="Schwerpunkte: Energietechnik, Numerische Strömungsmechanik (CFD), Strukturmechanik (FEM) und Regenerative Energiesysteme.">
+          Specialization in Energy Technology, Computational Fluid Dynamics (CFD), Structural Mechanics (FEM), and Renewable Energy Systems.
+        </p>
+      </div>
+
+      <div class="mb-3">
+        <div class="flex flex-wrap justify-between items-baseline">
+          <p>
+            <strong>
+              <span data-lang-en="Bachelor of Science (B.Sc.) in Mechanical Engineering"
+                    data-lang-de="Bachelor of Science (B.Sc.) in Maschinenbau">
+                Bachelor of Science (B.Sc.) in Mechanical Engineering
+              </span>
+            </strong>
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                  data-lang-en="· University of Stuttgart"
+                  data-lang-de="· Universität Stuttgart">
+              · University of Stuttgart
+            </span>
+            <span class="text-sm text-gray-600 dark:text-gray-400"
+                  data-lang-en="- Final Grade: 1.7 (With Merit)"
+                  data-lang-de="- Abschlussnote: 1,7 (Gut)">
+              - Final Grade: 1.7 (With Merit)
+            </span>
+          </p>
+          <span class="text-sm text-gray-600 dark:text-gray-400 font-medium"
+                data-lang-en="10/2014 – 09/2018 (4 years · 8 semesters)"
+                data-lang-de="10/2014 – 09/2018 (4 Jahre · 8 Semester)">
+            10/2014 – 09/2018 (4 years · 8 semesters)
+          </span>
+        </div>
+        <p class="text-sm mt-1 text-gray-700 dark:text-gray-300"
+          data-lang-en="Core foundations in Technical Mechanics, Thermodynamics, Materials Science, Machine Elements, and CAD Design."
+          data-lang-de="Grundlagen der Technischen Mechanik, Thermodynamik, Werkstoffkunde, Maschinenelemente und CAD Konstruktion.">
+          Core foundations in Technical Mechanics, Thermodynamics, Materials Science, Machine Elements, and CAD Design.
         </p>
       </div>
 
@@ -608,14 +662,14 @@
           Academic Achievements
         </h4>
         <ul class="list-disc ml-5 text-sm space-y-0.5">
-          <li data-lang-en="Dean’s Honor List – Academic excellence award for top percentile students"
-            data-lang-de="Dean’s Honor List – Auszeichnung für herausragende akademische Spitzenleistungen">
-            Dean’s Honor List – Academic excellence award for top percentile students
+          <li data-lang-en="Master Thesis Award – Recognized for innovative thermal packaging of high-density lithium-ion battery modules"
+            data-lang-de="Auszeichnung für Masterarbeit – Prämierung für innovatives Thermomanagement hochintegrierter Lithium-Ionen-Batteriemodule">
+            Master Thesis Award – Recognized for innovative thermal packaging of high-density lithium-ion battery modules
           </li>
           <li
-            data-lang-en="Specialized coursework in Software Architecture, Distributed Systems, and Cloud-Native Platforms"
-            data-lang-de="Vertiefte Studienleistungen in Softwarearchitektur, Verteilten Systemen und Cloud-Native Plattformen">
-            Specialized coursework in Software Architecture, Distributed Systems, and Cloud-Native Platforms
+            data-lang-en="Advanced research projects in convective heat transfer and turbomachinery fluid modeling"
+            data-lang-de="Forschungsprojekte im Bereich konvektive Wärmeübertragung und Strömungsmodellierung thermischer Maschinen">
+            Advanced research projects in convective heat transfer and turbomachinery fluid modeling
           </li>
         </ul>
       </div>
@@ -625,25 +679,25 @@
           <h4 class="font-semibold text-sm" data-lang-en="Certifications &amp; Professional Development" data-lang-de="Zertifikate &amp; Weiterbildung">
             Certifications &amp; Professional Development
           </h4>
-          <a href="https://links.example.com/certificates.html" target="_blank" rel="noopener noreferrer" class="text-xs text-[#a9583e] hover:underline" data-lang-en="Verify online &rarr;" data-lang-de="Online verifizieren &rarr;">
+          <a href="https://links.stefan-kramer.example.com/certificates.html" target="_blank" rel="noopener noreferrer" class="text-xs text-[#a9583e] hover:underline" data-lang-en="Verify online &rarr;" data-lang-de="Online verifizieren &rarr;">
             Online verifizieren &rarr;
           </a>
         </div>
         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 list-disc ml-5 text-sm">
           <li>
-            <span data-lang-en="<strong>Cloud Architecture &amp; DevOps Professional</strong> — Cloud Institute" data-lang-de="<strong>Cloud Architecture &amp; DevOps Professional</strong> — Cloud Institute"><strong>Cloud Architecture &amp; DevOps Professional</strong> — Cloud Institute</span>
+            <span data-lang-en="<strong>Certified Energy Efficiency Expert (DIN EN 16247-1)</strong> — DENA / BAFA" data-lang-de="<strong>Zertifizierter Energieeffizienz-Experte (DIN EN 16247-1)</strong> — DENA / BAFA"><strong>Certified Energy Efficiency Expert (DIN EN 16247-1)</strong> — DENA / BAFA</span>
             <span class="text-xs text-gray-500">· 2025</span>
           </li>
           <li>
-            <span data-lang-en="<strong>Modern API Design &amp; Automated Testing</strong> — Engineering Academy" data-lang-de="<strong>Modernes API-Design &amp; Automatisierte Tests</strong> — Engineering Academy"><strong>Modern API Design &amp; Automated Testing</strong> — Engineering Academy</span>
+            <span data-lang-en="<strong>ANSYS Certified Professional: Advanced FEM &amp; CFD</strong> — CADFEM" data-lang-de="<strong>ANSYS Certified Professional: Advanced FEM &amp; CFD</strong> — CADFEM"><strong>ANSYS Certified Professional: Advanced FEM &amp; CFD</strong> — CADFEM</span>
             <span class="text-xs text-gray-500">· 2024</span>
           </li>
           <li>
-            <span data-lang-en="<strong>Enterprise Web Application Security (OWASP)</strong> — CyberSec Institute" data-lang-de="<strong>Enterprise Web Application Security (OWASP)</strong> — CyberSec Institute"><strong>Enterprise Web Application Security (OWASP)</strong> — CyberSec Institute</span>
+            <span data-lang-en="<strong>CE Compliance Specialist (Machinery Directive 2006/42/EC)</strong> — TÜV SÜD" data-lang-de="<strong>CE Beauftragter &amp; Maschinenrichtlinie 2006/42/EG</strong> — TÜV SÜD"><strong>CE Compliance Specialist (Machinery Directive 2006/42/EC)</strong> — TÜV SÜD</span>
             <span class="text-xs text-gray-500">· 2023</span>
           </li>
           <li>
-            <span data-lang-en="<strong>Professional Agile &amp; Scrum Practitioner</strong> — Agile Alliance" data-lang-de="<strong>Professional Agile &amp; Scrum Practitioner</strong> — Agile Alliance"><strong>Professional Agile &amp; Scrum Practitioner</strong> — Agile Alliance</span>
+            <span data-lang-en="<strong>Systems Engineering Practitioner</strong> — GfSE / INCOSE" data-lang-de="<strong>Systems Engineering Practitioner</strong> — GfSE / INCOSE"><strong>Systems Engineering Practitioner</strong> — GfSE / INCOSE</span>
             <span class="text-xs text-gray-500">· 2022</span>
           </li>
         </ul>
@@ -657,16 +711,16 @@
         </h2>
 
         <ul class="ml-1 text-sm space-y-1">
+          <li data-lang-en="German: Native (C2)" data-lang-de="Deutsch: Muttersprache (C2)">
+            German: Native (C2)
+          </li>
+
           <li data-lang-en="English: Fluent / Professional (C1)" data-lang-de="Englisch: Verhandlungssicher (C1)">
             English: Fluent / Professional (C1)
           </li>
 
-          <li data-lang-en="German: Intermediate (B2)" data-lang-de="Deutsch: Fließend / B2 (Zertifikat in Vorbereitung)">
-            German: Intermediate (B2)
-          </li>
-
-          <li data-lang-en="Arabic: Native (C2)" data-lang-de="Arabisch: Muttersprache (C2)">
-            Arabic: Native (C2)
+          <li data-lang-en="French: Basic / Elementary (A2)" data-lang-de="Französisch: Grundkenntnisse (A2)">
+            French: Basic / Elementary (A2)
           </li>
         </ul>
       </section>
@@ -676,14 +730,13 @@
           Other
         </h2>
         <ul class="list-disc ml-5 text-sm">
-          <li data-lang-en="Willingness to travel (even for several days) on business."
-            data-lang-de="Reisebereitschaft (auch mehrtägig) für geschäftliche Termine und Kundenprojekte.">
-            Willingness to travel (even for several days) on business.
+          <li data-lang-en="Full legal EU/German citizenship; Driver's license Class B."
+            data-lang-de="Deutsche Staatsangehörigkeit; Führerschein Klasse B.">
+            Full legal EU/German citizenship; Driver's license Class B.
           </li>
-          <li data-lang-en="Actively participate and contribute to working groups and collaborative team environments."
-            data-lang-de="Aktive Teilnahme und Einbringung in interdisziplinäre Arbeitsgruppen und agile Teams.">
-            Actively participate and contribute to working groups and
-            collaborative team environments.
+          <li data-lang-en="Willingness to travel for on-site commissioning, customer testing, and supplier audits."
+            data-lang-de="Reisebereitschaft für Inbetriebnahmen vor Ort, Kundenabnahmen und Lieferantenaudits.">
+            Willingness to travel for on-site commissioning, customer testing, and supplier audits.
           </li>
         </ul>
       </section>
@@ -693,9 +746,9 @@
           Hobbies
         </h2>
         <ul class="list-disc ml-5 text-sm">
-          <li data-lang-en="Fitness" data-lang-de="Fitness">Fitness</li>
-          <li data-lang-en="Travel" data-lang-de="Reisen">Travel</li>
-          <li data-lang-en="Gaming &amp; Technology" data-lang-de="Gaming &amp; Technologie-Trends">Gaming &amp; Technology</li>
+          <li data-lang-en="Road Cycling &amp; Triathlon" data-lang-de="Rennrad &amp; Triathlon">Road Cycling &amp; Triathlon</li>
+          <li data-lang-en="Alpine Hiking" data-lang-de="Bergwandern">Alpine Hiking</li>
+          <li data-lang-en="3D Printing &amp; Prototyping" data-lang-de="3D Druck &amp; Rapid Prototyping">3D Printing &amp; Prototyping</li>
         </ul>
       </section>
     </div>
@@ -705,11 +758,11 @@
     class="text-center text-xs text-gray-500 mt-10 fixed bottom-0 right-0 px-2 pt-2 text-xs text-gray-600 z-[9999]">
     <!-- Section: Footer -->
             <div class="print-signature">
-      <a href="https://portfolio.example.com" target="_blank" rel="noopener noreferrer">https://portfolio.example.com</a>
+      <a href="https://stefan-kramer.example.com" target="_blank" rel="noopener noreferrer">https://stefan-kramer.example.com</a>
     </div>
   </footer>
  
-  <div class="fixed top-4 right-4 flex flex-col space-y-3 no-print">  <!-- Print and Download Buttons -->
+  <div class="fixed top-4 right-4 flex flex-col space-y-3 no-print">  <!-- Language and Theme Buttons -->
     <button onClick="switchLanguage()"
       class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
       aria-label="Switch Language">
@@ -720,18 +773,6 @@
       class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
       aria-label="Toggle Theme">
       <i data-lucide="sun-moon" class="w-5 h-5 text-gray-700 dark:text-gray-400"></i>
-    </button>
-
-    <button onClick="window.print()"
-      class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
-      aria-label="Print Page">
-      <i data-lucide="Printer" class="w-5 h-5 text-gray-700 dark:text-gray-400"></i>
-    </button>
-
-    <button onclick="downloadPdfHandler()" id="downloadPdf"
-      class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
-      aria-label="Download Page">
-      <i data-lucide="Download" class="w-5 h-5 text-gray-700 dark:text-gray-400"></i>
     </button>
   </div>
 
@@ -921,7 +962,7 @@
           }
         });
 
-        pdf.save("01-CV-Alex-Morgan.pdf");
+        pdf.save("01-CV-Stefan-Kramer.pdf");
       })
       .catch((err) => {
         console.error("Error generating PDF:", err);

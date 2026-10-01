@@ -18,15 +18,22 @@ h3 {
   font-weight: bold;
 }
 
-/* On-screen Title divider lines */
-h1,
-h2,
-.title-font {
-  border-bottom: 1.5px solid #0f172a;
-  padding-bottom: 2px;
+/* Candidate Name Header */
+h1 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
 }
 
-html.dark h1,
+/* On-screen Title divider lines */
+h2,
+.title-font {
+  display: block;
+  border-bottom: 1.5px solid #0f172a;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
 html.dark h2,
 html.dark .title-font {
   border-bottom-color: #475569;
@@ -102,17 +109,22 @@ a:hover {
   }
 
   html.dark body #resumeContent h1,
+  body #resumeContent h1,
+  h1 {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
   html.dark body #resumeContent h2,
   html.dark body #resumeContent .title-font,
-  body #resumeContent h1,
   body #resumeContent h2,
   body #resumeContent .title-font,
-  h1,
   h2,
   .title-font {
     border-bottom: 1.5px solid #0f172a !important;
-    padding-bottom: 2px !important;
-    margin-bottom: 4px !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 8px !important;
+    line-height: 1.35 !important;
   }
 
   /* Compact vertical rhythm to ensure 2-page fit */
@@ -225,16 +237,23 @@ a:hover {
 }
 
 .pdf-export-active header#header,
-.pdf-export-active #header,
-.pdf-export-active h1,
+.pdf-export-active #header {
+  border-bottom: 1.5px solid #0f172a !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 8px !important;
+}
+
+.pdf-export-active h1 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
 .pdf-export-active h2,
 .pdf-export-active .title-font {
   border-bottom: 1.5px solid #0f172a !important;
-}
-
-.pdf-export-active h1,
-.pdf-export-active h2 {
-  padding-bottom: 4px !important;
+  padding-bottom: 6px !important;
+  margin-bottom: 8px !important;
+  line-height: 1.35 !important;
 }
 
 html.dark.pdf-export-active body #resumeContent *,

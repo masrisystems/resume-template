@@ -91,14 +91,20 @@
     .contact-link { overflow-wrap: anywhere; }
 
     /* On-screen Title divider lines */
-    h1,
-    h2,
-    .title-font {
-      border-bottom: 1.5px solid #0f172a;
-      padding-bottom: 2px;
+    h1 {
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
     }
 
-    html.dark h1,
+    h2,
+    .title-font {
+      display: block;
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
     html.dark h2,
     html.dark .title-font {
       border-bottom-color: #475569;
@@ -123,11 +129,23 @@
     }
 
     .pdf-export-active header#header,
-    .pdf-export-active #header,
-    .pdf-export-active h1,
+    .pdf-export-active #header {
+      border-bottom: 1.5px solid #0f172a !important;
+      padding-bottom: 8px !important;
+      margin-bottom: 8px !important;
+    }
+
+    .pdf-export-active h1 {
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+    }
+
     .pdf-export-active h2,
     .pdf-export-active .title-font {
       border-bottom: 1.5px solid #0f172a !important;
+      padding-bottom: 6px !important;
+      margin-bottom: 8px !important;
+      line-height: 1.35 !important;
     }
 
     html.dark.pdf-export-active body #resumeContent *,
@@ -202,17 +220,22 @@
       }
 
       html.dark body #resumeContent h1,
+      body #resumeContent h1,
+      h1 {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+      }
+
       html.dark body #resumeContent h2,
       html.dark body #resumeContent .title-font,
-      body #resumeContent h1,
       body #resumeContent h2,
       body #resumeContent .title-font,
-      h1,
       h2,
       .title-font {
         border-bottom: 1.5px solid #0f172a !important;
-        padding-bottom: 2px !important;
-        margin-bottom: 4px !important;
+        padding-bottom: 5px !important;
+        margin-bottom: 8px !important;
+        line-height: 1.35 !important;
       }
 
       /* Compact vertical rhythm to ensure 2-page fit */
@@ -328,7 +351,7 @@
             <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" target="_blank" rel="noopener noreferrer" href="https://links.stefan-kramer.example.com/">Portfolio</a>
           </nav>
           <div class="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start no-print">
-            <button type="button" onclick="downloadPdfHandler()"
+            <button type="button" id="downloadPdf" onclick="downloadPdfHandler()"
               class="rounded-md bg-[#cc785c] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#a9583e] focus:outline-none focus:ring-2 focus:ring-[#cc785c] focus:ring-offset-2"
               data-lang-en="Download CV (PDF)" data-lang-de="Lebenslauf als PDF herunterladen">
               Download CV (PDF)
@@ -739,7 +762,7 @@
     </div>
   </footer>
  
-  <div class="fixed top-4 right-4 flex flex-col space-y-3 no-print">  <!-- Print and Download Buttons -->
+  <div class="fixed top-4 right-4 flex flex-col space-y-3 no-print">  <!-- Language and Theme Buttons -->
     <button onClick="switchLanguage()"
       class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
       aria-label="Switch Language">
@@ -750,18 +773,6 @@
       class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
       aria-label="Toggle Theme">
       <i data-lucide="sun-moon" class="w-5 h-5 text-gray-700 dark:text-gray-400"></i>
-    </button>
-
-    <button onClick="window.print()"
-      class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
-      aria-label="Print Page">
-      <i data-lucide="Printer" class="w-5 h-5 text-gray-700 dark:text-gray-400"></i>
-    </button>
-
-    <button onclick="downloadPdfHandler()" id="downloadPdf"
-      class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
-      aria-label="Download Page">
-      <i data-lucide="Download" class="w-5 h-5 text-gray-700 dark:text-gray-400"></i>
     </button>
   </div>
 
