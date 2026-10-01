@@ -5,6 +5,10 @@
     # Compression
     encode gzip zstd
 
+    # Legacy root profile image fallback
+    @rootProfiles path /*-profile.webp
+    rewrite @rootProfiles /assets/profiles{path}
+
     # Single-page routing fallback
     try_files {path} {path}/ /index.html
 
