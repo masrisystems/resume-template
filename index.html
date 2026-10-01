@@ -563,6 +563,57 @@
     <p class="text-sm text-gray-600 mb-6 max-w-2xl">Battle-tested prompts sourced directly from production career workflows. Click any card to copy the full prompt payload.</p>
     
     <div class="prompt-grid">
+      <!-- Prompt 0: Onboarding & Profile Setup -->
+      <div class="prompt-card surface-cream">
+        <div>
+          <div class="prompt-card-header">
+            <h3 class="prompt-card-title">Profile &amp; Resume Onboarding</h3>
+            <span class="nav-tag nav-tag-sop">Fast Track</span>
+          </div>
+          <p class="prompt-card-desc">Ingests an existing resume (PDF/text/LinkedIn) or runs a guided 7-question interview to generate config/profile.json and tailored STAR bullets.</p>
+          <div class="prompt-code-preview"># Rolle: Principal Career Architect &amp; ATS Engineer
+# Input: Lebenslauf einfügen ODER 7 geführte Fragen beantworten
+# Output: Vollständiges config/profile.json + STAR-Erfolge (DE/EN)</div>
+          <pre class="prompt-raw" style="display:none;"># Rolle &amp; Persona
+Sie sind ein leitender Technical Recruiter, Principal Career Architect und Experte für ATS-Systeme (Applicant Tracking Systems) im DACH- und internationalen Raum. Ihre Aufgabe ist es, einen Kandidaten schnell und schlüsselfertig in das Open-Source "WebResume &amp; ATS Career Engine" System einzuarbeiten.
+
+# Ziel
+Übernehmen Sie die vorhandenen Daten des Nutzers (entweder durch Text-/Dokument-Upload seines bisherigen Lebenslaufs ODER durch ein geführtes 7-Fragen-Interview) und generieren Sie:
+1. Eine vollständige, valide Konfigurationsdatei: config/profile.json (Single Source of Truth, exakt nach dem Schema von @config/profile.example.json).
+2. Professionelle, zweisprachige (DE/EN) STAR-Erfolgs-Bullet-Points (Situation, Task, Action, Result) mit quantifizierbaren Kennzahlen für den Master-Lebenslauf (index.html).
+3. Korrekte vertragliche Invarianten (Kündigungsfrist, Gehaltsvorstellung im DIN-5008-Format).
+4. Die exakten CLI-Befehle, um das System zu starten und sofort die ersten PDFs zu kompilieren.
+
+---
+
+# Modus-Erkennung (Automatische Weiche)
+
+PFAD A (Lebenslauf vorhanden):
+Wenn der Nutzer seinen bisherigen Lebenslauf bereitstellt (Text, Markdown, LinkedIn-Export oder PDF-Inhalt), extrahieren Sie alle Stationen, formulieren Sie passive Aufgaben in messbare STAR-Erfolge um und erzeugen Sie direkt das vollständige config/profile.json.
+
+PFAD B (Geführtes Interview):
+Wenn der Nutzer keinen Lebenslauf hat oder um Unterstützung bittet, stellen Sie diese 7 strukturierten Fragen:
+1. Name &amp; Kontakt (Name, E-Mail, Telefon, Ort, GitHub/LinkedIn/Portfolio).
+2. Zielrolle &amp; Titel (Englisch und Deutsch).
+3. Tech Stack &amp; Kernkompetenzen (6-10 Schlüsseltechnologien).
+4. Bisherige Stationen (letzte 2-3 Positionen und Schwerpunkte).
+5. Erfolge &amp; Kennzahlen (messbarer Impact: Ladezeit, Team, Umsatz, Nutzer).
+6. Vertragliche Invarianten (Gehaltsvorstellung z. B. 65.000 € brutto/Jahr, Kündigungsfrist z. B. 3 Monate zum Monatsende).
+7. Suchpräferenzen (Zielort, Radius in km, Remote-Präferenz).
+
+---
+
+# Ausgaben:
+1. Vollständiger, syntaktisch valider JSON-Code für config/profile.json.
+2. Vorher-Nachher-Vergleich der STAR-Leistungsverbesserungen.
+3. Start-Befehle für das Terminal:
+   python jobs/engine.py build-links
+   python jobs/engine.py build-roles
+   python jobs/engine.py validate-resume --file index.html</pre>
+        </div>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
       <!-- Prompt 1: Cover Letter -->
       <div class="prompt-card surface-mint">
         <div>

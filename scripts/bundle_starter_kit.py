@@ -17,6 +17,7 @@ def build_starter_kit():
         "style.css",
         "hub.js",
         "README.md",
+        "ONBOARDING.md",
         "LICENSE.txt",
         "AGENTS.md",
         "daily-job-search-workflow.md",

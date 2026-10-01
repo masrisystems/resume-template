@@ -26,6 +26,8 @@
 
 ## 🚀 Quick Start
 
+> 💡 **New here? Check out the [Onboarding Guide (ONBOARDING.md)](ONBOARDING.md)** for a guided 5-minute setup using our interactive AI onboarding prompt (paste your existing resume or answer 7 quick questions).
+
 ### 1. Clone & Setup Configuration
 Choose from one of the pre-configured profile templates:
 - **Fullstack Software Engineer:** `config/profile.example.json` (Alex Morgan, Berlin)
@@ -38,7 +40,7 @@ Copy your preferred profile template to create your active configuration:
 ```bash
 cp config/profile.example.json config/profile.json
 ```
-Edit `config/profile.json` with your personal details, target salary, notice period, and preferred search locations.
+Edit `config/profile.json` with your personal details, target salary, notice period, and preferred search locations (or let the [AI Onboarding Prompt](jobs/prompts/onboarding_profile_prompt.txt) generate it automatically from your old resume).
 You can also run any engine command directly against a specific profile using `--profile [path]`.
 
 ### 2. Render Search Links Dashboard
