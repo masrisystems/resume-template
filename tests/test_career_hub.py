@@ -234,6 +234,45 @@ class TestCareerHub(unittest.TestCase):
         self.assertIn("Auto-Generate Resume & Cover Letter", stage_titles[2])
         self.assertIn("Submit, Record It & You're Done!", stage_titles[3])
 
+    def test_14_responsive_navigation_and_drawer(self):
+        with open(self.index_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        soup = BeautifulSoup(content, "html.parser")
+
+        top_nav = soup.find(id="top-nav")
+        self.assertIsNotNone(top_nav, "Missing #top-nav")
+
+        # 1. Nav toggle button
+        toggle_btn = top_nav.find(id="nav-toggle-btn")
+        self.assertIsNotNone(toggle_btn, "Missing #nav-toggle-btn hamburger button in #top-nav")
+        self.assertEqual(toggle_btn.get("aria-controls"), "nav-drawer")
+        self.assertEqual(toggle_btn.get("aria-expanded"), "false")
+        self.assertIsNotNone(toggle_btn.find(id="nav-icon-menu"), "Missing #nav-icon-menu SVG in toggle button")
+        self.assertIsNotNone(toggle_btn.find(id="nav-icon-close"), "Missing #nav-icon-close SVG in toggle button")
+
+        # 2. Mobile Nav Drawer
+        drawer = top_nav.find(id="nav-drawer")
+        self.assertIsNotNone(drawer, "Missing #nav-drawer element")
+        drawer_classes = drawer.get("class", [])
+        self.assertIn("nav-drawer", drawer_classes)
+
+        # 3. Drawer Links point to valid sections
+        drawer_links = drawer.select("a[href^='#']")
+        self.assertGreaterEqual(len(drawer_links), 7, "Mobile drawer must contain at least 7 section anchor links")
+        for a in drawer_links:
+            anchor_id = a.get("href").lstrip("#")
+            self.assertIsNotNone(soup.find(id=anchor_id), f"Drawer link {a.get('href')} points to non-existent ID #{anchor_id}")
+
+        # 4. Drawer contains download CTA
+        drawer_cta = drawer.select_one("a[download]")
+        self.assertIsNotNone(drawer_cta, "Mobile drawer must contain starter kit download CTA")
+
+        # 5. Check hub.js contains mobile navigation controller functions
+        with open(self.hub_js_path, "r", encoding="utf-8") as f:
+            js = f.read()
+        self.assertIn("function toggleMobileNav", js)
+        self.assertIn("function closeMobileNav", js)
+
 if __name__ == "__main__":
     unittest.main()
 
