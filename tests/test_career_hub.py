@@ -68,5 +68,23 @@ class TestCareerHub(unittest.TestCase):
                 self.assertTrue(any("profile.example.json" in n for n in names), "Missing profile.example.json in ZIP")
                 self.assertTrue(any("cover_letter_prompt.txt" in n for n in names), "Missing prompt files in ZIP")
 
+    def test_07_hub_js_syntax_and_invariants(self):
+        self.assertTrue(os.path.exists(self.hub_js_path), "hub.js must exist")
+        with open(self.hub_js_path, "r", encoding="utf-8") as f:
+            js_content = f.read()
+
+        # Check required handlers exist
+        self.assertIn("function copyPrompt", js_content)
+        self.assertIn("function switchPersona", js_content)
+        self.assertIn("function toggleAtsMode", js_content)
+
+        # Zero emojis invariant in JS
+        emoji_pattern = re.compile(
+            "[\U00010000-\U0010ffff\u2600-\u26ff\u2700-\u27bf\U0001f300-\U0001f9ff]",
+            flags=re.UNICODE
+        )
+        matches = emoji_pattern.findall(js_content)
+        self.assertEqual(len(matches), 0, f"Prohibited emojis found in hub.js: {set(matches)}")
+
 if __name__ == "__main__":
     unittest.main()
