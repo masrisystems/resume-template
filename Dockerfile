@@ -20,8 +20,6 @@ COPY download.html ./download.html
 COPY style.css ./style.css
 COPY hub.js ./hub.js
 COPY config ./config
-COPY alex-morgan-profile.webp ./alex-morgan-profile.webp
-COPY stefan-kramer-profile.webp ./stefan-kramer-profile.webp
 COPY assets ./assets
 COPY workflows ./workflows
 COPY robots.txt ./robots.txt
