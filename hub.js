@@ -113,21 +113,21 @@ const ARCHETYPES = {
     title_en: "Lead Cloud DevOps & Platform Architect",
     title_de: "Lead Cloud DevOps & Plattform Architektin",
     file: "./jobs/roles/html/ai_product_engineer.html",
-    avatar: "./assets/profiles/alex-morgan-profile.webp"
+    avatar: "./assets/profiles/elena-becker-profile.webp"
   },
   designer: {
     name: "Julian Richter",
     title_en: "Staff Product Designer & Design Systems Lead",
     title_de: "Staff Product Designer & Design Systems Lead",
     file: "./jobs/roles/html/frontend_ui_architect.html",
-    avatar: "./assets/profiles/alex-morgan-profile.webp"
+    avatar: "./assets/profiles/julian-richter-profile.webp"
   },
   finance: {
     name: "Clara Lindemann",
     title_en: "Senior Financial Controller & FP&A Lead",
     title_de: "Senior Financial Controllerin & FP&A Spezialistin",
     file: "./resume.html",
-    avatar: "./assets/profiles/alex-morgan-profile.webp"
+    avatar: "./assets/profiles/clara-lindemann-profile.webp"
   }
 };
 

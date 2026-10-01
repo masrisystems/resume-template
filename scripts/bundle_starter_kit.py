@@ -23,6 +23,9 @@ def build_starter_kit():
         "daily-job-search-workflow.md",
         "daily-job-search-links.md",
         "alex-morgan-profile.webp",
+        "elena-becker-profile.webp",
+        "julian-richter-profile.webp",
+        "clara-lindemann-profile.webp",
         "stefan-kramer-profile.webp",
         "run_engine.py",
     ]

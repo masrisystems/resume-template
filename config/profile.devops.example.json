@@ -12,7 +12,8 @@
     "links_url": "https://links.elena-becker.example.com",
     "prohibited_domains": [
       "resume.elena-becker.example.com"
-    ]
+    ],
+    "avatar": "./assets/profiles/elena-becker-profile.webp"
   },
   "invariants": {
     "target_salary_gross_eur": 82000,

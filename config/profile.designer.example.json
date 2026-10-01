@@ -12,7 +12,8 @@
     "links_url": "https://links.julian-richter.example.com",
     "prohibited_domains": [
       "resume.julian-richter.example.com"
-    ]
+    ],
+    "avatar": "./assets/profiles/julian-richter-profile.webp"
   },
   "invariants": {
     "target_salary_gross_eur": 70000,

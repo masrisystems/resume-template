@@ -912,6 +912,75 @@ Erstellen Sie ein valides JSON-Dokument unter 'jobs/roles/{{ROLE_ID}}.json' mit 
 1. Spacing-Invariante: NIEMALS Bindestriche für technische Komposita verwenden (REST APIs, CI/CD Pipelines, MCP Tools, Cloud Architekturen).
 2. Authentizität: Nur Fähigkeiten aufnehmen, die durch reale Projekte und nachweisbare Meilensteine belegt werden können.
 3. DOM-Parität: Sicherstellen, dass die Skills nahtlos in das 4-Kategorien-Schema von resume.html und engine.py passen.</pre>
+      <!-- Prompt 9: Salary Negotiation & Counter-Offer -->
+      <div class="prompt-card surface-peach">
+        <div>
+          <div class="prompt-card-header">
+            <h3 class="prompt-card-title">Salary Negotiation &amp; Counter-Offer</h3>
+          </div>
+          <p class="prompt-card-desc">Benchmarks market compensation, calculates total package value, and writes confident counter-offer negotiation scripts.</p>
+          <div class="prompt-code-preview"># Rolle: Executive Compensation Advisor &amp; Verhandlungscoach
+# Hebel: STAR-Erfolge als geschäftliche Begründung nutzen
+# Output: E-Mail-Gegenangebot + Telefon-Leitfaden (DE &amp; EN)</div>
+          <pre class="prompt-raw" style="display:none;"># Rolle &amp; Persona
+Sie sind ein erfahrener Executive Compensation Advisor, Verhandlungscoach und Senior Tech Recruiter im europäischen Markt. Ihr Ziel ist es, dem Kandidaten eine wasserdichte Gehaltsverhandlungs- und Gegenangebotsstrategie (Counter-Offer Script) zu erstellen.
+
+# Kontext &amp; Eingaben
+Ich werde Ihnen folgende Daten bereitstellen:
+1. Meine vertraglichen Invarianten aus @config/profile.json (Zielgehalt, Kündigungsfrist, bisherige Rolle).
+2. Das vorliegende Jobangebot (Grundgehalt, Boni, Remote-Regelung, Zusatzleistungen).
+3. Optionale Kontextdaten (Unternehmen, Standort, Kununu-/Levels.fyi-Gehaltsbenchmarks).
+
+# Anweisungen
+1. Marktwert-Benchmark &amp; Total Compensation Analyse:
+   - Analysieren Sie das Angebot im Vergleich zum Branchendurchschnitt (DACH-Raum für Software Engineers / IT-Spezialisten).
+   - Bewerten Sie das Gesamtpaket (Total Compensation: Fixgehalt, variabler Bonus, Remote-Pauschale, betriebliche Altersvorsorge, Weiterbildungsbudget, Urlaubstage).
+2. Hebel &amp; Argumentationskette (Leverage):
+   - Identifizieren Sie 3 stichhaltige, fachliche Argumente basierend auf meinen bisherigen messbaren Erfolgen (STAR-Kennzahlen aus dem Lebenslauf).
+   - Verknüpfen Sie den geforderten Mehrwert direkt mit den geschäftlichen Zielen der Zielposition.
+3. Verhandlungs-Skripte (DE &amp; EN):
+   - Erstellen Sie zwei einsatzbereite Formulierungsvorschläge:
+     a) E-Mail-Gegenangebot: Professionell, wertschätzend, aber bestimmt und faktenbasiert.
+     b) Telefon-Leitfaden: Stichpunkte und exakte Formulierungen für das mündliche Verhandlungsgespräch mit dem HR-Leiter / Hiring Manager.
+4. Konzessions-Matrix (Plan B):
+   - Falls das Budget für das Grundgehalt fix ist: Welche alternativen Hebel können verhandelt werden (z. B. Sign-on-Bonus, garantierte Gehaltsüberprüfung nach 6 Monaten Probezeit, 100% Remote, zusätzlicher Urlaub)?</pre>
+        </div>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
+      <!-- Prompt 10: LinkedIn Profile Optimizer -->
+      <div class="prompt-card surface-yellow">
+        <div>
+          <div class="prompt-card-header">
+            <h3 class="prompt-card-title">LinkedIn Profile Optimizer</h3>
+          </div>
+          <p class="prompt-card-desc">Transforms your candidate profile into a high-converting, recruiter-optimized LinkedIn headline, About section, and experience bullets.</p>
+          <div class="prompt-code-preview"># Rolle: Personal Branding &amp; Executive Tech Headhunter
+# Fokus: Recruiter-Suche, STAR-Hook, Info-Storytelling
+# Richtlinie: Null Emojis, exakte Fachbegriffe mit Leerzeichen</div>
+          <pre class="prompt-raw" style="display:none;"># Rolle &amp; Persona
+Sie sind ein LinkedIn Top Voice Experte, Personal Branding Stratege und Executive Tech Headhunter. Ihre Mission ist es, das LinkedIn-Profil des Kandidaten basierend auf @config/profile.json und @index.html für maximale Sichtbarkeit bei Recruitern und Algorithmen zu optimieren.
+
+# Aufgabe
+Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update (auf Deutsch und Englisch), das passive Anfragen von Top-Arbeitgebern anzieht.
+
+# Anweisungen
+1. Recruiter-Optimierte Headline (3 Varianten):
+   - Variante 1 (Keyword &amp; Search Heavy): Optimiert für die LinkedIn-Recruiter-Suche mit Kern-Skills und Titel.
+   - Variante 2 (Value &amp; Outcome Driven): Fokus auf geschäftlichen Mehrwert und messbare Resultate.
+   - Variante 3 (Hybrid &amp; Punchy): Ausgewogene Balance aus Position, Tech-Stack und Spezialisierung.
+2. Fesselnder Info / About-Bereich (Storytelling Framework):
+   - Der Hook (Zeilen 1-3 vor 'Mehr anzeigen'): Weckt sofortiges Interesse mit einem klaren Alleinstellungsmerkmal.
+   - Der Kern (Tech Stack &amp; Philosophie): Architektur-Prinzipien, Lieblingstools und Problemlösungskompetenz.
+   - Messbare Meilensteine: 3-4 quantifizierte Erfolge aus dem Master-Lebenslauf.
+   - Call to Action &amp; Kontaktdaten: Klare Einladung zum Netzwerken mit E-Mail und Portfolio-Link.
+3. Optimierung der Berufserfahrung (Experience Section):
+   - Strukturierung der letzten Positionen mit 3-5 prägnanten STAR-Bullet-Points.
+4. Skill-Matrix &amp; Top 5 Skills:
+   - Auswahl der 5 wichtigsten Skills für das LinkedIn-Profil.
+5. Richtlinien:
+   - Keine Emojis im Text (wirkt im europäischen B2B-Tech-Umfeld unseriös).
+   - Strikte Schreibweise mit Leerzeichen bei Fachbegriffen (z. B. REST APIs, CI/CD Pipelines, Fullstack Entwickler).</pre>
         </div>
         <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
       </div>

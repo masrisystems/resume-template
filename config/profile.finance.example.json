@@ -12,7 +12,8 @@
     "links_url": "https://links.clara-lindemann.example.com",
     "prohibited_domains": [
       "resume.clara-lindemann.example.com"
-    ]
+    ],
+    "avatar": "./assets/profiles/clara-lindemann-profile.webp"
   },
   "invariants": {
     "target_salary_gross_eur": 75000,
