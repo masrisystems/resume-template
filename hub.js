@@ -758,11 +758,84 @@ function updatePlayButtonUI() {
   }
 }
 
+// Mobile Navigation Drawer Controller
+function toggleMobileNav() {
+  const drawer = document.getElementById('nav-drawer');
+  const toggleBtn = document.getElementById('nav-toggle-btn');
+  const iconMenu = document.getElementById('nav-icon-menu');
+  const iconClose = document.getElementById('nav-icon-close');
+
+  if (!drawer || !toggleBtn) return;
+
+  const isOpen = drawer.classList.contains('is-open');
+
+  if (isOpen) {
+    closeMobileNav();
+  } else {
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    if (iconMenu && iconClose) {
+      iconMenu.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+    }
+  }
+}
+
+function closeMobileNav() {
+  const drawer = document.getElementById('nav-drawer');
+  const toggleBtn = document.getElementById('nav-toggle-btn');
+  const iconMenu = document.getElementById('nav-icon-menu');
+  const iconClose = document.getElementById('nav-icon-close');
+
+  if (!drawer) return;
+
+  drawer.classList.remove('is-open');
+  drawer.setAttribute('aria-hidden', 'true');
+  if (toggleBtn) {
+    toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+  if (iconMenu && iconClose) {
+    iconMenu.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+  }
+}
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) {
     lucide.createIcons();
   }
+
+  // Close mobile drawer when pressing Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const drawer = document.getElementById('nav-drawer');
+      if (drawer && drawer.classList.contains('is-open')) {
+        closeMobileNav();
+        const toggleBtn = document.getElementById('nav-toggle-btn');
+        if (toggleBtn) toggleBtn.focus();
+      }
+    }
+  });
+
+  // Close mobile drawer when clicking outside top-nav
+  document.addEventListener('click', (e) => {
+    const topNav = document.getElementById('top-nav');
+    const drawer = document.getElementById('nav-drawer');
+    if (topNav && drawer && drawer.classList.contains('is-open')) {
+      if (!topNav.contains(e.target)) {
+        closeMobileNav();
+      }
+    }
+  });
+
+  // Close mobile drawer on desktop resize (> 900px)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      closeMobileNav();
+    }
+  });
 
   // Initialize Simulation Deck Stage 1
   renderSimStage(1);

@@ -90,7 +90,7 @@
   <link rel="stylesheet" href="./style.css">
 
   <!-- Top Navigation (Pinned Editorial Header) -->
-  <nav id="top-nav" class="no-print">
+  <nav id="top-nav" class="no-print" aria-label="Main Navigation">
     <div class="hub-container top-nav-inner">
       <a href="#hero" class="nav-brand" aria-label="Career Engine Homepage">
         <img src="./assets/masrisystems-logo-light.webp" alt="Masri Systems" class="nav-logo nav-logo-light" />
@@ -98,7 +98,7 @@
         <span class="nav-brand-title">Career Engine</span>
         <span class="nav-tag">Open Source</span>
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links desktop-nav-links">
         <li><a href="#daily-workflow" class="nav-link">Daily Routine</a></li>
         <li><a href="#brief-showcase" class="nav-link">Results</a></li>
         <li><a href="#prompts" class="nav-link">AI Prompts</a></li>
@@ -112,9 +112,43 @@
           <span class="theme-label-light hidden dark:inline">Light</span>
           <span class="theme-label-dark inline dark:hidden">Dark</span>
         </button>
-        <button id="lang-toggle-nav-btn" class="btn-pill-sm" onclick="switchLanguage()">EN / DE</button>
-        <a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-pill-sm">Portfolio</a>
-        <a href="./download/resume-template-starter.zip" download="resume-template-starter.zip" class="btn-primary btn-nav-cta">Download Kit</a>
+        <div class="nav-desktop-actions">
+          <button id="lang-toggle-nav-btn" class="btn-pill-sm" onclick="switchLanguage()">EN / DE</button>
+          <a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-pill-sm">Portfolio</a>
+          <a href="./download/resume-template-starter.zip" download="resume-template-starter.zip" class="btn-primary btn-nav-cta">Download Kit</a>
+        </div>
+        <button id="nav-toggle-btn" class="nav-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-drawer" onclick="toggleMobileNav()">
+          <svg id="nav-icon-menu" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg id="nav-icon-close" class="h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Navigation Drawer -->
+    <div id="nav-drawer" class="nav-drawer no-print" aria-hidden="true">
+      <div class="nav-drawer-inner">
+        <ul class="nav-links mobile-nav-links">
+          <li><a href="#daily-workflow" class="drawer-link" onclick="closeMobileNav()">Daily Routine</a></li>
+          <li><a href="#brief-showcase" class="drawer-link" onclick="closeMobileNav()">Results</a></li>
+          <li><a href="#prompts" class="drawer-link" onclick="closeMobileNav()">AI Prompts</a></li>
+          <li><a href="#cover-letters" class="drawer-link" onclick="closeMobileNav()">Cover Letters</a></li>
+          <li><a href="#engine" class="drawer-link" onclick="closeMobileNav()">CLI Engine</a></li>
+          <li><a href="#workflows" class="drawer-link" onclick="closeMobileNav()">Skills</a></li>
+          <li><a href="#resume" class="drawer-link" onclick="closeMobileNav()">Web Resume</a></li>
+        </ul>
+        <div class="nav-drawer-actions">
+          <div class="nav-drawer-row">
+            <button class="btn-pill-sm drawer-pill-btn" onclick="switchLanguage()">EN / DE</button>
+            <a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-pill-sm drawer-pill-btn">Portfolio</a>
+          </div>
+          <a href="./download/resume-template-starter.zip" download="resume-template-starter.zip" class="btn-primary drawer-cta-btn">Download Kit</a>
+        </div>
       </div>
     </div>
   </nav>
