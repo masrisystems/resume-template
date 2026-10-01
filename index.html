@@ -334,8 +334,10 @@
   <!-- Top Navigation (Pinned Editorial Header) -->
   <nav id="top-nav" class="no-print">
     <div class="hub-container top-nav-inner">
-      <a href="#hero" class="nav-brand">
-        WebResume &amp; Career Engine
+      <a href="#hero" class="nav-brand" aria-label="Career Engine Homepage">
+        <img src="./assets/masrisystems-logo-light.webp" alt="Masri Systems" class="nav-logo nav-logo-light" />
+        <img src="./assets/masrisystems-logo-dark.webp" alt="Masri Systems" class="nav-logo nav-logo-dark" />
+        <span class="nav-brand-title">Career Engine</span>
         <span class="nav-tag">Open Source</span>
       </a>
       <ul class="nav-links">
@@ -346,12 +348,11 @@
         <li><a href="#engine" class="nav-link">CLI Engine</a></li>
         <li><a href="#workflows" class="nav-link">Skills</a></li>
         <li><a href="#resume" class="nav-link">Web Resume</a></li>
-        <li><a href="#download" class="nav-link">Download Kit</a></li>
       </ul>
       <div class="nav-controls">
         <button id="lang-toggle-nav-btn" class="btn-pill-sm" onclick="switchLanguage()">EN / DE</button>
         <a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-pill-sm">Portfolio</a>
-        <a href="#download" class="btn-primary" style="padding: 8px 16px; font-size: 13.5px;">Download Kit</a>
+        <a href="#download" class="btn-primary btn-nav-cta">Download Kit</a>
       </div>
     </div>
   </nav>
