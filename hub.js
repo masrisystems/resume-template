@@ -60,35 +60,40 @@ function copyPrompt(btn) {
 
 // Pre-defined Archetype Data
 const ARCHETYPES = {
+  engineering: {
+    name: "Stefan Kramer",
+    title_en: "Senior Systems & Mechanical Engineer (M.Sc.)",
+    title_de: "Senior Entwicklungsingenieur Maschinenbau (M.Sc.)",
+    file: "./resume.html",
+    avatar: "stefan-kramer-profile.webp"
+  },
   fullstack: {
     name: "Alex Morgan",
     title_en: "Senior Fullstack Engineer & AI Solutions Architect",
     title_de: "Senior Fullstack Entwickler & KI Lösungsarchitekt",
+    file: "./jobs/roles/html/fullstack_laravel.html",
     avatar: "alex-morgan-profile.webp"
   },
   devops: {
     name: "Elena Becker",
     title_en: "Lead Cloud DevOps & Platform Architect",
     title_de: "Lead Cloud DevOps & Plattform Architektin",
+    file: "./jobs/roles/html/ai_product_engineer.html",
     avatar: "alex-morgan-profile.webp"
   },
   designer: {
     name: "Julian Richter",
     title_en: "Staff Product Designer & Design Systems Lead",
     title_de: "Staff Product Designer & Design Systems Lead",
+    file: "./jobs/roles/html/frontend_ui_architect.html",
     avatar: "alex-morgan-profile.webp"
   },
   finance: {
     name: "Clara Lindemann",
     title_en: "Senior Financial Controller & FP&A Lead",
     title_de: "Senior Financial Controllerin & FP&A Spezialistin",
+    file: "./resume.html",
     avatar: "alex-morgan-profile.webp"
-  },
-  engineering: {
-    name: "Stefan Kramer",
-    title_en: "Senior Systems & Mechanical Engineer (M.Sc.)",
-    title_de: "Senior Entwicklungsingenieur Maschinenbau (M.Sc.)",
-    avatar: "stefan-kramer-profile.webp"
   }
 };
 
@@ -97,24 +102,14 @@ function switchPersona(personaKey) {
   const data = ARCHETYPES[personaKey];
   if (!data) return;
 
-  // Update name in header
-  const nameEl = document.querySelector('#header h1');
-  if (nameEl) nameEl.textContent = data.name;
+  const frame = document.getElementById('resumeFrame');
+  const standaloneLink = document.getElementById('resume-standalone-link');
 
-  // Update subtitle
-  const titleEl = document.querySelector('#header h2');
-  if (titleEl) {
-    titleEl.setAttribute('data-lang-en', data.title_en);
-    titleEl.setAttribute('data-lang-de', data.title_de);
-    const currentLang = document.documentElement.lang || 'en';
-    titleEl.textContent = currentLang === 'de' ? data.title_de : data.title_en;
+  if (frame && data.file) {
+    frame.src = data.file;
   }
-
-  // Update avatar
-  const avatarEl = document.querySelector('#header img');
-  if (avatarEl && data.avatar) {
-    avatarEl.src = data.avatar;
-    avatarEl.alt = data.name;
+  if (standaloneLink && data.file) {
+    standaloneLink.href = data.file;
   }
 
   // Update pill active states
@@ -129,12 +124,43 @@ function switchPersona(personaKey) {
   showToast(`Switched preview to ${data.name} (${personaKey})`);
 }
 
+// Print Resume Frame
+function printResumeFrame() {
+  const frame = document.getElementById('resumeFrame');
+  if (frame && frame.contentWindow) {
+    try {
+      frame.contentWindow.focus();
+      frame.contentWindow.print();
+      return;
+    } catch (e) {
+      console.warn('Frame print cross-origin or restricted, falling back to open', e);
+    }
+  }
+  window.open('./resume.html', '_blank');
+}
+
 // ATS Plain Text Mode Toggle
 function toggleAtsMode() {
+  const frame = document.getElementById('resumeFrame');
   const paper = document.getElementById('resume-paper');
-  if (!paper) return;
-  paper.classList.toggle('ats-plain-mode');
-  const isAts = paper.classList.contains('ats-plain-mode');
+  let isAts = false;
+
+  if (frame && frame.contentDocument) {
+    try {
+      const doc = frame.contentDocument;
+      const target = doc.getElementById('resumeContent') || doc.body;
+      target.classList.toggle('ats-plain-mode');
+      isAts = target.classList.contains('ats-plain-mode');
+    } catch (e) {
+      console.warn('Cannot access frame document', e);
+    }
+  }
+
+  if (paper) {
+    paper.classList.toggle('ats-plain-mode');
+    if (!isAts) isAts = paper.classList.contains('ats-plain-mode');
+  }
+
   showToast(isAts ? 'ATS plain-text preview active' : 'Standard visual layout active');
 }
 

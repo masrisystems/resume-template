@@ -11,6 +11,8 @@ def build_starter_kit():
     # Specific files and directories to include
     include_files = [
         "index.html",
+        "resume.html",
+        "download.html",
         "style.css",
         "hub.js",
         "README.md",

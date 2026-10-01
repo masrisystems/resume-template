@@ -11,7 +11,7 @@ CONFIGS_DIR = JOBS_DIR / "configs"
 ROLES_DIR = JOBS_DIR / "roles"
 ROLES_HTML_DIR = ROLES_DIR / "html"
 ROLES_PDF_DIR = ROLES_DIR / "pdf"
-MASTER_INDEX = BASE_DIR / "index.html"
+MASTER_INDEX = (BASE_DIR / "resume.html") if (BASE_DIR / "resume.html").exists() else (BASE_DIR / "index.html")
 CONFIG_DIR = BASE_DIR / "config"
 
 ACTIVE_PROFILE_PATH = None

@@ -86,5 +86,28 @@ class TestCareerHub(unittest.TestCase):
         matches = emoji_pattern.findall(js_content)
         self.assertEqual(len(matches), 0, f"Prohibited emojis found in hub.js: {set(matches)}")
 
+    def test_08_resume_html_separation(self):
+        resume_path = os.path.join(self.root_dir, "resume.html")
+        self.assertTrue(os.path.exists(resume_path), "resume.html must exist as standalone resume")
+        with open(resume_path, "r", encoding="utf-8") as f:
+            resume_content = f.read()
+
+        self.assertIn('id="resumeContent"', resume_content, "resume.html must contain #resumeContent")
+
+        # Zero emojis in resume.html
+        emoji_pattern = re.compile(
+            "[\U00010000-\U0010ffff\u2600-\u26ff\u2700-\u27bf\U0001f300-\U0001f9ff]",
+            flags=re.UNICODE
+        )
+        matches = emoji_pattern.findall(resume_content)
+        self.assertEqual(len(matches), 0, f"Found prohibited emojis in resume.html: {set(matches)}")
+
+        # index.html should not duplicate resumeContent
+        with open(self.index_path, "r", encoding="utf-8") as f:
+            index_content = f.read()
+        self.assertNotIn('id="resumeContent"', index_content, "index.html must not inline #resumeContent")
+        self.assertIn('id="resume-paper"', index_content, "index.html must maintain #resume-paper preview container")
+        self.assertIn('id="resumeFrame"', index_content, "index.html must embed #resumeFrame preview")
+
 if __name__ == "__main__":
     unittest.main()

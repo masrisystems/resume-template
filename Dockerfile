@@ -14,11 +14,14 @@ WORKDIR /usr/share/caddy
 
 # Copy static assets and built download package
 COPY index.html ./index.html
+COPY resume.html ./resume.html
+COPY download.html ./download.html
 COPY style.css ./style.css
 COPY hub.js ./hub.js
 COPY alex-morgan-profile.webp ./alex-morgan-profile.webp
 COPY stefan-kramer-profile.webp ./stefan-kramer-profile.webp
 COPY robots.txt ./robots.txt
+COPY jobs/roles ./jobs/roles
 COPY --from=builder /build/download/resume-template-starter.zip ./download/resume-template-starter.zip
 
 # Copy Caddyfile configuration
