@@ -1,0 +1,17 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.pyc
+*.pyo
+.agents
+.claude
+.gemini
+content/private
+jobs/resumes
+jobs/cover_letters
+jobs/job_matches.md
+tests
+scratch
+docs
+*.pdf
