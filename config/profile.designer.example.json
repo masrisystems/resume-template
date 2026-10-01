@@ -1,0 +1,91 @@
+{
+  "candidate": {
+    "name": "Julian Richter",
+    "title_en": "Senior UI/UX & Digital Product Designer",
+    "title_de": "Senior UI/UX & Digital Product Designer",
+    "address_street": "Neuer Wall 88",
+    "address_city": "20354 Hamburg",
+    "postal_code": "20354",
+    "phone": "+49 40 12345678",
+    "email": "julian.richter@example.com",
+    "portfolio_url": "https://julian-richter.example.com",
+    "links_url": "https://links.julian-richter.example.com",
+    "prohibited_domains": [
+      "resume.julian-richter.example.com"
+    ]
+  },
+  "invariants": {
+    "target_salary_gross_eur": 70000,
+    "target_salary_phrase_de": "70.000 Euro brutto im Jahr",
+    "notice_period_de": "dreimonatigen Kündigungsfrist zum Monatsende, im Einvernehmen gern auch kurzfristiger",
+    "default_location_city": "Hamburg"
+  },
+  "search_preferences": {
+    "role_keyword": "UI/UX Designer",
+    "target_stack": [
+      "Figma Design",
+      "Design Systems & Token Architecture",
+      "User Research & Usability Testing",
+      "Interactive Prototyping",
+      "Information Architecture & Wireframing",
+      "HTML5 & Modern CSS / Tailwind CSS",
+      "Accessibility & WCAG 2.2 AA",
+      "Design Sprint Moderation",
+      "B2B SaaS Interface Design",
+      "Design QA & Frontend Alignment"
+    ],
+    "experience_level": "Senior Level (5+ Jahre Erfahrung)",
+    "location": "Hamburg",
+    "postal_code": "20354",
+    "radius_km": 25,
+    "remote_focus": "100% Remote (Deutschland/Europa) oder Hybrid Hamburg",
+    "salary_band": {
+      "min_eur": 65000,
+      "max_eur": 80000,
+      "target_eur": 70000
+    }
+  },
+  "search_platforms": [
+    {
+      "name": "LinkedIn Jobs",
+      "category": "Aggregator",
+      "url_template": "https://www.linkedin.com/jobs/search/?keywords={role}&location={location}&f_TPR=r604800&sortBy=DD"
+    },
+    {
+      "name": "StepStone",
+      "category": "Aggregator",
+      "url_template": "https://www.stepstone.de/jobs/{role}/in-{location}?rad={radius_km}"
+    },
+    {
+      "name": "Indeed Germany",
+      "category": "Aggregator",
+      "url_template": "https://de.indeed.com/jobs?q={role}&l={location}&radius={radius_km}&fromage=7"
+    },
+    {
+      "name": "Bundesagentur für Arbeit",
+      "category": "Public",
+      "url_template": "https://www.arbeitsagentur.de/jobsuche/suche?berufsfeld={role}&wo={postal_code}&umkreis={radius_km}"
+    },
+    {
+      "name": "XING Jobs",
+      "category": "Regional / DACH",
+      "url_template": "https://www.xing.com/jobs/search?keywords={role}&location={location}&radius={radius_km}"
+    },
+    {
+      "name": "Workwise",
+      "category": "Direct / Salary-Transparent",
+      "url_template": "https://www.workwise.io/jobs?query={role}&remote=true"
+    },
+    {
+      "name": "Yourfirm (Mittelstand)",
+      "category": "SME",
+      "url_template": "https://www.yourfirm.de/jobs/?q={role}&l={location}&r={radius_km}"
+    }
+  ],
+  "best_practices": [
+    "Suchfilter 'Neueste zuerst' / 'Letzte 7 Tage' verwenden, um frühzeitig im Bewerbungsprozess präsent zu sein.",
+    "Fokus auf Senior UI/UX Designer, Lead Product Designer und Design System Specialist Rollen.",
+    "Immer direkten Link zum interaktiven Portfolio oder Case Study Dossier mitsenden.",
+    "Bewerbungsunterlagen über die standardisierte jobs/engine.py Pipeline generieren und validieren."
+  ]
+}

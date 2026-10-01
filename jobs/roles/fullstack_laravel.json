@@ -1,0 +1,51 @@
+{
+  "role_id": "fullstack_laravel",
+  "title": "{candidate_name} | Senior Fullstack Entwickler (Laravel & Vue.js) — Resume",
+  "og_title": "{candidate_name} | Senior Fullstack Entwickler (Laravel & Vue.js)",
+  "twitter_title": "{candidate_name} | Senior Fullstack Entwickler (Laravel & Vue.js)",
+  "subtitle_en": "Senior Fullstack Developer · PHP 8, Laravel & Vue.js · Inertia.js, Tailwind CSS & APIs",
+  "subtitle_de": "Senior Fullstack Entwickler · PHP 8, Laravel & Vue.js · Inertia.js, Tailwind CSS & APIs",
+  "summary_en": "Senior Fullstack Developer with 5+ years of experience engineering scalable web applications, enterprise portals, and high-performance API architectures. Deep expertise in PHP 8+, Laravel (Eloquent, Queues, Inertia.js), Vue 3 (Composition API, Pinia), and Tailwind CSS. Proven track record in relational database optimization, Docker containerization, automated testing (Pest, PHPUnit), and CI/CD pipelines. 100% remote resident in Germany.",
+  "summary_de": "Senior Fullstack Entwickler mit über 5 Jahren Erfahrung in Konzeption, Architektur und Umsetzung skalierbarer Webanwendungen, Enterprise-Portale und performanter API-Architekturen. Fundierte Expertise in PHP 8+, Laravel (Eloquent, Queues, Inertia.js), Vue 3 (Composition API, Pinia) und Tailwind CSS. Versiert in relationaler Datenbank-Optimierung, Docker-Containerisierung, automatisierten Tests (Pest, PHPUnit) und CI/CD Pipelines. 100% remote in Deutschland.",
+  "skills_frontend": {
+    "heading_en": "Frontend & UI Architecture (Primary)",
+    "heading_de": "Frontend & UI-Architektur (Primär)",
+    "heading_display": "Frontend & UI Architecture",
+    "items": [
+      "<strong>Vue.js 3, Inertia.js & TypeScript</strong> · Moderne SPA/SSR-Architektur, Composition API, Pinia & reactive State",
+      "Moderne Webstandards, HTML5, CSS3, Tailwind CSS & Core Web Vitals 95+ · Barrierefreiheit (WCAG) & Vite Tooling"
+    ]
+  },
+  "skills_backend": {
+    "heading_en": "Backend, APIs & Frameworks (Primary)",
+    "heading_de": "Backend, APIs & Frameworks (Primär)",
+    "heading_display": "Backend, APIs & Frameworks",
+    "items": [
+      "<strong>PHP 8+ & Laravel</strong> · Eloquent ORM, Service Layer, asynchrone Queues, Events & Jobs",
+      "RESTful API & OpenAPI / Swagger Design · Sichere Auth (Sanctum), Webhooks & externe Drittsystem-Integration",
+      "Datenbank-Architektur: MySQL 8, PostgreSQL, Schema-Migrationen, Indexierung & Redis Caching",
+      "Symfony Komponenten, Shopware 6 & CMS-Architektur · Automatisierte Backend-Tests mit Pest & PHPUnit"
+    ]
+  },
+  "skills_devops": {
+    "heading_en": "DevOps, Container & Automation",
+    "heading_de": "DevOps, Container & Automatisierung",
+    "heading_display": "DevOps & Automation",
+    "items": [
+      "Docker Containerisierung & Docker Compose für konsistente Staging- und Produktionsumgebungen",
+      "CI/CD Pipelines mit GitHub Actions & GitLab CI · Automatisierte Unit-, Feature- & E2E-Tests",
+      "Linux Serveradministration (Nginx, PHP-FPM, SSL/TLS, Log-Aggregation & System-Härtung)",
+      "Entwicklung eigener MCP Tools (Model Context Protocol) & KI-unterstützte Coding-Workflows (Claude Code, Cursor)",
+      "Agile Softwareentwicklung, GitFlow, strukturierte Code Reviews & testgetriebene Entwicklung (TDD)"
+    ]
+  },
+  "skills_secondary": {
+    "heading_en": "Further Technologies & Background",
+    "heading_de": "Weitere Technologien & Hintergrund",
+    "heading_display": "Further Technologies",
+    "items": [
+      "Node.js, Express & Python Scripting · Asynchrone Job-Queues (RabbitMQ, Redis) & S3 Object Storage",
+      "B.Sc. Informatik (ZAB-zertifizierte Bachelor-Gleichwertigkeit) · 100% Remote deutschlandweit verfügbar"
+    ]
+  }
+}

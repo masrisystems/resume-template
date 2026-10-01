@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Primary Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Alex Morgan — Senior Fullstack Engineer specializing in Laravel, PHP, Vue.js, TypeScript, Cloud Architecture, and AI assisted software delivery." />
+  <meta name="author" content="Alex Morgan" />
+  <title>Alex Morgan | Senior Fullstack Entwickler (Laravel & Vue.js) — Resume</title>
+  <link rel="canonical" href="https://portfolio.example.com/" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Alex Morgan | Senior Fullstack Entwickler (Laravel & Vue.js)" />
+  <meta property="og:description" content="Senior Fullstack Engineer in Berlin specializing in Laravel, PHP, Vue.js, TypeScript and scalable cloud software." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://portfolio.example.com" />
+  <meta property="og:image" content="https://portfolio.example.com/alex-morgan-profile.webp" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alex Morgan | Senior Fullstack Entwickler (Laravel & Vue.js)" />
+  <meta name="twitter:description" content="Senior Fullstack Engineer in Berlin specializing in Laravel, PHP, Vue.js, TypeScript and scalable cloud software." />
+  <meta name="twitter:image" content="https://portfolio.example.com/alex-morgan-profile.webp" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display+SC&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN (for prototyping only) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: "#cc785c",
+              hover: "#a9583e",
+              light: "#e8a55a",
+            },
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body id="pdf-content"
+  class="text-stone-900 font-sans leading-relaxed bg-stone-100 dark:bg-stone-800 dark:text-neutral-300 overflow-x-hidden">
+
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alex Morgan",
+        "url": "https://portfolio.example.com",
+        "jobTitle": "Senior Fullstack Engineer",
+        "email": "mailto:alex.morgan@example.com",
+        "telephone": "+49 151 12345678",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Berlin",
+          "addressCountry": "DE"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/alex-morgan-example",
+          "https://github.com/alex-morgan-example",
+          "https://links.example.com/"
+        ],
+        "description": "Senior Fullstack Engineer specializing in Laravel, PHP, Vue.js, TypeScript, DevOps and enterprise software."
+      }
+    </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./style.css">
+
+  <style>
+    /* Recruiter-first ordering while preserving the original resume content. */
+    #work-experience { display: flex; flex-direction: column; }
+    #work-experience > h2 { order: 0; }
+    #current-role { order: 1; }
+    #brainkets-role { order: 2; }
+    #side-projects-role { order: 3; }
+    .job-fair-supplemental { display: none; }
+    .contact-link { overflow-wrap: anywhere; }
+
+    /* On-screen Title divider lines */
+    h1,
+    h2,
+    .title-font {
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 2px;
+    }
+
+    html.dark h1,
+    html.dark h2,
+    html.dark .title-font {
+      border-bottom-color: #475569;
+    }
+
+    /* PDF export active rules */
+    .pdf-export-active .no-print,
+    .pdf-export-active .no-print *,
+    #resumeContent.pdf-export-active .no-print,
+    #resumeContent.pdf-export-active .no-print * {
+      display: none !important;
+    }
+
+    .pdf-export-active,
+    .pdf-export-active body {
+      background: white !important;
+    }
+
+    .pdf-export-active #resumeContent {
+      background: white !important;
+      color: #0f172a !important;
+    }
+
+    .pdf-export-active header#header,
+    .pdf-export-active #header,
+    .pdf-export-active h1,
+    .pdf-export-active h2,
+    .pdf-export-active .title-font {
+      border-bottom: 1.5px solid #0f172a !important;
+    }
+
+    html.dark.pdf-export-active body #resumeContent *,
+    .pdf-export-active #resumeContent *,
+    .pdf-export-active p,
+    .pdf-export-active span,
+    .pdf-export-active li,
+    .pdf-export-active div,
+    .pdf-export-active .text-gray-700,
+    .pdf-export-active .text-gray-600,
+    .pdf-export-active .text-gray-500,
+    .pdf-export-active .dark\:text-gray-300,
+    .pdf-export-active .dark\:text-gray-400 {
+      color: #0f172a !important;
+    }
+
+    .pdf-export-active a,
+    .pdf-export-active .contact-link {
+      color: #cc785c !important;
+      text-decoration: none !important;
+    }
+
+    .pdf-export-active .text-\[\#a9583e\],
+    .pdf-export-active .dark\:text-\[\#e8a55a\] {
+      color: #a9583e !important;
+    }
+
+    .pdf-export-active .print-signature {
+      display: block !important;
+    }
+
+    @page {
+      size: A4;
+      margin: 6mm 8mm;
+    }
+
+    @media print {
+      .no-print,
+      .no-print *,
+      blockquote {
+        display: none !important;
+      }
+      .job-fair-supplemental { display: none !important; }
+
+      body {
+        background: white !important;
+        font-size: 9pt !important;
+        line-height: 1.35 !important;
+        color: #0f172a !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      #resumeContent {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        background: white !important;
+        color: #0f172a !important;
+      }
+
+      /* Title divider lines */
+      html.dark body #resumeContent header#header,
+      body #resumeContent header#header,
+      header#header,
+      #header {
+        border-bottom: 1.5px solid #0f172a !important;
+        padding-bottom: 8px !important;
+        margin-bottom: 8px !important;
+      }
+
+      html.dark body #resumeContent h1,
+      html.dark body #resumeContent h2,
+      html.dark body #resumeContent .title-font,
+      body #resumeContent h1,
+      body #resumeContent h2,
+      body #resumeContent .title-font,
+      h1,
+      h2,
+      .title-font {
+        border-bottom: 1.5px solid #0f172a !important;
+        padding-bottom: 2px !important;
+        margin-bottom: 4px !important;
+      }
+
+      /* Compact vertical rhythm to ensure 2-page fit */
+      section {
+        margin-bottom: 6px !important;
+      }
+
+      #work-experience > div,
+      #side-projects-role,
+      #current-role,
+      #brainkets-role {
+        margin-bottom: 6px !important;
+      }
+
+      h2 {
+        font-size: 1.15rem !important;
+      }
+
+      h3 {
+        font-size: 0.95rem !important;
+      }
+
+      ul {
+        margin-top: 2px !important;
+      }
+
+      li {
+        margin-bottom: 1px !important;
+        line-height: 1.35 !important;
+      }
+
+      /* Ensure all text descriptions, dates, and details are crisp, dark ink */
+      html.dark body #resumeContent .dark\:text-gray-300,
+      html.dark body #resumeContent .dark\:text-gray-400,
+      html.dark body #resumeContent .dark\:text-neutral-300,
+      html.dark body #resumeContent .text-gray-700,
+      html.dark body #resumeContent .text-gray-600,
+      html.dark body #resumeContent .text-gray-500,
+      html.dark body #resumeContent *,
+      body #resumeContent *,
+      #resumeContent p,
+      #resumeContent span,
+      #resumeContent li,
+      #resumeContent div,
+      #resumeContent strong,
+      .text-gray-700,
+      .text-gray-600,
+      .text-gray-500,
+      .text-stone-900,
+      .dark\:text-gray-300,
+      .dark\:text-gray-400,
+      .dark\:text-neutral-300 {
+        color: #0f172a !important;
+      }
+
+      /* Subtitle and links in brand accent */
+      html.dark body #resumeContent a,
+      html.dark body #resumeContent a *,
+      body #resumeContent a,
+      body #resumeContent a *,
+      .contact-link,
+      a.contact-link {
+        color: #cc785c !important;
+        text-decoration: none !important;
+      }
+
+      html.dark body #resumeContent .text-\[\#a9583e\],
+      html.dark body #resumeContent .dark\:text-\[\#e8a55a\],
+      body #resumeContent .text-\[\#a9583e\],
+      body #resumeContent .dark\:text-\[\#e8a55a\] {
+        color: #a9583e !important;
+      }
+
+      #certifications ul {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        column-gap: 1.5rem !important;
+        row-gap: 0.15rem !important;
+      }
+
+      .print-signature {
+        display: block !important;
+      }
+    }
+  </style>
+
+  <div id="resumeContent" class="max-w-4xl mx-auto p-6 bg-stone-50 shadow-md dark:bg-stone-950 overflow-hidden">
+
+    <header id="header" class="border-b pb-6 mb-6"> <!-- Section: Header -->
+      <div class="relative flex flex-col items-center gap-4 sm:flex-row sm:justify-start sm:gap-6 md:gap-10">
+        <img class="h-16 w-16 rounded-full object-cover object-[75%_20%] sm:h-16 sm:w-16 shadow-sm" style="object-position: 75% 20%;" crossorigin="anonymous" src="./alex-morgan-profile.webp" alt="Alex Morgan - Senior Fullstack Engineer Profile" />
+        <div class="grow w-full text-center sm:text-start">
+          <h1 class="text-2xl font-bold md:text-3xl">Alex Morgan <span class="text-base md:text-lg font-normal text-gray-500 dark:text-gray-400 font-sans" data-lang-en="(B.Sc. Computer Science)" data-lang-de="(B.Sc. Informatik)">(B.Sc. Computer Science)</span></h1>
+          <p class="mt-1 font-semibold text-[#a9583e] dark:text-[#e8a55a]"
+            data-lang-en="Senior Fullstack Developer · PHP 8, Laravel & Vue.js · Inertia.js, Tailwind CSS & APIs"
+            data-lang-de="Senior Fullstack Entwickler · PHP 8, Laravel & Vue.js · Inertia.js, Tailwind CSS & APIs">
+            Senior Fullstack Developer · PHP 8, Laravel & Vue.js · Inertia.js, Tailwind CSS & APIs
+          </p>
+          <p class="mt-2 max-w-2xl text-sm text-gray-700 dark:text-gray-300"
+            data-lang-en="Senior Fullstack Developer with 5+ years of experience engineering scalable web applications, enterprise portals, and high-performance API architectures. Deep expertise in PHP 8+, Laravel (Eloquent, Queues, Inertia.js), Vue.js (Composition API, Pinia), and Tailwind CSS. Proven track record in relational database optimization, Docker containerization, automated testing (Pest, PHPUnit), and CI/CD pipelines. 100% remote resident in Germany."
+            data-lang-de="Senior Fullstack Entwickler mit über 5 Jahren Erfahrung in Konzeption, Architektur und Umsetzung skalierbarer Webanwendungen, Enterprise-Portale und performanter API-Architekturen. Fundierte Expertise in PHP 8+, Laravel (Eloquent, Queues, Inertia.js), Vue.js (Composition API, Pinia) und Tailwind CSS. Versiert in relationaler Datenbank-Optimierung, Docker-Containerisierung, automatisierten Tests (Pest, PHPUnit) und CI/CD Pipelines. 100% remote in Deutschland.">
+            Senior Fullstack Developer with 5+ years of experience engineering scalable web applications, enterprise portals, and high-performance API architectures. Deep expertise in PHP 8+, Laravel (Eloquent, Queues, Inertia.js), Vue.js (Composition API, Pinia), and Tailwind CSS. Proven track record in relational database optimization, Docker containerization, automated testing (Pest, PHPUnit), and CI/CD pipelines. 100% remote resident in Germany.
+          </p>
+          <nav class="mt-3 flex flex-wrap justify-center gap-x-3 gap-y-1 text-sm sm:justify-start" aria-label="Contact and professional profiles">
+            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" href="mailto:alex.morgan@example.com">alex.morgan@example.com</a>
+            <span aria-hidden="true">·</span>
+            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" href="tel:+4915112345678">+49 151 12345678</a>
+            <span aria-hidden="true">·</span>
+            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/alex-morgan-example">LinkedIn</a>
+            <span aria-hidden="true">·</span>
+            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" target="_blank" rel="noopener noreferrer" href="https://github.com/alex-morgan-example">GitHub</a>
+            <span aria-hidden="true">·</span>
+            <a class="contact-link font-medium text-[#a9583e] hover:underline dark:text-[#e8a55a]" target="_blank" rel="noopener noreferrer" href="https://links.example.com/">Portfolio</a>
+          </nav>
+          <div class="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start no-print">
+            <button type="button" onclick="downloadPdfHandler()"
+              class="rounded-md bg-[#cc785c] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#a9583e] focus:outline-none focus:ring-2 focus:ring-[#cc785c] focus:ring-offset-2"
+              data-lang-en="Download CV (PDF)" data-lang-de="Lebenslauf als PDF herunterladen">
+              Download CV (PDF)
+            </button>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/alex-morgan-example"
+              class="rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold hover:border-[#cc785c] hover:text-[#a9583e] dark:border-gray-700 dark:hover:border-[#e8a55a] dark:hover:text-[#e8a55a]"
+              data-lang-en="View LinkedIn" data-lang-de="LinkedIn ansehen">View LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="work-experience" class="mb-4 md:mb-8"> <!-- Section: Work Experience -->
+      <h2 class="text-xl font-semibold mb-2 title-font" data-lang-en="Work Experience" data-lang-de="Berufserfahrung">
+        Work Experience
+      </h2>
+      <div id="side-projects-role" class="mb-6">
+        <h3 class="font-bold">
+          <span data-lang-en="Selected Freelance &amp; Personal Projects (Part-time · Remote)" 
+                data-lang-de="Ausgewählte Freelance- &amp; persönliche Projekte (Teilzeit · Remote)">
+            Selected Freelance &amp; Personal Projects (Part-time · Remote)
+          </span>
+        </h3>
+        <p class="text-sm text-gray-600">
+             <span data-lang-en="May 2020 – Present" data-lang-de="Mai 2020 – Heute">May 2020 – Present</span>
+        </p>
+        <ul class="list-disc ml-5 mt-2 text-sm">
+          <li data-lang-en="AI &amp; Agentic Coding – Engineered multi agent workflows (<strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Antigravity</strong>) and custom <strong>MCP tools</strong> for accelerated full-stack delivery."
+              data-lang-de="KI &amp; Agentic Coding – Entwicklung von Multi Agent Workflows (<strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Antigravity</strong>) und individuellen <strong>MCP Tools</strong> für beschleunigte Fullstack Auslieferung.">
+            AI &amp; Agentic Coding – Engineered multi agent workflows (<strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Antigravity</strong>) and custom <strong>MCP tools</strong> for accelerated full-stack delivery.
+          </li>
+          <li data-lang-en="CI/CD Pipeline – Containerised Laravel/Vue apps with <strong>Docker</strong> and automated deployments via <strong>GitHub Actions</strong>, enabling clean continuous delivery."
+              data-lang-de="CI/CD Pipelines – Containerisierung von Laravel/Vue Anwendungen mit <strong>Docker</strong> und automatisierte Deployments via <strong>GitHub Actions</strong> für saubere Continuous Delivery.">
+            CI/CD Pipeline – Containerised Laravel/Vue apps with <strong>Docker</strong> and automated deployments via <strong>GitHub Actions</strong>, enabling clean continuous delivery.
+          </li>
+          <li class="job-fair-supplemental" data-lang-en="AI Powered Reviews – Integrated AI review generation using local models (<strong>Ollama</strong>) and cloud LLMs to enrich product pages."
+              data-lang-de="KI gestützte Bewertungen – Integration von KI Review Generierung mit lokalen Modellen (<strong>Ollama</strong>) und Cloud-LLMs zur Anreicherung von Produktseiten.">
+            AI Powered Reviews – Integrated AI review generation using local models (<strong>Ollama</strong>) and cloud LLMs to enrich product pages.
+          </li>
+          <li data-lang-en="Fullstack Platforms – Built <strong>Laravel / Vue.js / Inertia</strong> apps with automated <strong>Stripe Connect</strong> onboarding and payout pipelines."
+              data-lang-de="Fullstack Plattformen – Entwicklung von <strong>Laravel / Vue.js / Inertia</strong>-Apps mit automatisierter <strong>Stripe Connect</strong>-Onboarding- und Payout-Architektur.">
+            Fullstack Platforms – Built <strong>Laravel / Vue.js / Inertia</strong> apps with automated <strong>Stripe Connect</strong> onboarding and payout pipelines.
+          </li>
+          <li class="job-fair-supplemental" data-lang-en="3D Web Assets &amp; Modeling – Created and integrated generative 3D models (<strong>Tripo AI</strong>) for interactive product and web visualizations."
+              data-lang-de="3D-Web-Assets &amp; Modellierung – Erstellung und Integration generativer 3D-Modelle (<strong>Tripo AI</strong>) für interaktive Produkt- und Web-Visualisierungen.">
+            3D Web Assets &amp; Modeling – Created and integrated generative 3D models (<strong>Tripo AI</strong>) for interactive product and web visualizations.
+          </li>
+          <li data-lang-en="Infrastructure &amp; DevOps – Managed self-hosted Linux infrastructure (Uberspace) including email, database management, backups, and hosting maintenance."
+              data-lang-de="Infrastruktur &amp; DevOps – Administration einer selbst gehosteten Linux Infrastruktur (Uberspace) inkl. E-Mail, Datenbankmanagement, Backups und Hosting-Wartung.">
+            Infrastructure &amp; DevOps – Managed self-hosted Linux infrastructure (Uberspace) including email, database management, backups, and hosting maintenance.
+          </li>
+          <li class="job-fair-supplemental" data-lang-en="Production Deployments – Deployed and maintained apps like Kimai (Time-tracking/Invoicing), Uptime-Kuma (Monitoring), and a digital garden blog."
+              data-lang-de="Produktive Bereitstellungen – Bereitstellung und Wartung produktiver Apps wie Kimai (Zeiterfassung/Rechnungsstellung), Uptime-Kuma (Monitoring) und einem Digital-Garden-Blog.">
+            Production Deployments – Deployed and maintained apps like Kimai, Uptime-Kuma, and a digital garden blog.
+          </li>
+          <li class="job-fair-supplemental" data-lang-en="Continuous Learning – Deepening expertise in <strong>Shopware</strong>, <strong>Pimcore</strong>, <strong>Symfony</strong>, <strong>S3</strong>, <strong>OpenSearch</strong>, <strong>Redis</strong>, <strong>MariaDB</strong>, and <strong>Upsun</strong>."
+              data-lang-de="Kontinuierliche Weiterbildung – Aktive Vertiefung in <strong>Shopware</strong>, <strong>Pimcore</strong>, <strong>Symfony</strong>, <strong>AWS S3</strong>, <strong>OpenSearch</strong>, <strong>Redis</strong>, <strong>MariaDB</strong> und <strong>Upsun</strong>.">
+            Continuous Learning – Deepening expertise in <strong>Shopware</strong>, <strong>Pimcore</strong>, <strong>Symfony</strong>, <strong>S3</strong>, <strong>OpenSearch</strong>, <strong>Redis</strong>, <strong>MariaDB</strong>, and <strong>Upsun</strong>.
+          </li>
+          <li class="job-fair-supplemental" data-lang-en="AI &amp; Workflow Engineering – Built a centralized <strong>Command Center / Mission Control</strong>; engineered multi agent workflows using <strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Antigravity</strong>, and custom <strong>Agent Skills &amp; Extensions</strong>."
+              data-lang-de="KI- &amp; Workflow-Engineering – Entwicklung eines zentralen <strong>Command Centers / Mission Controls</strong>; Multi Agent Workflows mit <strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Antigravity</strong> sowie maßgeschneiderten <strong>Agent Skills &amp; Extensions</strong>.">
+            AI &amp; Workflow Engineering – Built a centralized <strong>Command Center / Mission Control</strong>; engineered multi agent workflows using <strong>Claude Code</strong>, <strong>Codex</strong>, <strong>Antigravity</strong>, and custom <strong>Agent Skills &amp; Extensions</strong>.
+          </li>
+          <li data-lang-en="Mentoring &amp; Code Reviews – Conducted structured code reviews, promoted Clean Code standards, and mentored developers in Python and TypeScript."
+              data-lang-de="Mentoring &amp; Code Reviews – Durchführung strukturierter Code Reviews, Einhaltung von Clean-Code-Standards und Mentoring in Python und TypeScript.">
+            Mentoring &amp; Code Reviews – Conducted structured code reviews, promoted Clean Code standards, and mentored developers in Python and TypeScript.
+          </li>
+        </ul>
+      </div>
+      <div id="current-role" class="mb-6">
+        <h3 class="font-bold">
+          <span data-lang-en="Software Developer" data-lang-de="Softwareentwickler">Software Developer</span>
+          · CloudCommerce Solutions GmbH (Hybrid)
+        </h3>
+        <p class="text-sm text-gray-600">
+          <span data-lang-en="Apr 2024 – Present" data-lang-de="Apr. 2024 – Heute">Apr 2024 – Present</span>
+        </p>
+        <ul class="list-disc ml-5 mt-2 text-sm">
+          <li data-lang-en="Enterprise Architecture – Built <strong>Shopware</strong> plugins and async <strong>Pimcore</strong> sync via <strong>Symfony Messenger</strong>, <strong>OpenSearch</strong> &amp; <strong>Redis</strong>."
+              data-lang-de="Enterprise Architektur – Entwicklung von <strong>Shopware</strong>-Plugins und asynchroner <strong>Pimcore</strong>-Synchronisation via <strong>Symfony Messenger</strong>, <strong>OpenSearch</strong> &amp; <strong>Redis</strong>.">
+            Enterprise Architecture – Built <strong>Shopware</strong> plugins and async <strong>Pimcore</strong> sync via <strong>Symfony Messenger</strong>, <strong>OpenSearch</strong> &amp; <strong>Redis</strong>.
+          </li>
+          <li data-lang-en="Enterprise Software Development – Built Vue.js / Inertia.js / Laravel solutions for 13 enterprise shops; reduced database query time by 40% via <strong>Redis</strong> caching and optimized Eloquent relationships."
+              data-lang-de="Enterprise Software Entwicklung – Skalierbare Vue.js / Inertia.js / Laravel-Lösungen für 13 Enterprise Shops; Reduzierung der Datenbankabfragezeit um 40 % durch <strong>Redis</strong>-Caching und optimierte Eloquent-Beziehungen.">
+            Enterprise Software Development – Built Vue.js / Inertia.js / Laravel solutions for 13 enterprise shops; reduced database query time by 40% via <strong>Redis</strong> caching and optimized Eloquent relationships.
+          </li>
+          <li data-lang-en="CI/CD &amp; Docker – Containerised Laravel/Vue apps with <strong>Docker</strong>; set up <strong>GitHub Actions</strong> pipelines for automated, clean deployments."
+              data-lang-de="CI/CD &amp; Docker – Containerisierung von Laravel/Vue Anwendungen mit <strong>Docker</strong> und Einrichtung von <strong>GitHub Actions</strong>-Pipelines für automatisierte, saubere Deployments.">
+            CI/CD &amp; Docker – Containerised Laravel/Vue apps with <strong>Docker</strong>; set up <strong>GitHub Actions</strong> pipelines for automated, clean deployments.
+          </li>
+          <li class="job-fair-supplemental" data-lang-en="Figma Design – Created UI/UX designs and prototypes in Figma to streamline development and ensure visual consistency."
+              data-lang-de="Figma Design – Erstellung von High-Fidelity UI/UX Designs und Prototypen in Figma zur Optimierung des Entwicklungsprozesses und Sicherstellung visueller Konsistenz.">
+            Figma Design – Created UI/UX designs and prototypes in Figma to streamline development and ensure visual consistency.
+          </li>
+          <li data-lang-en="Performance Optimization – Cut page load time by 15 s by resolving N+1 query chains in Laravel and offloading report generation to queued background jobs."
+              data-lang-de="Performance-Optimierung – Reduzierung der Initialladezeit um über 15 Sek. durch Beseitigung von N+1-Abfrageketten in Laravel und Auslagerung von Reportgenerierung in Hintergrund-Jobs (Queues).">
+            Performance Optimization – Cut page load time by 15 s by resolving N+1 query chains in Laravel and offloading report generation to queued background jobs.
+          </li>
+          <li data-lang-en="Clean Code &amp; Feature Development – Built custom packages with GraphQL and Inertia.js, optimizing existing code by over 60%."
+              data-lang-de="Clean Code &amp; Feature-Entwicklung – Erstellung maßgeschneiderter Pakete und Implementierung von Funktionen mit GraphQL und Inertia.js; Code-Optimierung von über 60 %.">
+            Clean Code &amp; Feature Development – Built custom packages with GraphQL and Inertia.js, optimizing existing code by over 60%.
+          </li>
+          <li class="job-fair-supplemental" data-lang-en="Version Control – Followed GitFlow for structured development workflows (Git, GitFlow, Lazygit, Jira)."
+              data-lang-de="Versionskontrolle – Einhaltung von GitFlow für strukturierte Entwicklungs-Workflows (Git, GitFlow, Lazygit, Jira).">
+            Version Control – Followed GitFlow for structured development workflows (Git, GitFlow, Lazygit, Jira).
+          </li>
+          <li class="job-fair-supplemental" data-lang-en="Application Architecture – Applied design patterns to optimize application structure and enhance long-term scalability."
+              data-lang-de="Anwendungsarchitektur – Anwendung von Design Patterns zur Optimierung der Systemstruktur und Verbesserung der Skalierbarkeit.">
+            Applied Design Patterns to optimize application architecture and enhance scalability.
+          </li>
+        </ul>
+      </div>
+
+      <div id="brainkets-role" class="mb-6">
+        <h3 class="font-bold">
+          <span data-lang-en="Full Stack Developer – InnoTech Agency (Hybrid)" data-lang-de="Fullstack Entwickler – InnoTech Agency (Hybrid)">Full Stack Developer – InnoTech Agency (Hybrid)</span>
+        </h3>
+        <p class="text-sm text-gray-600">
+          <span data-lang-en="Jul 2022 – Sep 2023" data-lang-de="Juli 2022 – Sep. 2023">Jul 2022 – Sep 2023</span>
+        </p>
+        <ul class="list-disc ml-5 mt-2 text-sm">
+          <li
+            data-lang-en="Frontend Development – Developed interactive UIs and scalable enterprise-web applications using React.js, Next.js, and Redux."
+            data-lang-de="Frontend-Entwicklung – Entwicklung interaktiver Benutzeroberflächen und skalierbarer Enterprise-Web-Anwendungen mit React.js, Next.js und Redux.">
+            Frontend Development – Developed interactive UIs and scalable enterprise-web applications using React.js, Next.js, and Redux.
+          </li>
+          <li
+            data-lang-en="Backend Development – Built backend components and REST APIs with Yii2 and PHP, following Clean Code guidelines."
+            data-lang-de="Backend-Entwicklung – Erstellung von Backend-Komponenten und REST APIs mit Yii2 und PHP, unter Einhaltung von Clean-Code-Richtlinien.">
+            Backend Development – Built backend components and REST APIs with Yii2 and PHP, following Clean Code guidelines.
+          </li>
+          <li
+            data-lang-en="UI/UX Implementation – Translated Figma designs into responsive interfaces using HTML, CSS, Tailwind CSS, Material UI, and design systems."
+            data-lang-de="UI/UX-Implementierung – Umsetzung von Figma Designs in responsive Oberflächen mit HTML, CSS, Tailwind CSS, Material UI und Design Systemen.">
+            UI/UX Implementation – Translated Figma designs into responsive interfaces using HTML, CSS, Tailwind CSS, Material UI, and design systems.
+          </li>
+          <li
+            data-lang-en="API Integration – Connected frontend components to distributed REST based backend systems (REST APIs, JSON, SQL, Postman)."
+            data-lang-de="API Integration – Verbindung von Frontend-Komponenten mit verteilten REST basierten Backend-Systemen (REST APIs, JSON, SQL, Postman).">
+            API Integration – Connected frontend components to distributed REST based backend systems (REST APIs, JSON, SQL, Postman).
+          </li>
+          <li class="job-fair-supplemental"
+            data-lang-en="Agile Collaboration – Actively contributed to software development within an Agile team environment (GitHub, Git, SDLC)."
+            data-lang-de="Agile Zusammenarbeit – Aktiver Beitrag zur Softwareentwicklung in einer agilen Teamumgebung (GitHub, Git, SDLC).">
+            Agile Collaboration – Actively contributed to software development
+            within an Agile team environment (GitHub, Git, SDLC).
+          </li>
+          <li class="job-fair-supplemental"
+            data-lang-en="SEO &amp; Performance Optimization – Enhanced speed and discoverability (SSR, Indexing, Analytics, Meta Optimization)."
+            data-lang-de="SEO &amp; Performance-Optimierung – Verbesserung von Geschwindigkeit und Auffindbarkeit (SSR, Indexierung, Analytics, Meta-Optimierung).">
+            SEO &amp; Performance Optimization – Enhanced speed and
+            discoverability (SSR, Indexing, Analytics, Meta Optimization).
+          </li>
+          <li class="job-fair-supplemental"
+            data-lang-en="Design Patterns – Utilized common Design Patterns during the development of scalable React and PHP backend systems."
+            data-lang-de="Design Patterns – Verwendung gängiger Design Patterns bei der Entwicklung skalierbarer React- und PHP-Backend-Systeme.">
+            Utilized common Design Patterns during the development of scalable
+            React and PHP backend systems.
+          </li>
+          <li
+            data-lang-en="Internship (April '22 – Sep '22) – Gained hands-on experience with JavaScript, React.js, HTML, CSS, and Bootstrap."
+            data-lang-de="Praktikum (April '22 – Sep. '22) – Praktische Erfahrung mit JavaScript, React.js, HTML, CSS und Bootstrap gesammelt.">
+            Internship (April '22 – Sep '22) – Gained hands-on experience with JavaScript, React.js, HTML, CSS, and Bootstrap.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="technical-skills" class="mb-4 md:mb-8"> <!-- Section: Technical Skills -->
+      <h2 class="text-xl font-semibold mb-2" data-lang-en="Technical Skills" data-lang-de="Technische Fähigkeiten">
+        Technical Skills
+      </h2>
+      <div class="text-sm grid gap-1 space-y-2">
+        
+        <!-- PRIMARY SKILLS: VILT Stack (star of the show) -->
+        <div>
+          <h4 class="font-semibold" data-lang-en="Frontend & UI Architecture (Primary)" data-lang-de="Frontend & UI-Architektur (Primär)">
+            Frontend & UI Architecture
+          </h4>
+          <ul class="list-disc ml-5">
+            <li><strong>Vue.js, Inertia.js & TypeScript</strong> · Moderne SPA/SSR-Architektur, Composition API, Pinia & reactive State</li>
+            <li>Moderne Webstandards, HTML5, CSS3, Tailwind CSS & Core Web Vitals 95+ · Barrierefreiheit (WCAG) & Vite Tooling</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold" data-lang-en="Backend, APIs & Frameworks (Primary)" data-lang-de="Backend, APIs & Frameworks (Primär)">
+            Backend, APIs & Frameworks
+          </h4>
+          <ul class="list-disc ml-5">
+            <li><strong>PHP 8+ & Laravel</strong> · Eloquent ORM, Service Layer, asynchrone Queues, Events & Jobs</li>
+            <li>RESTful API & OpenAPI / Swagger Design · Sichere Auth (Sanctum), Webhooks & externe Drittsystem-Integration</li>
+            <li>Datenbank-Architektur: MySQL 8, PostgreSQL, Schema-Migrationen, Indexierung & Redis Caching</li>
+            <li>Symfony Komponenten, Shopware 6 & CMS-Architektur · Automatisierte Backend-Tests mit Pest & PHPUnit</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold" data-lang-en="DevOps, Container & Automation" data-lang-de="DevOps, Container & Automatisierung">
+            DevOps & Automation
+          </h4>
+          <ul class="list-disc ml-5">
+            <li>Docker Containerisierung & Docker Compose für konsistente Staging- und Produktionsumgebungen</li>
+            <li>CI/CD Pipelines mit GitHub Actions & GitLab CI · Automatisierte Unit-, Feature- & E2E-Tests</li>
+            <li>Linux Serveradministration (Nginx, PHP-FPM, SSL/TLS, Log-Aggregation & System-Härtung)</li>
+            <li>Entwicklung eigener MCP Tools (Model Context Protocol) & KI-unterstützte Coding-Workflows (Claude Code, Cursor)</li>
+            <li>Agile Softwareentwicklung, GitFlow, strukturierte Code Reviews & testgetriebene Entwicklung (TDD)</li>
+          </ul>
+        </div>
+
+        <!-- SECONDARY SKILLS: previous experience, deprioritised -->
+        <div>
+          <h4 class="font-semibold" data-lang-en="Further Technologies & Background" data-lang-de="Weitere Technologien & Hintergrund">
+            Further Technologies
+          </h4>
+          <ul class="list-disc ml-5">
+            <li>Node.js, Express & Python Scripting · Asynchrone Job-Queues (RabbitMQ, Redis) & S3 Object Storage</li>
+            <li>B.Sc. Informatik (ZAB-zertifizierte Bachelor-Gleichwertigkeit) · 100% Remote deutschlandweit verfügbar</li>
+          </ul>
+        </div>
+
+        <div class="job-fair-supplemental">
+          <h4 class="font-semibold" data-lang-en="Competences" data-lang-de="Kernkompetenzen">
+            Competences
+          </h4>
+          <ul class="list-disc ml-5">
+            <li data-lang-en="Teamwork, motivation, flexibility" data-lang-de="Teamfähigkeit, hohe Motivation und Flexibilität">
+              Teamwork, motivation, flexibility
+            </li>
+            <li data-lang-en="Independent, solution-oriented, responsible work style"
+              data-lang-de="Selbstständige, lösungsorientierte und verantwortungsbewusste Arbeitsweise">
+              Independent, solution-oriented, responsible work style
+            </li>
+            <li data-lang-en="IT and process affinity, fast learner, high implementation skills"
+              data-lang-de="Hohe IT- und Prozessaffinität, schnelle Auffassungsgabe und ausgeprägte Umsetzungsstärke">
+              IT and process affinity, fast learner, high implementation skills
+            </li>
+            <li data-lang-en="Continuous Learning – Consistently up-to-date with the newest technologies, packages, and stack updates."
+              data-lang-de="Kontinuierliche Weiterbildung – Stets am Puls neuester Frameworks, AI Tools und Stack Updates.">
+              Continuous Learning – Consistently up-to-date with the newest technologies, packages, and stack updates.
+            </li>
+            <li data-lang-en="Analytical &amp; problem-solving ability" data-lang-de="Analytisches Denkvermögen und ausgeprägte Problemlösungskompetenz">
+              Analytical &amp; problem-solving ability
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="education" class="mb-4 md:mb-8"> <!-- Section: Education, Academic Achievements & Certifications -->
+      <h2 class="text-xl font-semibold mb-2" data-lang-en="Education &amp; Qualifications" data-lang-de="Bildung">
+        Education &amp; Qualifications
+      </h2>
+      <div class="mb-3">
+        <p>
+          <strong>
+            <span data-lang-en="Bachelor of Science (B.Sc.) in Computer Science"
+                  data-lang-de="Bachelor of Science (B.Sc.) in Informatik">
+              Bachelor of Science (B.Sc.) in Computer Science
+            </span>
+          </strong>
+          <span class="text-sm text-gray-600"
+                data-lang-en="- Final Grade: 1.7 (With Distinction)"
+                data-lang-de="- Abschlussnote: 1,7 (Mit Auszeichnung)">
+            - Final Grade: 1.7 (With Distinction)
+          </span>
+        </p>
+        <p class="text-sm mt-1 text-gray-700 dark:text-gray-300"
+          data-lang-en="Focused on software engineering, object-oriented design, distributed systems, algorithms, and database architecture."
+          data-lang-de="Schwerpunkte: Softwaretechnik, objektorientierter Entwurf, verteilte Systeme, Algorithmen und Datenbankarchitektur.">
+          Focused on software engineering, object-oriented design, distributed systems,
+          algorithms, and database architecture.
+        </p>
+      </div>
+
+      <div id="academic-achievements" class="mb-3">
+        <h4 class="font-semibold text-sm mb-1" data-lang-en="Academic Achievements" data-lang-de="Akademische Leistungen">
+          Academic Achievements
+        </h4>
+        <ul class="list-disc ml-5 text-sm space-y-0.5">
+          <li data-lang-en="Dean’s Honor List – Academic excellence award for top percentile students"
+            data-lang-de="Dean’s Honor List – Auszeichnung für herausragende akademische Spitzenleistungen">
+            Dean’s Honor List – Academic excellence award for top percentile students
+          </li>
+          <li
+            data-lang-en="Specialized coursework in Software Architecture, Distributed Systems, and Cloud-Native Platforms"
+            data-lang-de="Vertiefte Studienleistungen in Softwarearchitektur, Verteilten Systemen und Cloud-Native Plattformen">
+            Specialized coursework in Software Architecture, Distributed Systems, and Cloud-Native Platforms
+          </li>
+        </ul>
+      </div>
+
+      <div id="certifications">
+        <div class="flex justify-between items-baseline mb-1">
+          <h4 class="font-semibold text-sm" data-lang-en="Certifications &amp; Professional Development" data-lang-de="Zertifikate &amp; Weiterbildung">
+            Certifications &amp; Professional Development
+          </h4>
+          <a href="https://links.example.com/certificates.html" target="_blank" rel="noopener noreferrer" class="text-xs text-[#a9583e] hover:underline" data-lang-en="Verify online &rarr;" data-lang-de="Online verifizieren &rarr;">
+            Online verifizieren &rarr;
+          </a>
+        </div>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 list-disc ml-5 text-sm">
+          <li>
+            <span data-lang-en="<strong>Cloud Architecture &amp; DevOps Professional</strong> — Cloud Institute" data-lang-de="<strong>Cloud Architecture &amp; DevOps Professional</strong> — Cloud Institute"><strong>Cloud Architecture &amp; DevOps Professional</strong> — Cloud Institute</span>
+            <span class="text-xs text-gray-500">· 2025</span>
+          </li>
+          <li>
+            <span data-lang-en="<strong>Modern API Design &amp; Automated Testing</strong> — Engineering Academy" data-lang-de="<strong>Modernes API-Design &amp; Automatisierte Tests</strong> — Engineering Academy"><strong>Modern API Design &amp; Automated Testing</strong> — Engineering Academy</span>
+            <span class="text-xs text-gray-500">· 2024</span>
+          </li>
+          <li>
+            <span data-lang-en="<strong>Enterprise Web Application Security (OWASP)</strong> — CyberSec Institute" data-lang-de="<strong>Enterprise Web Application Security (OWASP)</strong> — CyberSec Institute"><strong>Enterprise Web Application Security (OWASP)</strong> — CyberSec Institute</span>
+            <span class="text-xs text-gray-500">· 2023</span>
+          </li>
+          <li>
+            <span data-lang-en="<strong>Professional Agile &amp; Scrum Practitioner</strong> — Agile Alliance" data-lang-de="<strong>Professional Agile &amp; Scrum Practitioner</strong> — Agile Alliance"><strong>Professional Agile &amp; Scrum Practitioner</strong> — Agile Alliance</span>
+            <span class="text-xs text-gray-500">· 2022</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-4 md:mb-8">
+      <section id="languages"> <!-- Section: Languages -->
+        <h2 class="text-xl font-semibold mb-2 title-font" data-lang-en="Languages" data-lang-de="Sprachen">
+          Languages
+        </h2>
+
+        <ul class="ml-1 text-sm space-y-1">
+          <li data-lang-en="English: Fluent / Professional (C1)" data-lang-de="Englisch: Verhandlungssicher (C1)">
+            English: Fluent / Professional (C1)
+          </li>
+
+          <li data-lang-en="German: Intermediate (B2)" data-lang-de="Deutsch: Fließend / B2 (Zertifikat in Vorbereitung)">
+            German: Intermediate (B2)
+          </li>
+
+          <li data-lang-en="Arabic: Native (C2)" data-lang-de="Arabisch: Muttersprache (C2)">
+            Arabic: Native (C2)
+          </li>
+        </ul>
+      </section>
+
+      <section id="other-info" class="job-fair-supplemental"> <!-- Section: Other Information -->
+        <h2 class="text-xl font-semibold mb-2" data-lang-en="Other" data-lang-de="Sonstiges">
+          Other
+        </h2>
+        <ul class="list-disc ml-5 text-sm">
+          <li data-lang-en="Willingness to travel (even for several days) on business."
+            data-lang-de="Reisebereitschaft (auch mehrtägig) für geschäftliche Termine und Kundenprojekte.">
+            Willingness to travel (even for several days) on business.
+          </li>
+          <li data-lang-en="Actively participate and contribute to working groups and collaborative team environments."
+            data-lang-de="Aktive Teilnahme und Einbringung in interdisziplinäre Arbeitsgruppen und agile Teams.">
+            Actively participate and contribute to working groups and
+            collaborative team environments.
+          </li>
+        </ul>
+      </section>
+
+      <section id="hobbies" class="job-fair-supplemental"> <!-- Section: Hobbies -->
+        <h2 class="text-xl font-semibold mb-2" data-lang-en="Hobbies" data-lang-de="Hobbys">
+          Hobbies
+        </h2>
+        <ul class="list-disc ml-5 text-sm">
+          <li data-lang-en="Fitness" data-lang-de="Fitness">Fitness</li>
+          <li data-lang-en="Travel" data-lang-de="Reisen">Travel</li>
+          <li data-lang-en="Gaming &amp; Technology" data-lang-de="Gaming &amp; Technologie-Trends">Gaming &amp; Technology</li>
+        </ul>
+      </section>
+    </div>
+
+  </div>
+  <footer id="footer"
+    class="text-center text-xs text-gray-500 mt-10 fixed bottom-0 right-0 px-2 pt-2 text-xs text-gray-600 z-[9999]">
+    <!-- Section: Footer -->
+            <div class="print-signature">
+      <a href="https://portfolio.example.com" target="_blank" rel="noopener noreferrer">https://portfolio.example.com</a>
+    </div>
+  </footer>
+ 
+  <div class="fixed top-4 right-4 flex flex-col space-y-3 no-print">  <!-- Print and Download Buttons -->
+    <button onClick="switchLanguage()"
+      class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
+      aria-label="Switch Language">
+      <i data-lucide="languages" class="w-5 h-5 text-gray-700 dark:text-gray-400"></i>
+    </button>
+
+    <button id="theme-toggle"
+      class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
+      aria-label="Toggle Theme">
+      <i data-lucide="sun-moon" class="w-5 h-5 text-gray-700 dark:text-gray-400"></i>
+    </button>
+
+    <button onClick="window.print()"
+      class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
+      aria-label="Print Page">
+      <i data-lucide="Printer" class="w-5 h-5 text-gray-700 dark:text-gray-400"></i>
+    </button>
+
+    <button onclick="downloadPdfHandler()" id="downloadPdf"
+      class="flex items-center justify-center p-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-500 transition-colors duration-200"
+      aria-label="Download Page">
+      <i data-lucide="Download" class="w-5 h-5 text-gray-700 dark:text-gray-400"></i>
+    </button>
+  </div>
+
+<!-- Production version -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+<!-- Toggle Theme -->
+<script>
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const htmlElement = document.documentElement;
+
+  function setTheme(theme) {
+    if (theme === "dark") {
+      htmlElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      htmlElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  const storedTheme = localStorage.getItem("theme");
+  if (storedTheme) {
+    setTheme(storedTheme);
+  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    setTheme("dark");
+  } else {
+    setTheme("light");
+  }
+
+  themeToggleBtn.addEventListener("click", () => {
+    if (htmlElement.classList.contains("dark")) {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  });
+</script>
+
+<!-- Toggle Language -->
+<script>
+  function switchLanguage() {
+    const languages = ["de", "en"];
+    let currentLang = localStorage.getItem("lang") || "en";
+
+    const newLang = currentLang === "en" ? "de" : "en";
+    localStorage.setItem("lang", newLang);
+
+    applyLanguage(newLang);
+  }
+
+  function applyLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    const elements = document.querySelectorAll("[data-lang-en]");
+    elements.forEach((el) => {
+      const text = el.getAttribute(`data-lang-${lang}`);
+      if (text) el.innerHTML = text;
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("lang") || "en";
+    applyLanguage(savedLang);
+  });
+</script>
+
+<!-- Download Function -->
+<script>
+  function downloadPdfHandler() {
+    const resumeElement = document.getElementById("resumeContent");
+    const noPrintElements = document.querySelectorAll(".no-print");
+
+    document.body.classList.add("pdf-export-active");
+    resumeElement.classList.add("pdf-export-active");
+    noPrintElements.forEach((el) => {
+      el.dataset.originalDisplay = el.style.display;
+      el.style.display = "none";
+    });
+
+    const resumeRect = resumeElement.getBoundingClientRect();
+    const linkElements = Array.from(resumeElement.querySelectorAll("a[href]")).filter((a) => {
+      return !a.closest(".no-print") && a.offsetParent !== null;
+    });
+
+    const linkAnnotations = [];
+    linkElements.forEach((a) => {
+      const rects = a.getClientRects();
+      if (rects && rects.length > 0) {
+        for (let i = 0; i < rects.length; i++) {
+          const r = rects[i];
+          if (r.width > 0 && r.height > 0) {
+            linkAnnotations.push({
+              href: a.href,
+              left: r.left - resumeRect.left,
+              top: r.top - resumeRect.top,
+              width: r.width,
+              height: r.height,
+            });
+          }
+        }
+      } else {
+        const r = a.getBoundingClientRect();
+        if (r.width > 0 && r.height > 0) {
+          linkAnnotations.push({
+            href: a.href,
+            left: r.left - resumeRect.left,
+            top: r.top - resumeRect.top,
+            width: r.width,
+            height: r.height,
+          });
+        }
+      }
+    });
+
+    html2canvas(resumeElement, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: window
+        .getComputedStyle(document.body)
+        .getPropertyValue("background-color"),
+      ignoreElements: (element) => {
+        return element.classList && element.classList.contains("no-print");
+      },
+    })
+      .then((canvas) => {
+        const imgData = canvas.toDataURL("image/jpeg", 0.90);
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({
+          orientation: "portrait",
+          unit: "pt",
+          format: "a4",
+        });
+
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = pdf.internal.pageSize.getHeight();
+
+        const bottomMargin = 10;
+
+        const usablePdfPageHeight = pdfHeight - bottomMargin;
+
+        const imgHeightInPdf = (imgProps.height * pdfWidth) / imgProps.width;
+
+        let heightLeft = imgHeightInPdf;
+        let position = 0;
+
+        // Add the first page
+        pdf.addImage(imgData, "JPEG", 0, position, pdfWidth, imgHeightInPdf, undefined, "FAST");
+        heightLeft -= usablePdfPageHeight;
+
+        while (heightLeft > 0) {
+          position = heightLeft - imgHeightInPdf;
+          pdf.addPage();
+          pdf.addImage(imgData, "JPEG", 0, position, pdfWidth, imgHeightInPdf, undefined, "FAST");
+          heightLeft -= usablePdfPageHeight;
+        }
+
+        const numPages = pdf.getNumberOfPages();
+
+        linkAnnotations.forEach((annot) => {
+          const x = (annot.left / resumeRect.width) * pdfWidth;
+          const w = (annot.width / resumeRect.width) * pdfWidth;
+          const yTotal = (annot.top / resumeRect.height) * imgHeightInPdf;
+          const h = (annot.height / resumeRect.height) * imgHeightInPdf;
+
+          const pageIndex = Math.floor(yTotal / usablePdfPageHeight);
+          const targetPage = pageIndex + 1;
+          const yOnPage = yTotal - (pageIndex * usablePdfPageHeight);
+
+          if (targetPage <= numPages) {
+            pdf.setPage(targetPage);
+            if (yOnPage + h <= usablePdfPageHeight) {
+              pdf.link(x, yOnPage, w, h, { url: annot.href });
+            } else {
+              const hFirst = usablePdfPageHeight - yOnPage;
+              if (hFirst > 0) {
+                pdf.link(x, yOnPage, w, hFirst, { url: annot.href });
+              }
+              if (targetPage + 1 <= numPages) {
+                pdf.setPage(targetPage + 1);
+                pdf.link(x, 0, w, h - hFirst, { url: annot.href });
+              }
+            }
+          }
+        });
+
+        pdf.save("01-CV-Alex-Morgan.pdf");
+      })
+      .catch((err) => {
+        console.error("Error generating PDF:", err);
+      })
+      .finally(() => {
+        noPrintElements.forEach((el) => {
+          el.style.display = el.dataset.originalDisplay || "";
+        });
+        document.body.classList.remove("pdf-export-active");
+        resumeElement.classList.remove("pdf-export-active");
+      });
+  }
+</script>
+</body>
+</html>

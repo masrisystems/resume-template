@@ -1,0 +1,51 @@
+{
+  "role_id": "ai_product_engineer",
+  "title": "{candidate_name} | Senior AI & Fullstack Product Engineer — Resume",
+  "og_title": "{candidate_name} | Senior AI & Fullstack Product Engineer",
+  "twitter_title": "{candidate_name} | Senior AI & Fullstack Product Engineer",
+  "subtitle_en": "Senior AI & Fullstack Product Engineer · TypeScript, Python & LLM Workflows · MCP Tools & Cloud",
+  "subtitle_de": "Senior AI & Fullstack Product Engineer · TypeScript, Python & LLM Workflows · MCP Tools & Cloud",
+  "summary_en": "Senior AI & Fullstack Product Engineer with 5+ years of experience building autonomous developer tooling, production RAG pipelines, and enterprise web applications. Deep expertise in TypeScript, Python, and the Model Context Protocol (MCP), alongside daily orchestration of agentic AI systems (Claude Code, Cursor). Proven track record in vector search, API gateway architecture, Docker containerization, and automated CI/CD pipelines. 100% remote resident in Germany.",
+  "summary_de": "Senior AI & Fullstack Product Engineer mit über 5 Jahren Erfahrung in Konzeption, Architektur und Umsetzung autonomer Entwickler-Tools, RAG-Pipelines und skalierbarer Enterprise-Plattformen. Tiefgehende Expertise in TypeScript, Python und dem Model Context Protocol (MCP) sowie der täglichen Orchestrierung agentischer KI-Systeme (Claude Code, Cursor). Nachweisbare Praxiserfolge in Vektorsuche, API-Architekturen, Docker-Containerisierung und CI/CD Pipelines. 100% remote in Deutschland.",
+  "skills_frontend": {
+    "heading_en": "Frontend & AI Interaction Design (Primary)",
+    "heading_de": "Frontend & KI-Interaktionsdesign (Primär)",
+    "heading_display": "Frontend & AI Interaction Design",
+    "items": [
+      "<strong>Next.js, React, Vue 3 & TypeScript</strong> · Streaming UI (Vercel AI SDK), Chat-Interfaces & responsive Dashboards",
+      "Moderne Webstandards, HTML5, CSS3, Tailwind CSS & Core Web Vitals 95+ · Client-State-Management & Vite Tooling"
+    ]
+  },
+  "skills_backend": {
+    "heading_en": "AI Engineering, Backend & APIs (Primary)",
+    "heading_de": "KI-Engineering, Backend & APIs (Primär)",
+    "heading_display": "AI Engineering, Backend & APIs",
+    "items": [
+      "<strong>Entwicklung eigener MCP Tools & MCP Server</strong> · Model Context Protocol Integration für Claude Code, Codex & IDEs",
+      "Python & TypeScript Backend: FastMCP, FastAPI, Node.js (Express), asynchrone RAG-Pipelines & Embeddings",
+      "LLM Integration (Anthropic Claude API, OpenAI) · Prompt Engineering, Function Calling & strukturierte JSON Outputs",
+      "Datenbank-Architektur: PostgreSQL (pgvector), SQLite, Redis In-Memory Caching & relationale Schema-Optimierung"
+    ]
+  },
+  "skills_devops": {
+    "heading_en": "DevOps, Container & Agentic Automation",
+    "heading_de": "DevOps, Container & Agentic Automation",
+    "heading_display": "DevOps & Automation",
+    "items": [
+      "Docker Containerisierung & Docker Compose für modulare AI-Services, Vektordatenbanken und Web-Gateways",
+      "CI/CD Pipelines mit GitHub Actions & GitLab CI · Automatisierte Code-Reviews, Linter und Evaluierungs-Läufe",
+      "Linux Serveradministration (Nginx, Reverse Proxies, SSL/TLS, Monitoring & Log-Aggregation)",
+      "Agentische Softwareentwicklung mit Claude Code CLI, Cursor & autonomen Coding-Agenten im täglichen Einsatz",
+      "Agile Softwareentwicklung, GitFlow, strukturierte Code Reviews & testgetriebene Entwicklung (TDD)"
+    ]
+  },
+  "skills_secondary": {
+    "heading_en": "Further Technologies & Background",
+    "heading_de": "Weitere Technologien & Hintergrund",
+    "heading_display": "Further Technologies",
+    "items": [
+      "PHP 8+, Laravel & REST Schnittstellen · Asynchrone Queues (RabbitMQ, Redis) & S3 Object Storage",
+      "B.Sc. Informatik (ZAB-zertifizierte Bachelor-Gleichwertigkeit) · 100% Remote deutschlandweit verfügbar"
+    ]
+  }
+}

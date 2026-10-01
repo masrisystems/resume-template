@@ -1,0 +1,51 @@
+{
+  "role_id": "shopware_php_backend",
+  "title": "{candidate_name} | Senior E-Commerce & Backend Entwickler (Shopware 6 & PHP) — Resume",
+  "og_title": "{candidate_name} | Senior E-Commerce & Backend Entwickler (Shopware 6 & PHP)",
+  "twitter_title": "{candidate_name} | Senior E-Commerce & Backend Entwickler (Shopware 6 & PHP)",
+  "subtitle_en": "Senior E-Commerce & Backend Developer · Shopware 6, PHP 8 & Symfony · Pimcore & APIs",
+  "subtitle_de": "Senior E-Commerce & Backend Entwickler · Shopware 6, PHP 8 & Symfony · Pimcore & APIs",
+  "summary_en": "Senior Backend & E-Commerce Developer with 5+ years of experience building complex shop architectures and enterprise integrations. Deep expertise in custom Shopware 6 plugin development (DAL, Flow Builder, Scheduled Tasks), Symfony, PHP 8+, and Pimcore PIM/ERP synchronization. Proven track record in high-concurrency database modeling, Redis caching, Docker, and automated CI/CD pipelines. 100% remote resident in Germany.",
+  "summary_de": "Senior Backend & E-Commerce Entwickler mit über 5 Jahren Erfahrung in Konzeption, Architektur und Umsetzung anspruchsvoller Shop-Systeme und Enterprise-Integrationen. Tiefgehende Expertise in maßgeschneiderter Shopware 6 Plugin-Entwicklung (DAL, Flow Builder, Scheduled Tasks), Symfony, PHP 8+ und Pimcore PIM/ERP Synchronisation. Fundierte Praxiserfahrung in relationalem Datenbankdesign, Redis Caching, Docker und CI/CD Pipelines. 100% remote in Deutschland.",
+  "skills_frontend": {
+    "heading_en": "Storefront & UI Customization (Primary)",
+    "heading_de": "Storefront & UI-Entwicklung (Primär)",
+    "heading_display": "Storefront & UI Customization",
+    "items": [
+      "<strong>Shopware Storefront, Twig & Vue.js</strong> · Kundenspezifische CMS-Elemente, Administration-Module & Storefront Theme Customization",
+      "Moderne Webstandards, HTML5, CSS3, Tailwind CSS & Core Web Vitals 95+ · Responsive Layouts & Performance-Optimierung"
+    ]
+  },
+  "skills_backend": {
+    "heading_en": "E-Commerce, Backend & APIs (Primary)",
+    "heading_de": "E-Commerce, Backend & APIs (Primär)",
+    "heading_display": "E-Commerce, Backend & APIs",
+    "items": [
+      "<strong>Shopware 6 & Symfony</strong> · Custom Plugin-Entwicklung, Data Abstraction Layer (DAL), Custom Entities & Flow Builder",
+      "Pimcore PIM/DAM & ERP Synchronisation via asynchrone Messenger Queues, Webhooks & REST Schnittstellen",
+      "Datenbank-Design & Performance: MySQL 8, Index-Optimierung, N+1 Query-Vermeidung & Redis Caching",
+      "PHP 8+, Laravel & Clean Architecture · Automatisierte Unit- und Integrationstests mit PHPUnit"
+    ]
+  },
+  "skills_devops": {
+    "heading_en": "DevOps, Container & Automation",
+    "heading_de": "DevOps, Container & Automatisierung",
+    "heading_display": "DevOps & Automation",
+    "items": [
+      "Docker Containerisierung & Docker Compose für lokale Shopware-Entwicklung und Staging-Umgebungen",
+      "CI/CD Pipelines mit GitHub Actions & GitLab CI · Automatisierte Code-Quality-Checks, Linter & Build-Pipelines",
+      "Linux Serveradministration (Nginx, Apache, PHP-FPM, TLS-Zertifikate, Backup-Strategien)",
+      "Entwicklung eigener MCP Tools (Model Context Protocol) & KI-unterstützte Coding-Workflows (Claude Code, Cursor)",
+      "Agile Softwareentwicklung, GitFlow, strukturierte Code Reviews & Versionskontrolle"
+    ]
+  },
+  "skills_secondary": {
+    "heading_en": "Further Technologies & Background",
+    "heading_de": "Weitere Technologien & Hintergrund",
+    "heading_display": "Further Technologies",
+    "items": [
+      "Node.js, TypeScript & Python Scripting · Asynchrone Job-Queues (RabbitMQ) & Elasticsearch / OpenSearch",
+      "B.Sc. Informatik (ZAB-zertifizierte Bachelor-Gleichwertigkeit) · 100% Remote deutschlandweit verfügbar"
+    ]
+  }
+}

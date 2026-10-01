@@ -1,0 +1,91 @@
+{
+  "candidate": {
+    "name": "Stefan Kramer",
+    "title_en": "Senior Mechanical & Renewable Energy Systems Engineer",
+    "title_de": "Senior Ingenieur Maschinenbau & Erneuerbare Energiesysteme",
+    "address_street": "Königstraße 28",
+    "address_city": "70173 Stuttgart",
+    "postal_code": "70173",
+    "phone": "+49 711 98765432",
+    "email": "stefan.kramer@example.com",
+    "portfolio_url": "https://stefan-kramer.example.com",
+    "links_url": "https://links.stefan-kramer.example.com",
+    "prohibited_domains": [
+      "resume.stefan-kramer.example.com"
+    ]
+  },
+  "invariants": {
+    "target_salary_gross_eur": 80000,
+    "target_salary_phrase_de": "80.000 Euro brutto im Jahr",
+    "notice_period_de": "dreimonatigen Kündigungsfrist zum Quartalsende, im Einvernehmen gern auch kurzfristiger",
+    "default_location_city": "Stuttgart"
+  },
+  "search_preferences": {
+    "role_keyword": "Entwicklungsingenieur",
+    "target_stack": [
+      "Thermodynamik & CFD Strömungssimulation",
+      "CAD Konstruktion (SolidWorks & Siemens NX)",
+      "Photovoltaik- & Windenergiesysteme",
+      "Batteriespeichersysteme (BESS) & Netzintegration",
+      "FEM Festigkeitsberechnung (ANSYS)",
+      "CE Kennzeichnung & Maschinenrichtlinie 2006/42/EG",
+      "MATLAB & Simulink Systemmodellierung",
+      "Energieaudits & Energieeffizienz (DIN EN 16247-1)",
+      "Prüfstandsvalidierung & Prototypenbau",
+      "Lieferantenqualifizierung & Technisches Projektmanagement"
+    ],
+    "experience_level": "Senior Level (6+ Jahre Erfahrung)",
+    "location": "Stuttgart",
+    "postal_code": "70173",
+    "radius_km": 35,
+    "remote_focus": "Hybrid Stuttgart Region (+35 km) oder projektbezogenes Remote-Setup",
+    "salary_band": {
+      "min_eur": 75000,
+      "max_eur": 92000,
+      "target_eur": 80000
+    }
+  },
+  "search_platforms": [
+    {
+      "name": "LinkedIn Jobs",
+      "category": "Aggregator",
+      "url_template": "https://www.linkedin.com/jobs/search/?keywords={role}&location={location}&f_TPR=r604800&sortBy=DD"
+    },
+    {
+      "name": "StepStone",
+      "category": "Aggregator",
+      "url_template": "https://www.stepstone.de/jobs/{role}/in-{location}?rad={radius_km}"
+    },
+    {
+      "name": "Indeed Germany",
+      "category": "Aggregator",
+      "url_template": "https://de.indeed.com/jobs?q={role}&l={location}&radius={radius_km}&fromage=7"
+    },
+    {
+      "name": "Bundesagentur für Arbeit",
+      "category": "Public",
+      "url_template": "https://www.arbeitsagentur.de/jobsuche/suche?berufsfeld={role}&wo={postal_code}&umkreis={radius_km}"
+    },
+    {
+      "name": "XING Jobs",
+      "category": "Regional / DACH",
+      "url_template": "https://www.xing.com/jobs/search?keywords={role}&location={location}&radius={radius_km}"
+    },
+    {
+      "name": "Workwise",
+      "category": "Direct / Salary-Transparent",
+      "url_template": "https://www.workwise.io/jobs?query={role}&remote=true"
+    },
+    {
+      "name": "Yourfirm (Mittelstand)",
+      "category": "SME",
+      "url_template": "https://www.yourfirm.de/jobs/?q={role}&l={location}&r={radius_km}"
+    }
+  ],
+  "best_practices": [
+    "Suchfilter 'Neueste zuerst' / 'Letzte 7 Tage' verwenden, um frühzeitig im Bewerbungsprozess präsent zu sein.",
+    "Fokus auf Entwicklungsingenieur, Projektingenieur Erneuerbare Energien, Systems Engineer und Mechanical Design Lead Positionen.",
+    "Patente, Veröffentlichungen, Normen-Know-how (ISO, DIN, CE) und erfolgreich in Serie überführte Projekte im Anschreiben hervorheben.",
+    "Bewerbungsunterlagen über die standardisierte jobs/engine.py Pipeline generieren und validieren."
+  ]
+}

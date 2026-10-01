@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Bewerbung - Alex Morgan - Example Tech GmbH</title>
+<style>
+@page {
+    size: A4;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background-color: #ffffff;
+    width: 210mm;
+    height: 297mm;
+    padding: 24mm 22mm 20mm 25mm;
+    position: relative;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 12px;
+    margin-bottom: 22px;
+}
+.sender-name {
+    font-size: 16pt;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+}
+.sender-title {
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: #a9583e;
+    margin-top: 2px;
+}
+.sender-contact {
+    text-align: right;
+    font-size: 8.5pt;
+    color: #475569;
+    line-height: 1.45;
+}
+.sender-contact a {
+    color: #a9583e;
+    text-decoration: none;
+}
+.recipient-date-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+}
+.recipient-block {
+    font-size: 9.5pt;
+    line-height: 1.45;
+    color: #334155;
+}
+.recipient-company {
+    font-weight: 600;
+    color: #0f172a;
+}
+.date-block {
+    font-size: 9pt;
+    color: #64748b;
+}
+.subject-line {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+.salutation {
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #0f172a;
+}
+.paragraph {
+    margin-bottom: 13px;
+    text-align: justify;
+}
+.paragraph a {
+    color: #a9583e;
+    text-decoration: none;
+}
+.closing {
+    margin-top: 18px;
+    margin-bottom: 24px;
+}
+.signature-name {
+    font-weight: 700;
+    font-size: 11pt;
+    color: #0f172a;
+}
+.footer-note {
+    position: absolute;
+    bottom: 12mm;
+    left: 25mm;
+    right: 22mm;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 8px;
+    font-size: 8pt;
+    color: #94a3b8;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-note a {
+    color: #a9583e;
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+<div class="header-row">
+    <div>
+        <div class="sender-name">Alex Morgan</div>
+        <div class="sender-title">Senior Fullstack Entwickler · PHP, Laravel & Vue.js</div>
+    </div>
+    <div class="sender-contact">
+        Musterstraße 123 · 10115 Berlin<br>
+        +49 151 12345678 · <a href="mailto:alex.morgan@example.com">alex.morgan@example.com</a><br>
+        <a href="https://links.example.com">https://links.example.com</a>
+    </div>
+</div>
+
+<div class="recipient-date-row">
+    <div class="recipient-block">
+        <div class="recipient-company">Example Tech GmbH</div>
+        <div>Recruiting Team</div>
+        <div>Musterstraße 10 · 10115 Berlin</div>
+    </div>
+    <div class="date-block">
+        Berlin, 1. Oktober 2026
+    </div>
+</div>
+
+<div class="subject-line">Bewerbung als Senior Fullstack Engineer (m/w/d)</div>
+
+<div class="salutation">Sehr geehrte Damen und Herren,</div>
+
+<div class="paragraph">
+moderne Webanwendungen verlangen nach klaren Architekturen und verlässlicher Performance. Als Senior Fullstack Entwickler baue ich wartbare Plattformen mit Laravel und Vue 3. Die Ausrichtung der Example Tech GmbH auf modulare Cloud-Systeme und agile Methoden deckt sich ideal mit meiner Arbeitsweise.
+</div>
+
+<div class="paragraph">
+In meinen bisherigen Projekten konzipierte und realisierte ich verteilte Backend-Systeme mit PHP 8, modularen Service-Architekturen, relationalen MySQL-Datenbanken und asynchronen Queues, wodurch wir eine spürbare Steigerung des Durchsatzes bei hoher Zuverlässigkeit erzielten. Im Frontend baue ich reaktive Oberflächen mit Vue 3, Pinia und Tailwind CSS. Qualität sichere ich durch automatisierte Tests mit Pest und saubere CI/CD Pipelines mit Docker. Das passt perfekt.
+</div>
+
+<div class="paragraph">
+Mein Gehaltswunsch liegt bei 65.000 Euro brutto im Jahr. Ein Einstieg ist unter Berücksichtigung meiner dreimonatigen Kündigungsfrist zum Monatsende möglich, bei Einvernehmen gerne auch kurzfristiger. Ausführliche Einblicke in meine Arbeitsproben und meinen Stack finden Sie auf https://links.example.com. Ich freue mich auf das persönliche Gespräch mit Ihrem Team.
+</div>
+
+<div class="closing">
+    <div>Mit freundlichen Grüßen</div>
+    <div style="margin-top: 14px;" class="signature-name">Alex Morgan</div>
+</div>
+
+<div class="footer-note">
+    <span>Bewerbungsunterlagen · Alex Morgan</span>
+    <span>Portfolio: <a href="https://links.example.com">links.example.com</a></span>
+</div>
+</body>
+</html>

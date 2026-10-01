@@ -1,0 +1,51 @@
+{
+  "role_id": "frontend_ui_architect",
+  "title": "{candidate_name} | Senior Frontend Entwickler & UI Architekt — Resume",
+  "og_title": "{candidate_name} | Senior Frontend Entwickler & UI Architekt",
+  "twitter_title": "{candidate_name} | Senior Frontend Entwickler & UI Architekt",
+  "subtitle_en": "Senior Frontend Developer & UI Architect · Vue.js, React, Angular & TypeScript · Nuxt, Next.js & Tailwind CSS",
+  "subtitle_de": "Senior Frontend Entwickler & UI Architekt · Vue.js, React, Angular & TypeScript · Nuxt, Next.js & Tailwind CSS",
+  "summary_en": "Senior Frontend Developer & UI Architect with 5+ years of experience engineering accessible, responsive, and ultra-fast web applications. Deep expertise in Vue 3 (Composition API, Pinia, Nuxt), React (Next.js, Server Components), Angular, and TypeScript. Proven track record in achieving Core Web Vitals 95+, WCAG accessibility compliance, modern build tooling (Vite, Webpack), and automated frontend testing (Vitest, Playwright, Cypress). 100% remote resident in Germany.",
+  "summary_de": "Senior Frontend Entwickler & UI Architekt mit über 5 Jahren Erfahrung in Konzeption, Architektur und Umsetzung barrierefreier, hochperformanter Webanwendungen. Tiefgehende Expertise in Vue 3 (Composition API, Pinia, Nuxt), React (Next.js, Server Components), Angular und TypeScript. Nachweisbare Erfolge bei Core Web Vitals 95+, Barrierefreiheit nach WCAG, modernem Build-Tooling (Vite, Webpack) und automatisierten Frontend-Tests (Vitest, Playwright, Cypress). 100% remote in Deutschland.",
+  "skills_frontend": {
+    "heading_en": "Frontend, UI/UX & Component Architecture (Primary)",
+    "heading_de": "Frontend, UI/UX & Komponenten-Architektur (Primär)",
+    "heading_display": "Frontend, UI/UX & Component Architecture",
+    "items": [
+      "<strong>Vue 3, Nuxt, React, Next.js & Angular</strong> · Composition API, Pinia, Redux Toolkit, SSR/SSG & modulare Design Systems",
+      "Moderne Webstandards, HTML5, CSS3, Tailwind CSS & Core Web Vitals 95+ · Barrierefreiheit (WCAG 2.1 AA) & Vite / Webpack"
+    ]
+  },
+  "skills_backend": {
+    "heading_en": "Backend Integration, APIs & Data Layer (Primary)",
+    "heading_de": "Backend-Integration, APIs & Daten-Layer (Primär)",
+    "heading_display": "Backend Integration, APIs & Data Layer",
+    "items": [
+      "<strong>TypeScript & Node.js</strong> · Typensichere API-Clients, TanStack Query, SWR, REST & GraphQL Schnittstellen",
+      "State Management & Telemetrie: Pinia, Zustand, PostHog Event-Tracking & Web Vitals Monitoring",
+      "BFF (Backend-for-Frontend) Architekturen mit Next.js API Routes, Express & Headless CMS Integration",
+      "PHP 8+, Laravel & Headless E-Commerce (Shopware Storefront API) · OpenAPI / Swagger Schema Validierung"
+    ]
+  },
+  "skills_devops": {
+    "heading_en": "DevOps, Tooling & Frontend Testing",
+    "heading_de": "DevOps, Tooling & Frontend-Testing",
+    "heading_display": "DevOps, Tooling & Testing",
+    "items": [
+      "Automatisierte Frontend-Test-Pipelines: Unit-Tests mit Vitest/Jest, E2E-Tests mit Playwright & Cypress",
+      "CI/CD Pipelines mit GitHub Actions & GitLab CI · Automatisierte Performance-Audits mit Lighthouse CI",
+      "Docker Containerisierung & statische Multi-Stage Builds für blitzschnelle CDN-Deployments",
+      "Entwicklung eigener MCP Tools (Model Context Protocol) & KI-unterstützte Coding-Workflows (Claude Code, Cursor)",
+      "Agile Zusammenarbeit, Figma Design Tokens Umsetzung, GitFlow & strukturierte UI Code Reviews"
+    ]
+  },
+  "skills_secondary": {
+    "heading_en": "Further Technologies & Background",
+    "heading_de": "Weitere Technologien & Hintergrund",
+    "heading_display": "Further Technologies",
+    "items": [
+      "Svelte, Python Scripting, WebSockets & Realtime-Datenströme (Server-Sent Events) · S3 Assets & Cloudflare Edge",
+      "B.Sc. Informatik (ZAB-zertifizierte Bachelor-Gleichwertigkeit) · 100% Remote deutschlandweit verfügbar"
+    ]
+  }
+}

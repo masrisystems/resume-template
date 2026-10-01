@@ -1,0 +1,91 @@
+{
+  "candidate": {
+    "name": "Alex Morgan",
+    "title_en": "Senior Fullstack Engineer",
+    "title_de": "Senior Fullstack Entwickler",
+    "address_street": "Musterstraße 123",
+    "address_city": "10115 Berlin",
+    "postal_code": "10115",
+    "phone": "+49 151 12345678",
+    "email": "alex.morgan@example.com",
+    "portfolio_url": "https://portfolio.example.com",
+    "links_url": "https://links.example.com",
+    "prohibited_domains": [
+      "resume.example.com"
+    ]
+  },
+  "invariants": {
+    "target_salary_gross_eur": 65000,
+    "target_salary_phrase_de": "65.000 Euro brutto im Jahr",
+    "notice_period_de": "dreimonatigen Kündigungsfrist zum Monatsende, im Einvernehmen gern auch kurzfristiger",
+    "default_location_city": "Berlin"
+  },
+  "search_preferences": {
+    "role_keyword": "Fullstack",
+    "target_stack": [
+      "Vue.js",
+      "Nuxt 3",
+      "Laravel",
+      "PHP 8+",
+      "Shopware 6",
+      "TypeScript",
+      "Node.js",
+      "Inertia.js",
+      "Tailwind CSS",
+      "Docker"
+    ],
+    "experience_level": "Senior Level (5+ Jahre Erfahrung)",
+    "location": "Berlin",
+    "postal_code": "10115",
+    "radius_km": 25,
+    "remote_focus": "100% Remote (Deutschland/Europa) oder Hybrid Berlin",
+    "salary_band": {
+      "min_eur": 60000,
+      "max_eur": 75000,
+      "target_eur": 65000
+    }
+  },
+  "search_platforms": [
+    {
+      "name": "LinkedIn Jobs",
+      "category": "Aggregator",
+      "url_template": "https://www.linkedin.com/jobs/search/?keywords={role}&location={location}&f_TPR=r604800&sortBy=DD"
+    },
+    {
+      "name": "StepStone",
+      "category": "Aggregator",
+      "url_template": "https://www.stepstone.de/jobs/{role}/in-{location}?rad={radius_km}"
+    },
+    {
+      "name": "Indeed Germany",
+      "category": "Aggregator",
+      "url_template": "https://de.indeed.com/jobs?q={role}&l={location}&radius={radius_km}&fromage=7"
+    },
+    {
+      "name": "Bundesagentur für Arbeit",
+      "category": "Public",
+      "url_template": "https://www.arbeitsagentur.de/jobsuche/suche?berufsfeld={role}&wo={postal_code}&umkreis={radius_km}"
+    },
+    {
+      "name": "XING Jobs",
+      "category": "Regional / DACH",
+      "url_template": "https://www.xing.com/jobs/search?keywords={role}&location={location}&radius={radius_km}"
+    },
+    {
+      "name": "Workwise",
+      "category": "Direct / Salary-Transparent",
+      "url_template": "https://www.workwise.io/jobs?query={role}&remote=true"
+    },
+    {
+      "name": "Yourfirm (Mittelstand)",
+      "category": "SME",
+      "url_template": "https://www.yourfirm.de/jobs/?q={role}&l={location}&r={radius_km}"
+    }
+  ],
+  "best_practices": [
+    "Suchfilter 'Neueste zuerst' / 'Letzte 7 Tage' verwenden, um frühzeitig im Bewerbungsprozess präsent zu sein.",
+    "Keine Junior-Filter nutzen — Fokus auf Mid- und Senior-Positionen (5+ Jahre Erfahrung).",
+    "Direktbewerbung auf Firmenportalen oder per E-Mail bevorzugen, wenn Stellen auf Aggregatoren gelistet sind.",
+    "Bewerbungsunterlagen über die standardisierte jobs/engine.py Pipeline generieren und validieren."
+  ]
+}

@@ -1,0 +1,23 @@
+# Rolle
+Agieren Sie als Experte für technisches Recruiting, professionelles Schreiben von Lebensläufen und ATS-Optimierung (Applicant Tracking System).
+
+# Aufgabe
+Lesen Sie das Kandidatenprofil in `@config/profile.json`, den Master-Lebenslauf in `@index.html` sowie die kanonischen Rollen in `@jobs/roles/`. Ich werde Ihnen eine spezifische Stellenbeschreibung zur Verfügung stellen. Ihre Aufgabe ist es, den HTML-Lebenslauf passgenau auf diese Stellenbeschreibung zuzuschneiden und für ATS-Systeme zu optimieren.
+
+**STRIKT:** Der generierte Lebenslauf muss die exakte DOM-Struktur von `@index.html` einhalten. Verändern Sie ausschließlich die Textinhalte der Tags (`<li>`, `<p>`, `<span>`, etc.) und die zweisprachigen Attribute (`data-lang-en`, `data-lang-de`). Die gesamte HTML-Struktur, alle Script- und Style-Blöcke, IDs und CSS-Klassen müssen für die DOM-Parität erhalten bleiben.
+
+# Anweisungen
+
+1. **Wissensbasis konsultieren:** Ziehen Sie bei der Formulierung konkreter Stichpunkte und Erfolge die Projektdetails und Kennzahlen aus `@index.html` und den passenden Rollenprofilen aus `@jobs/roles/` heran.
+
+2. **ATS-Optimierung:** Identifizieren Sie die 5 wichtigsten Keywords und Qualifikationen aus der Stellenbeschreibung. Integrieren Sie diese exakt und natürlich in den Text des Lebenslaufs (in die `data-lang-en` und `data-lang-de` Attribute sowie den sichtbaren Text), um maximale ATS-Kompatibilität zu gewährleisten.
+
+3. **STAR-Methode & Quantifizierung:** Überarbeiten Sie die Stichpunkte der Berufserfahrung nach der STAR-Methode (Situation, Task, Action, Result). Heben Sie quantifizierbare Erfolge hervor, wo immer möglich.
+
+4. **Tech-Stack Fokus:** Betonen Sie die geforderten Kern-Frameworks und Backend-/Cloud-Architekturen gezielt.
+
+5. **Lückenanalyse & Transferable Skills:** Führen Sie eine kurze Lückenanalyse durch. Adressieren Sie "Skill Gaps" direkt bei der Überarbeitung, indem Sie relevante, übertragbare Fähigkeiten betonen.
+
+6. **Erhalt von Code & Funktionalität (STRIKT):** Stellen Sie sicher, dass alle CSS-Klassen, Inline-Styles, JavaScript-Funktionalitäten und Meta-Tags aus `@index.html` 1:1 übernommen werden.
+
+7. **Dateiausgabe:** Speichern Sie die Konfiguration in `jobs/configs/JJJJ-MM-TT_[slug].json` und kompilieren Sie das Paket über `python jobs/engine.py run --config ...`.

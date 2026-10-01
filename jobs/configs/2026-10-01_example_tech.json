@@ -1,0 +1,19 @@
+{
+  "slug": "example_tech",
+  "date": "2026-10-01",
+  "role_profile": "fullstack_laravel",
+  "cover_letter": {
+    "company_clean": "Example Tech GmbH",
+    "sender_title": "Senior Fullstack Entwickler · PHP, Laravel & Vue.js",
+    "recipient_company": "Example Tech GmbH",
+    "recipient_person": "Recruiting Team",
+    "recipient_address": "Musterstraße 10 · 10115 Berlin",
+    "subject_line": "Bewerbung als Senior Fullstack Engineer (m/w/d)",
+    "salutation": "Sehr geehrte Damen und Herren,",
+    "paragraphs": [
+      "moderne Webanwendungen verlangen nach klaren Architekturen und verlässlicher Performance. Als Senior Fullstack Entwickler baue ich wartbare Plattformen mit Laravel und Vue 3. Die Ausrichtung der Example Tech GmbH auf modulare Cloud-Systeme und agile Methoden deckt sich ideal mit meiner Arbeitsweise.",
+      "In meinen bisherigen Projekten konzipierte und realisierte ich verteilte Backend-Systeme mit PHP 8, modularen Service-Architekturen, relationalen MySQL-Datenbanken und asynchronen Queues, wodurch wir eine spürbare Steigerung des Durchsatzes bei hoher Zuverlässigkeit erzielten. Im Frontend baue ich reaktive Oberflächen mit Vue 3, Pinia und Tailwind CSS. Qualität sichere ich durch automatisierte Tests mit Pest und saubere CI/CD Pipelines mit Docker. Das passt perfekt.",
+      "Mein Gehaltswunsch liegt bei 65.000 Euro brutto im Jahr. Ein Einstieg ist unter Berücksichtigung meiner dreimonatigen Kündigungsfrist zum Monatsende möglich, bei Einvernehmen gerne auch kurzfristiger. Ausführliche Einblicke in meine Arbeitsproben und meinen Stack finden Sie auf https://links.example.com. Ich freue mich auf das persönliche Gespräch mit Ihrem Team."
+    ]
+  }
+}

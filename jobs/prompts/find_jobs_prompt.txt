@@ -1,0 +1,21 @@
+Agieren Sie als Experte für Executive Recruiting. Analysieren Sie das Kandidatenprofil in `@config/profile.json` sowie den Lebenslauf in `@index.html` und nutzen Sie Ihre Web-Suche, um die besten passenden Stellenangebote zu finden:
+1. **Remote / Deutschlandweit** (100% Home Office oder remote-friendly)
+2. **Vor Ort / Hybrid in der Zielregion:** Gemäß den in `config/profile.json` definierten Parametern (z. B. Berlin und Umgebung).
+3. **Kuratierte Tech- & Investment-Quellen:**
+   - **Techstars Portfolio Directory:** `https://www.techstars.com/portfolio#search-portfolio` (Tech-Unternehmen & Startups nach Region und Tech-Stack filtern).
+   - **High-Tech Gründerfonds (HTGF) Newsroom:** `https://www.htgf.de/newsroom/` (Neueste Finanzierungsrunden & Tech-Investitionen in Deutschland identifizieren).
+
+**Recherchieren Sie dabei zwingend auch die durchschnittlichen Gehälter für die jeweilige Rolle im entsprechenden Unternehmen im Internet (vorzugsweise über kununu).**
+
+KRITISCHE ANWEISUNGEN FÜR STRUKTUR, STATUS UND DUPLIKATSPRÜFUNG:
+
+1. Bestand & Status prüfen: Lesen Sie zuerst die vorhandene Tabelle in `@jobs/job_matches.md`. Sie dürfen KEINE Stellenanzeigen, Unternehmen oder Rollen aufnehmen, die dort bereits gelistet sind – unabhängig davon, ob sie mit `🔵 [Submitted]` oder einem anderen Status markiert sind. Finden Sie ausschließlich neue, einzigartige Gelegenheiten.
+2. Nahtlose Integration: Die Ausgabe muss in reinem, fehlerfreiem Markdown erfolgen. Erstellen Sie keine neue Tabellenüberschrift. Generieren Sie die neuen Treffer ausschließlich als Datenzeilen, die exakt in das bestehende Schema passen und als fortlaufende Zeilen angehängt werden können.
+3. Spaltenstruktur:
+   | Job Title | Company Name | Location | Job Type | Status | Match Score (0-10) | Match Justification | Skill Gap | Salary Range | Apply Link |
+4. Status-Zuweisung mit Emojis: Setzen Sie in der Spalte "Status" für alle neu gefundenen Jobs zwingend den Wert `🟢 [New]`.
+5. Inhaltliche Präzision:
+   - Match Justification: Nur ein prägnanter Satz zur Eignung (Fokus auf Fullstack-Entwicklung, moderne Frontend-Frameworks wie Vue.js / React / TypeScript, PHP / Laravel / Symfony, Enterprise-Erfahrung und ggf. regionale Nähe).
+   - Skill Gap: Maximal 1-2 spezifische Qualifikationen, die im Lebenslauf fehlen.
+   - Salary Range: Nutzen Sie Ihre Websuche (Fokus auf kununu oder ähnliche Plattformen), um das durchschnittliche Gehalt für diese spezifische Rolle bei dem jeweiligen Unternehmen zu ermitteln.
+6. Ausführung: Hängen Sie die neuen Markdown-Zeilen direkt am Ende der Datei `@jobs/job_matches.md` an. Überschreiben Sie nichts und stellen Sie sicher, dass keine Leerzeilen die Tabellenstruktur unterbrechen.

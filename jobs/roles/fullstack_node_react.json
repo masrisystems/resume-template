@@ -1,0 +1,51 @@
+{
+  "role_id": "fullstack_node_react",
+  "title": "{candidate_name} | Senior Full Stack Entwickler (TypeScript & React) — Resume",
+  "og_title": "{candidate_name} | Senior Full Stack Entwickler (TypeScript & React)",
+  "twitter_title": "{candidate_name} | Senior Full Stack Entwickler (TypeScript & React)",
+  "subtitle_en": "Senior Full Stack Developer · TypeScript, React, Next.js & Node.js · REST APIs & Cloud",
+  "subtitle_de": "Senior Full Stack Entwickler · TypeScript, React, Next.js & Node.js · REST APIs & Cloud",
+  "summary_en": "Senior Full Stack Developer with 5+ years of experience engineering scalable web applications and e-commerce platforms. Deep expertise in TypeScript, React, Next.js, and Node.js (Express), along with REST and GraphQL API architectures. Proven track record in relational and NoSQL databases, Docker containerization, automated testing, and CI/CD pipelines. 100% remote resident in Germany.",
+  "summary_de": "Senior Full Stack Entwickler mit über 5 Jahren Erfahrung in Konzeption, Architektur und Entwicklung skalierbarer Webanwendungen und Plattform-Systeme. Fundierte Praxiserfahrung in TypeScript, React, Next.js und Node.js (Express) sowie REST- und GraphQL-Schnittstellen. Versiert im Aufbau relationaler und NoSQL-Datenbanken, Docker-Containerisierung, automatisierten Tests und CI/CD Pipelines. 100% remote in Deutschland.",
+  "skills_frontend": {
+    "heading_en": "Frontend & UI Architecture (Primary)",
+    "heading_de": "Frontend & UI-Architektur (Primär)",
+    "heading_display": "Frontend & UI Architecture",
+    "items": [
+      "<strong>React, Next.js & TypeScript</strong> · Moderne SPA/SSR-Architektur, Component Design & responsive Interfaces",
+      "Moderne Webstandards, HTML5, CSS3, Tailwind CSS & Core Web Vitals 95+ · Barrierefreiheit & Client-State-Management"
+    ]
+  },
+  "skills_backend": {
+    "heading_en": "Backend, APIs & Cloud Services (Primary)",
+    "heading_de": "Backend, APIs & Cloud Services (Primär)",
+    "heading_display": "Backend, APIs & Cloud Services",
+    "items": [
+      "<strong>Node.js, Express & TypeScript</strong> · Skalierbare Microservices, REST & GraphQL API Design",
+      "Sichere Authentifizierung (OAuth2, JWT, Session Management) & robuste Webhook-Integrationen",
+      "Datenbank-Architektur: PostgreSQL, MySQL & NoSQL (MongoDB, Redis Caching & In-Memory Stores)",
+      "PHP 8+, Symfony & Laravel · Schnittstellen-Architektur & OpenAPI / Postman Automated Testing"
+    ]
+  },
+  "skills_devops": {
+    "heading_en": "DevOps, Container & Automation",
+    "heading_de": "DevOps, Container & Automatisierung",
+    "heading_display": "DevOps & Automation",
+    "items": [
+      "Docker Containerisierung & Docker Compose für reproduzierbare Staging- und Produktionsumgebungen",
+      "CI/CD Pipelines mit GitHub Actions & GitLab CI · Automatisierte Unit-, Integrations- & E2E-Tests (Vitest, Jest)",
+      "Cloud und Linux Serveradministration (Nginx, Reverse Proxies, SSL/TLS, Monitoring & Log-Aggregation)",
+      "Entwicklung eigener MCP Tools (Model Context Protocol) & KI-unterstützte Coding-Workflows (Claude Code, Cursor)",
+      "Agile Softwareentwicklung, GitFlow, strukturierte Code Reviews & testgetriebene Entwicklung (TDD)"
+    ]
+  },
+  "skills_secondary": {
+    "heading_en": "Further Technologies & Background",
+    "heading_de": "Weitere Technologien & Hintergrund",
+    "heading_display": "Further Technologies",
+    "items": [
+      "Python & Bash Scripting · Asynchrone Job-Queues (Redis, RabbitMQ) & S3 Object Storage",
+      "B.Sc. Informatik (ZAB-zertifizierte Bachelor-Gleichwertigkeit) · 100% Remote deutschlandweit verfügbar"
+    ]
+  }
+}

@@ -1,0 +1,267 @@
+/* Basic body font and line height */
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+}
+
+/* List style for li */
+li {
+  list-style: circle;
+}
+
+/* Font families for titles */
+.title-font,
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display SC", serif;
+  font-weight: bold;
+}
+
+/* On-screen Title divider lines */
+h1,
+h2,
+.title-font {
+  border-bottom: 1.5px solid #0f172a;
+  padding-bottom: 2px;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark .title-font {
+  border-bottom-color: #475569;
+}
+
+/* Link styling using primary accent color (#cc785c) */
+a {
+  color: #cc785c;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+a:hover {
+  color: #a9583e;
+  text-decoration: underline;
+}
+
+.dark a {
+  color: #e8a55a;
+}
+
+.dark a:hover {
+  color: #cc785c;
+}
+
+/* Hide print signature by default */
+.print-signature {
+  display: none;
+}
+
+@page {
+  size: A4;
+  margin: 6mm 8mm;
+}
+
+/* Print-specific styles */
+@media print {
+  /* Hide elements not needed for print */
+  .no-print,
+  .no-print *,
+  blockquote {
+    display: none !important;
+  }
+  .job-fair-supplemental { display: none !important; }
+
+  body {
+    background: white !important;
+    font-size: 9pt !important;
+    line-height: 1.35 !important;
+    color: #0f172a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #resumeContent {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    background: white !important;
+    color: #0f172a !important;
+  }
+
+  /* Title divider lines */
+  html.dark body #resumeContent header#header,
+  body #resumeContent header#header,
+  header#header,
+  #header {
+    border-bottom: 1.5px solid #0f172a !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  html.dark body #resumeContent h1,
+  html.dark body #resumeContent h2,
+  html.dark body #resumeContent .title-font,
+  body #resumeContent h1,
+  body #resumeContent h2,
+  body #resumeContent .title-font,
+  h1,
+  h2,
+  .title-font {
+    border-bottom: 1.5px solid #0f172a !important;
+    padding-bottom: 2px !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Compact vertical rhythm to ensure 2-page fit */
+  section {
+    margin-bottom: 6px !important;
+  }
+
+  #work-experience > div,
+  #side-projects-role,
+  #current-role,
+  #brainkets-role {
+    margin-bottom: 6px !important;
+  }
+
+  h2 {
+    font-size: 1.15rem !important;
+  }
+
+  h3 {
+    font-size: 0.95rem !important;
+  }
+
+  ul {
+    margin-top: 2px !important;
+  }
+
+  li {
+    margin-bottom: 1px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Ensure all text descriptions, dates, and details are crisp, dark ink */
+  html.dark body #resumeContent .dark\:text-gray-300,
+  html.dark body #resumeContent .dark\:text-gray-400,
+  html.dark body #resumeContent .dark\:text-neutral-300,
+  html.dark body #resumeContent .text-gray-700,
+  html.dark body #resumeContent .text-gray-600,
+  html.dark body #resumeContent .text-gray-500,
+  html.dark body #resumeContent *,
+  body #resumeContent *,
+  #resumeContent p,
+  #resumeContent span,
+  #resumeContent li,
+  #resumeContent div,
+  #resumeContent strong,
+  .text-gray-700,
+  .text-gray-600,
+  .text-gray-500,
+  .text-stone-900,
+  .dark\:text-gray-300,
+  .dark\:text-gray-400,
+  .dark\:text-neutral-300 {
+    color: #0f172a !important;
+  }
+
+  /* Subtitle and links in brand accent */
+  html.dark body #resumeContent a,
+  html.dark body #resumeContent a *,
+  body #resumeContent a,
+  body #resumeContent a *,
+  .contact-link,
+  a.contact-link {
+    color: #cc785c !important;
+    text-decoration: none !important;
+  }
+
+  html.dark body #resumeContent .text-\[\#a9583e\],
+  html.dark body #resumeContent .dark\:text-\[\#e8a55a\],
+  body #resumeContent .text-\[\#a9583e\],
+  body #resumeContent .dark\:text-\[\#e8a55a\] {
+    color: #a9583e !important;
+  }
+
+  #certifications ul {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    column-gap: 1.5rem !important;
+    row-gap: 0.15rem !important;
+  }
+
+  .print-signature {
+    display: block !important;
+  }
+}
+
+/* Styles for the main resume content area */
+#resumeContent {
+  width: 210mm; /* Standard A4 width */
+  padding: 20px;
+  margin: 20px auto; /* Center the content */
+}
+
+/* Styles applied when the PDF export is active (used by html2canvas/jsPDF) */
+.pdf-export-active .no-print,
+.pdf-export-active .no-print *,
+#resumeContent.pdf-export-active .no-print,
+#resumeContent.pdf-export-active .no-print *,
+.pdf-export-active blockquote {
+  display: none !important;
+}
+
+.pdf-export-active,
+.pdf-export-active body {
+  background: white !important;
+}
+
+.pdf-export-active #resumeContent {
+  background: white !important;
+  color: #0f172a !important;
+}
+
+.pdf-export-active header#header,
+.pdf-export-active #header,
+.pdf-export-active h1,
+.pdf-export-active h2,
+.pdf-export-active .title-font {
+  border-bottom: 1.5px solid #0f172a !important;
+}
+
+.pdf-export-active h1,
+.pdf-export-active h2 {
+  padding-bottom: 4px !important;
+}
+
+html.dark.pdf-export-active body #resumeContent *,
+.pdf-export-active #resumeContent *,
+.pdf-export-active p,
+.pdf-export-active span,
+.pdf-export-active li,
+.pdf-export-active div,
+.pdf-export-active .text-gray-700,
+.pdf-export-active .text-gray-600,
+.pdf-export-active .text-gray-500,
+.pdf-export-active .dark\:text-gray-300,
+.pdf-export-active .dark\:text-gray-400 {
+  color: #0f172a !important;
+}
+
+.pdf-export-active a,
+.pdf-export-active .contact-link {
+  color: #cc785c !important;
+  text-decoration: none !important;
+}
+
+.pdf-export-active .text-\[\#a9583e\],
+.pdf-export-active .dark\:text-\[\#e8a55a\] {
+  color: #a9583e !important;
+}
+
+.pdf-export-active .print-signature {
+  display: block !important;
+}

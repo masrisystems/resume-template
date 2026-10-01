@@ -1,0 +1,92 @@
+{
+  "candidate": {
+    "name": "Elena Becker",
+    "title_en": "Lead Cloud DevOps & Platform Engineer",
+    "title_de": "Lead Cloud DevOps & Platform Engineer",
+    "address_street": "Leopoldstraße 45",
+    "address_city": "80802 München",
+    "postal_code": "80802",
+    "phone": "+49 89 98765432",
+    "email": "elena.becker@example.com",
+    "portfolio_url": "https://elena-becker.example.com",
+    "links_url": "https://links.elena-becker.example.com",
+    "prohibited_domains": [
+      "resume.elena-becker.example.com"
+    ]
+  },
+  "invariants": {
+    "target_salary_gross_eur": 82000,
+    "target_salary_phrase_de": "82.000 Euro brutto im Jahr",
+    "notice_period_de": "dreimonatigen Kündigungsfrist zum Quartalsende, im Einvernehmen gern auch kurzfristiger",
+    "default_location_city": "München"
+  },
+  "search_preferences": {
+    "role_keyword": "DevOps",
+    "target_stack": [
+      "Kubernetes",
+      "Terraform",
+      "AWS Cloud",
+      "Azure Cloud",
+      "Docker Containerisierung",
+      "CI/CD Pipelines",
+      "Helm Charts",
+      "Prometheus & Grafana",
+      "ArgoCD GitOps",
+      "Python & Bash Scripting",
+      "Linux Server Administration"
+    ],
+    "experience_level": "Senior / Lead Level (6+ Jahre Erfahrung)",
+    "location": "München",
+    "postal_code": "80802",
+    "radius_km": 30,
+    "remote_focus": "100% Remote (Deutschland/DACH) oder Hybrid München",
+    "salary_band": {
+      "min_eur": 78000,
+      "max_eur": 95000,
+      "target_eur": 82000
+    }
+  },
+  "search_platforms": [
+    {
+      "name": "LinkedIn Jobs",
+      "category": "Aggregator",
+      "url_template": "https://www.linkedin.com/jobs/search/?keywords={role}&location={location}&f_TPR=r604800&sortBy=DD"
+    },
+    {
+      "name": "StepStone",
+      "category": "Aggregator",
+      "url_template": "https://www.stepstone.de/jobs/{role}/in-{location}?rad={radius_km}"
+    },
+    {
+      "name": "Indeed Germany",
+      "category": "Aggregator",
+      "url_template": "https://de.indeed.com/jobs?q={role}&l={location}&radius={radius_km}&fromage=7"
+    },
+    {
+      "name": "Bundesagentur für Arbeit",
+      "category": "Public",
+      "url_template": "https://www.arbeitsagentur.de/jobsuche/suche?berufsfeld={role}&wo={postal_code}&umkreis={radius_km}"
+    },
+    {
+      "name": "XING Jobs",
+      "category": "Regional / DACH",
+      "url_template": "https://www.xing.com/jobs/search?keywords={role}&location={location}&radius={radius_km}"
+    },
+    {
+      "name": "Workwise",
+      "category": "Direct / Salary-Transparent",
+      "url_template": "https://www.workwise.io/jobs?query={role}&remote=true"
+    },
+    {
+      "name": "Yourfirm (Mittelstand)",
+      "category": "SME",
+      "url_template": "https://www.yourfirm.de/jobs/?q={role}&l={location}&r={radius_km}"
+    }
+  ],
+  "best_practices": [
+    "Suchfilter 'Neueste zuerst' / 'Letzte 7 Tage' verwenden, um frühzeitig im Bewerbungsprozess präsent zu sein.",
+    "Fokus auf Senior DevOps, Cloud Infrastructure, Platform Engineering und Site Reliability Engineering (SRE) Positionen.",
+    "Direktbewerbung auf Firmenportalen oder via Tech Recruiter bevorzugen.",
+    "Bewerbungsunterlagen über die standardisierte jobs/engine.py Pipeline generieren und validieren."
+  ]
+}

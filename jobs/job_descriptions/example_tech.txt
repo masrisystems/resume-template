@@ -1,0 +1,30 @@
+Stellenbezeichnung: Senior Fullstack Engineer (m/w/d) - PHP / Laravel & Vue.js
+Unternehmen: Example Tech GmbH
+Standort: Berlin / 100% Remote (Deutschland)
+Vertragsart: Vollzeit, unbefristet
+
+Über uns:
+Die Example Tech GmbH entwickelt hochskalierbare Cloud-Plattformen und Enterprise-Lösungen für moderne B2B-Kunden im europäischen Markt. Unser Tech-Stack basiert auf modernen Webtechnologien, cloud-nativen Architekturen und automatisierten CI/CD-Pipelines.
+
+Deine Aufgaben:
+- Konzeption, Weiterentwicklung und Skalierung unserer Microservices und Webplattformen auf Basis von PHP 8+ und Laravel.
+- Entwicklung responsiver, hochperformanter Single Page Applications mit Vue.js 3, Inertia.js und Tailwind CSS.
+- Entwurf und Implementierung robuster RESTful APIs und Webhooks nach OpenAPI / Swagger Spezifikationen.
+- Optimierung relationaler Datenbankschemata in MySQL und PostgreSQL sowie Implementierung von Caching-Strategien mit Redis.
+- Gewährleistung höchster Codequalität durch automatisierte Unit- und Integrationstests (PHPUnit, Pest) und strukturierte Peer Code Reviews.
+- Aktive Mitgestaltung unserer CI/CD-Pipelines mit Docker und GitHub Actions in agilen Sprints.
+
+Dein Profil:
+- Mindestens 5 Jahre fundierte Berufserfahrung in der professionellen Softwareentwicklung im Web-Umfeld.
+- Tiefgehendes Verständnis von PHP 8+, Laravel (Eloquent, Queues, Service Layer) und modernen Framework-Architekturen.
+- Sehr gute Kenntnisse in modernem JavaScript / TypeScript sowie Vue.js 3 (Composition API, Pinia) und Tailwind CSS.
+- Erfahrung im Umgang mit Docker, GitFlow und relationalen Datenbanken.
+- Ausgeprägtes Qualitätsbewusstsein nach Clean-Code-Prinzipien und Leidenschaft für moderne Entwickler-Workflows.
+- Verhandlungssichere Deutschkenntnisse und gute Englischkenntnisse.
+
+Wir bieten:
+- Flexible Arbeitszeiten und 100% Remote-Work-Option innerhalb Deutschlands.
+- Attraktives Gehaltspaket (60.000 € – 75.000 € brutto/Jahr) je nach Erfahrung und Qualifikation.
+- Modernes Hardware-Equipment freier Wahl (MacBook Pro / Linux ThinkPad).
+- Regelmäßige Weiterbildungsbudgets und Konferenzbesuche.
+- Ein offenes, wertschätzendes Team mit flachen Hierarchien und agilem Mindset.

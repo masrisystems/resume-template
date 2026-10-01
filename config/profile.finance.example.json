@@ -1,0 +1,91 @@
+{
+  "candidate": {
+    "name": "Clara Lindemann",
+    "title_en": "Senior Financial Analyst & Corporate Controller",
+    "title_de": "Senior Financial Analyst & Corporate Controller",
+    "address_street": "Mainzer Landstraße 180",
+    "address_city": "60327 Frankfurt am Main",
+    "postal_code": "60327",
+    "phone": "+49 69 12345678",
+    "email": "clara.lindemann@example.com",
+    "portfolio_url": "https://clara-lindemann.example.com",
+    "links_url": "https://links.clara-lindemann.example.com",
+    "prohibited_domains": [
+      "resume.clara-lindemann.example.com"
+    ]
+  },
+  "invariants": {
+    "target_salary_gross_eur": 75000,
+    "target_salary_phrase_de": "75.000 Euro brutto im Jahr",
+    "notice_period_de": "dreimonatigen Kündigungsfrist zum Quartalsende, im Einvernehmen gern auch kurzfristiger",
+    "default_location_city": "Frankfurt am Main"
+  },
+  "search_preferences": {
+    "role_keyword": "Financial Analyst",
+    "target_stack": [
+      "Financial Modeling & Unternehmensbewertung",
+      "Corporate Controlling & FP&A",
+      "IFRS & HGB Rechnungslegung",
+      "SAP S/4HANA Finance",
+      "Cash Flow Forecasting & Liquiditätssteuerung",
+      "Excel Financial Models & Power Query",
+      "Power BI Dashboards & Management Reporting",
+      "Budgetierung & Rolling Forecasts",
+      "M&A Due Diligence & M&A Transaktionsberatung",
+      "Kosten- und Leistungsrechnung (KLR)"
+    ],
+    "experience_level": "Senior Level (5+ Jahre Erfahrung)",
+    "location": "Frankfurt am Main",
+    "postal_code": "60327",
+    "radius_km": 30,
+    "remote_focus": "Hybrid Frankfurt am Main oder 100% Remote Deutschland",
+    "salary_band": {
+      "min_eur": 70000,
+      "max_eur": 85000,
+      "target_eur": 75000
+    }
+  },
+  "search_platforms": [
+    {
+      "name": "LinkedIn Jobs",
+      "category": "Aggregator",
+      "url_template": "https://www.linkedin.com/jobs/search/?keywords={role}&location={location}&f_TPR=r604800&sortBy=DD"
+    },
+    {
+      "name": "StepStone",
+      "category": "Aggregator",
+      "url_template": "https://www.stepstone.de/jobs/{role}/in-{location}?rad={radius_km}"
+    },
+    {
+      "name": "Indeed Germany",
+      "category": "Aggregator",
+      "url_template": "https://de.indeed.com/jobs?q={role}&l={location}&radius={radius_km}&fromage=7"
+    },
+    {
+      "name": "Bundesagentur für Arbeit",
+      "category": "Public",
+      "url_template": "https://www.arbeitsagentur.de/jobsuche/suche?berufsfeld={role}&wo={postal_code}&umkreis={radius_km}"
+    },
+    {
+      "name": "XING Jobs",
+      "category": "Regional / DACH",
+      "url_template": "https://www.xing.com/jobs/search?keywords={role}&location={location}&radius={radius_km}"
+    },
+    {
+      "name": "Workwise",
+      "category": "Direct / Salary-Transparent",
+      "url_template": "https://www.workwise.io/jobs?query={role}&remote=true"
+    },
+    {
+      "name": "Yourfirm (Mittelstand)",
+      "category": "SME",
+      "url_template": "https://www.yourfirm.de/jobs/?q={role}&l={location}&r={radius_km}"
+    }
+  ],
+  "best_practices": [
+    "Suchfilter 'Neueste zuerst' / 'Letzte 7 Tage' verwenden, um frühzeitig im Bewerbungsprozess präsent zu sein.",
+    "Fokus auf Senior Financial Analyst, Corporate Controller, FP&A Manager und Finance Business Partner Rollen.",
+    "Erfolgreich geführte Audits, M&A Transaktionsvolumina oder implementierte Reporting-Automatisierungen im Anschreiben quantifizieren.",
+    "Bewerbungsunterlagen über die standardisierte jobs/engine.py Pipeline generieren und validieren."
+  ]
+}
