@@ -686,6 +686,40 @@ html.dark .btn-primary:hover,
   background-color: var(--color-surface-soft);
 }
 
+.btn-hero-gh {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-hero-gh svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.footer-gh-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-muted);
+  text-decoration: none !important;
+  transition: color 0.15s ease;
+}
+
+.footer-gh-link:hover {
+  color: var(--color-ink) !important;
+  text-decoration: none !important;
+}
+
+.footer-gh-link svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 .btn-secondary-on-dark {
   display: inline-flex;
   align-items: center;
@@ -1570,6 +1604,29 @@ html.dark .btn-pill-sm:hover,
   background-color: #1c2635 !important;
   color: #f8fafc !important;
   border-color: #33465e !important;
+}
+
+html.dark .btn-secondary,
+.dark .btn-secondary {
+  background-color: #131b26 !important;
+  color: #f8fafc !important;
+  border-color: #223145 !important;
+}
+
+html.dark .btn-secondary:hover,
+.dark .btn-secondary:hover {
+  background-color: #1c2635 !important;
+  border-color: #33465e !important;
+}
+
+html.dark .footer-gh-link,
+.dark .footer-gh-link {
+  color: #94a3b8 !important;
+}
+
+html.dark .footer-gh-link:hover,
+.dark .footer-gh-link:hover {
+  color: #f8fafc !important;
 }
 
 html.dark .btn-pill-sm.active,

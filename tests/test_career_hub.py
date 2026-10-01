@@ -167,6 +167,24 @@ class TestCareerHub(unittest.TestCase):
         self.assertTrue(href.endswith(".zip"), f".btn-secondary-on-dark href must point to zip file, got '{href}'")
         self.assertTrue(btn_secondary.has_attr("download"), ".btn-secondary-on-dark should have download attribute")
 
+    def test_11_github_icons_and_links(self):
+        with open(self.index_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        soup = BeautifulSoup(content, "html.parser")
+
+        # Hero GitHub link & SVG
+        hero_gh = soup.select_one("#hero .btn-hero-gh")
+        self.assertIsNotNone(hero_gh, "Missing GitHub link in #hero")
+        self.assertEqual(hero_gh.get("href"), "https://github.com/masrisystems/resume-template")
+        self.assertIsNotNone(hero_gh.find("svg"), "Hero GitHub button must contain SVG icon")
+
+        # Footer GitHub link & SVG
+        footer_gh = soup.select_one("footer .footer-gh-link")
+        self.assertIsNotNone(footer_gh, "Missing GitHub link in footer")
+        self.assertEqual(footer_gh.get("href"), "https://github.com/masrisystems/resume-template")
+        self.assertIsNotNone(footer_gh.find("svg"), "Footer GitHub link must contain SVG icon")
+
 if __name__ == "__main__":
     unittest.main()
+
 
